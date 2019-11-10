@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:07:10 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/04 17:37:01 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/10 20:27:00 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,33 @@ int	write_ferm(s_ferm **ferm, s_info *info, const int flag)
 		i++;
 	}
 	return (0);
+}
+
+void write_paths(s_paths *paths, s_ferm **ferm)
+{
+	s_set_path *tmp;
+
+	while (paths)
+	{
+		tmp = paths->s_set;
+		ft_putstr("\n_____________________________________\n");
+		if (paths->go == OPEN)
+			ft_putstr ("STATUS: OK\n");
+		else
+			ft_putstr ("STATUS: KO\n");
+		ft_putstr ("PATH-LEN: ");
+		ft_putnbr(paths->len);
+		ft_putstr("\n\n");
+		while (tmp)
+		{
+			ft_putstr(ferm[tmp->var][tmp->var].name);
+			if (tmp->next)
+				ft_putstr(" → ");
+			tmp = tmp->next;
+		}
+		ft_putstr("\n_____________________________________\n\n");
+		if (paths->next)
+			ft_putstr("⬇");
+		paths = paths->next;
+	}
 }

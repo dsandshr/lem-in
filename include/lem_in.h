@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 16:42:51 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/10 15:26:06 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/10 20:14:19 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,11 +143,13 @@ s_paths					*search_paths(s_ferm **ferm, s_info *info);
 char					**delete_ar(char **ar, int size);
 void					delete_info(s_info **info);
 s_ferm					**delete_ferm(s_ferm **ferm, int room);
+void					delete_paths(s_paths **path);
 
 /*
 ** TMP_FUNCTION
 */
 
 int						write_ferm(s_ferm **ferm, s_info* info, int flag);
+void					write_paths(s_paths *paths, s_ferm **ferm);
 
 #endif
