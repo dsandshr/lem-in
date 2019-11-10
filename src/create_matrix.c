@@ -6,41 +6,24 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:53:59 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/06 19:46:38 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/10 15:27:38 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int search_pass(s_links *links, char *t_name, char *r_name)
-{
-	if (ft_strcmp(t_name, r_name))
-	{
-		while (links)
-		{
-			if (ft_strcmp(links->room1, t_name) == 0 || ft_strcmp(t_name, links->room2) == 0)
-			{
-				if (ft_strcmp(links->room1, r_name) == 0 || ft_strcmp(links->room2, r_name) == 0)
-					return (OPEN);
-			}
-			links = links->next;
-		}
-	}
-	return (CLOSE);
-}
-void	create_tunnel(s_ferm *branch, s_rooms *tunnel, s_rooms *rooms, s_info *info)
+void	create_tunnel(s_ferm *branch, s_rooms *rooms, s_info *info)
 {
 	branch->type = rooms->type;
 	branch->name = rooms->name;
-	branch->pass = CLOSE; //search_pass(info->links, tunnel->name, rooms->name);
-	branch->visited = OPEN;
+	branch->pass = CLOSE;
 	if (branch->type == START)
 		branch->ants = info->c_ants;
 	else
 		branch->ants = 0;
 }
 
-s_ferm	*create_branch(s_rooms *tunnel, s_info *info)
+s_ferm	*create_branch(s_info *info)
 {
 	s_rooms	*all_tunnel;
 	s_ferm	*branch;
@@ -51,7 +34,7 @@ s_ferm	*create_branch(s_rooms *tunnel, s_info *info)
 	branch = (s_ferm *)malloc(sizeof(s_ferm) * info->c_rooms);
 	while (all_tunnel)
 	{
-		create_tunnel(&branch[i], tunnel, all_tunnel, info);
+		create_tunnel(&branch[i], all_tunnel, info);
 		all_tunnel = all_tunnel->next;
 		i++;
 	}
@@ -101,11 +84,11 @@ s_ferm	**create_matrix(s_info *info)
 	int i;
 
 	i = 0;
-	rooms = info->rooms;
 	ferm = (s_ferm **)malloc(sizeof(s_ferm *) * (info->c_rooms));
+	rooms = info->rooms;
 	while (rooms)
 	{
-		ferm[i] = create_branch(rooms, info);
+		ferm[i] = create_branch(info);
 		i++;
 		rooms = rooms->next;
 	}

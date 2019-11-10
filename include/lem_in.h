@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 16:42:51 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/10 14:28:18 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/10 15:26:06 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,6 @@ typedef struct			l_ferm_matrix
 	int					ants;
 	int					pass;
 	int					type;
-	int					visited;
 	int					path_lenght;
 }						s_ferm;
 
@@ -134,6 +133,7 @@ s_info					*read_file(char *file);
 */
 
 s_ferm					**create_matrix(s_info *info);
+void					matrix_orient(s_ferm **ferm, s_info *info);
 s_paths					*search_paths(s_ferm **ferm, s_info *info);
 
 /*

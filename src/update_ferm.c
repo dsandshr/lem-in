@@ -6,11 +6,28 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:50:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/10 14:28:25 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/10 18:43:24 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
+
+void	delete_path(s_paths **path)
+{
+	s_set_path *tmp_set;
+
+	tmp_set = (*path)->s_set;
+	while ((*path)->s_set)
+	{
+		tmp_set = (*path)->s_set;
+		(*path)->s_set = (*path)->s_set->next;
+		free(tmp_set);
+		tmp_set = NULL;
+	}
+	free(*path);
+	path = NULL;
+
+}
 
 void	add_num(int num, s_set_path **set, s_set_path **s_set)
 {
@@ -40,15 +57,21 @@ s_paths *add_path(s_paths *parent, int len)
 
 	tmp = parent->s_set;
 	path = (s_paths *)malloc(sizeof(s_paths));
-	while (tmp)
+	path->s_set = NULL;
+	path->set = NULL;
+	while (i < len)
 	{
-		add_num(tmp->var, &paths->set, &paths->s_set);
+		add_num(tmp->var, &path->set, &path->s_set);
 		i++;
-		tmp->next;
+		tmp = tmp->next;
 	}
+	path->len = len;
+	path->go = OPEN;
+	path->next = NULL;
+	return (path);
 }
 
-void	create_paths(s_ferm **ferm, s_info *info, int branch, s_paths *paths)
+void		create_paths(s_ferm **ferm, s_info *info, int branch, s_paths *paths)
 {
 	int path;
 	int len;
@@ -58,29 +81,26 @@ void	create_paths(s_ferm **ferm, s_info *info, int branch, s_paths *paths)
 	tmp = paths;
 	path = 0;
 	room = 0;
+	add_num(branch, &(paths->set), &(paths->s_set));
+	paths->len++;
 	len = paths->len;
-	while (branch < info->c_rooms)
+	while (room < info->c_rooms)
 	{
 		if(ferm[branch][room].pass == OPEN)
 		{
-			if (path == 0)
-				paths->len++;
-			if (path != 0)
+			if (path > 0)
 			{
-				paths->len++;
-				len = paths;
-				add_num(room, &paths->set, &paths->s_set);
 				while (tmp->next)
 					tmp = tmp->next;
-				tmp->next = add_path(paths);
+				tmp->next = add_path(paths, len);
 				tmp = tmp->next;
 			}
-			create_paths(ferm, info, branch, tmp);
+			create_paths(ferm, info, room, tmp);
 			path++;
 		}
 		room++;
 	}
-	if (path == 0)
+	if (path == 0 && ferm[branch][branch].type != END)
 		paths->go = CLOSE;
 }
 
@@ -92,10 +112,28 @@ s_paths	*search_paths(s_ferm **ferm, s_info *info)
 	branch = 0;
 	paths = (s_paths *)malloc(sizeof(s_paths));
 	paths->next = NULL;
+	paths->s_set = NULL;
+	paths->set = NULL;
 	paths->len = 0;
 	paths->go = OPEN;
 	while (ferm[branch][branch].type != START)
 		branch++;
 	create_paths(ferm, info, branch, paths);
+	// while (paths)
+	// {
+	// 	if (paths->go == CLOSE)
+	// 		write(1, "path: CLOSE\n", 13);
+	// 	else
+	// 		write(1, "path: OPEN\n", 12);
+	// 	while (paths->s_set)
+	// 	{
+	// 		ft_putstr(ferm[paths->s_set->var][paths->s_set->var].name);
+	// 		if (paths->s_set->next)
+	// 			ft_putstr("->");
+	// 		paths->s_set = paths->s_set->next;
+	// 	}
+	// 	ft_putstr("\n\n");
+	// 	paths = paths->next;
+	// }
 	return (paths);
 }
