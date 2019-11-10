@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 16:42:51 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/10 12:37:00 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/10 14:28:18 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,10 +115,9 @@ typedef struct			l_set_path
 typedef struct			l_paths
 {
 	int					len;
+	int					go;
 	s_set_path			*s_set;
-	s_set_path			*s_nodes;
 	s_set_path			*set;
-	s_set_path			*nodes;
 	struct l_paths		*next;
 }						s_paths;
 
