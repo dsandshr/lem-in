@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+         #
+#    By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 18:21:34 by dsandshr          #+#    #+#              #
-#    Updated: 2019/11/10 12:15:21 by dsandshr         ###   ########.fr        #
+#    Updated: 2019/11/10 12:29:23 by tlorine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,18 @@ DIR_INCLUDE_LIBFT	:=	./libft/include
 DIR_BIN				:=	bin/
 DIRS_INCLUDE		:=	$(DIR_INCLUDE_LEM_IN) $(DIR_INCLUDE_LIBFT)
 
-SRCS				:=
+SRCS				:= valid_check.c \
+						lem_in.c \
+						write_ferm.c \
+						error_procrssing.c \
+						read_file.c \
+						update_ferm.c \
+						delete.c \
+						create_matrix.c \
 
 OBJS				:=	$(SRCS:.c=.o)
 OBJ_WITH_DIR		:=	$(addprefix $(DIR_BIN), $(OBJS))
-HEADERS				:=	lem-in.h
+HEADERS				:=	lem_in.h
 LIBFT				:=	libft.a
 
 CFLAGS				:=	-Wextra -Werror -Wall -g
