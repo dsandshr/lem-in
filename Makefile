@@ -6,12 +6,12 @@
 #    By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 18:21:34 by dsandshr          #+#    #+#              #
-#    Updated: 2019/11/10 12:29:23 by tlorine          ###   ########.fr        #
+#    Updated: 2019/11/10 12:36:00 by tlorine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME				:=	./lem-in
-DIR_SRC				:=	src
+NAME				:=	lem-in
+DIR_SRC				:=	./src
 DIR_INCLUDE_LEM_IN	:=	./include
 DIR_LIBFT			:=	./libft/
 DIR_INCLUDE_LIBFT	:=	./libft/include
@@ -43,7 +43,7 @@ REMOVE				:=	rm -rf
 
 vpath %.c $(DIR_SRC)
 vpath %.o $(DIR_BIN)
-vpath %.h $(DIR_INCLUDE_FILLER)
+vpath %.h $(DIR_INCLUDE_LEM_IN)
 vpath %.a $(DIR_LIBFT)
 
 all: $(LIBFT) $(NAME)
@@ -58,8 +58,6 @@ $(DIR_BIN):
 		mkdir -p $@
 $(LIBFT):
 		$(MAKE_LIBFT)
-$(FILLER_VIS):
-		$(MAKE_FILLER_VIS)
 
 clean:
 		$(REMOVE) $(OBJ_WITH_DIR)

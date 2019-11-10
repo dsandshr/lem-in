@@ -14,19 +14,19 @@ int		read_ants(int fd)
 			if (ft_thisnum(line))
 			{
 				ants = ft_atoi(line);
-				line = ft_strdel(&line);
+				ft_strdel(&line);
 				return (ants);
 			}
-			line = ft_strdel(&line);
+			ft_strdel(&line);
 			return (FORMAT_E);
 		}
 		else if (ft_strcmp(line, "##start") == 0 || ft_strcmp(line, "##end") == 0)
 		{
 			ants = line[2] == 's' ? START_1_E : END_1_E;
-			line = ft_strdel(&line);
+			ft_strdel(&line);
 			return (ants);
 		}
-		line = ft_strdel(&line);
+		ft_strdel(&line);
 	}
 	return (NO_ANTS_E);
 }
@@ -127,7 +127,7 @@ int		read_main(s_info *info, int fd)
 				info->c_links += add_links(info, line);
 			srm.type = TUNNEL;
 		}
-		line = ft_strdel(&line);
+		ft_strdel(&line);
 		if (srm.start > 1 || srm.end > 1)
 			error_processing(srm.start > 1 ? START_2_E : END_2_E, &info);
 		if (num < 1)

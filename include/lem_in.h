@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 16:42:51 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/10 12:25:47 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/10 12:37:00 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,22 +121,6 @@ typedef struct			l_paths
 	s_set_path			*nodes;
 	struct l_paths		*next;
 }						s_paths;
-
-
-// typedef struct			l_history_room
-// {
-// 	int					*buffer;
-// 	int					id;
-// 	int					max;
-// }						s_history;
-
-// typedef struct			l_stack
-// {
-// 	int					id;
-// 	struct l_stack		*next;
-// }						s_stack;
-
-
 
 /*
 ** READ_FUNCTION

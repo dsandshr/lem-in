@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/23 16:59:35 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/11/10 12:48:10 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,5 +193,9 @@ int				change_the_value_by_name_in_file(const char *path_name,
 	const char *name, const char *value);
 int				ft_push_end_file(const char *path_name, const char *data);
 int				ft_set_next_line(const char *path_name, const char *data);
+int				ft_qlines(char const *s, char c);
+int				ft_skipchar(const char *str, char c);
+int				ft_skipspace(const char *str);
+int				ft_thisnum(const char *line);
 
 #endif

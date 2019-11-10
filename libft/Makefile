@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+         #
+#    By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/04/06 14:32:05 by ksharlen          #+#    #+#              #
-#    Updated: 2019/10/16 17:22:40 by dsandshr         ###   ########.fr        #
+#    Updated: 2019/11/10 12:48:31 by tlorine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -132,7 +132,11 @@ SRC_LIBFT 		:= ft_arrfind.c\
 						ft_set_next_line.c\
 						ft_str_chr_clr.c\
 						ft_strcut.c\
-						ft_strndup.c
+						ft_strndup.c\
+						ft_thisnum.c\
+						ft_skipspace.c\
+						ft_skipchar.c\
+						ft_qlines.c
 
 SRCS 			:= $(SRC_LIBFT) $(SRCS_FT_PRINTF)
 

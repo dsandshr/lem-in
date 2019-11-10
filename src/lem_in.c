@@ -9,7 +9,7 @@ int main(int argc, char **argv)
 		return (0);
 	info = read_file(argv[1]);
 	ferm = create_matrix(info);
-	search_dead_branch(ferm, info);
+	search_paths(ferm, info);
 	write_ferm(ferm, info, 0);
 	ferm = delete_ferm(ferm, info->c_rooms);
 	delete_info(&info);
