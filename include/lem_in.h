@@ -80,6 +80,7 @@ typedef struct			l_info
 	int					c_ants;
 	int					c_rooms;
 	int					c_links;
+	int					c_path;
 	s_rooms				*rooms;
 	s_links				*links;
 }						s_info;

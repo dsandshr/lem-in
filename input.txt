@@ -9,11 +9,13 @@ room_1 4 2
 room_2 4 4
 room_5 8 2
 room_6 8 4
+room_7 9 10
 start-room_1
 room_3-room_4
 room_2-room_4
 room_1-room_5
 room_6-room_5
+start-room_7
 end-room_6
 room_1-room_2
 room_2-end

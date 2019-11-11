@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:50:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/10 20:06:49 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/11 15:11:30 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ s_paths *add_path(s_paths *parent, int len)
 	return (path);
 }
 
-void		create_paths(s_ferm **ferm, s_info *info, int branch, s_paths *paths)
+void	create_paths(s_ferm **ferm, s_info *info, int branch, s_paths *paths)
 {
 	int path;
 	int len;
@@ -108,6 +108,8 @@ void		create_paths(s_ferm **ferm, s_info *info, int branch, s_paths *paths)
 	}
 	if (path == 0 && ferm[branch][branch].type != END)
 		paths->go = CLOSE;
+	else if (ferm[branch][branch].type == END)
+		info->c_path++;
 }
 
 s_paths	*search_paths(s_ferm **ferm, s_info *info)
