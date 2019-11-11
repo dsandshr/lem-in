@@ -13,6 +13,7 @@ int main(int argc, char **argv)
 	matrix_orient(ferm, info);
 	paths = search_paths(ferm, info);
 	//write_paths(paths, ferm);
+	ft_putnbr(info->c_path);
 	ferm = delete_ferm(ferm, info->c_rooms);
 	delete_info(&info);
 	delete_paths(&paths);
