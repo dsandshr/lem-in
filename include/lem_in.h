@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lem_in.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 16:42:51 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/11 14:57:24 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/11 14:07:45 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,12 @@ typedef struct			l_paths
 	s_set_path			*set;
 	struct l_paths		*next;
 }						s_paths;
+
+typedef struct			l_paths_mas
+{
+	s_paths_mas			*mas;
+	int					i;
+}						s_paths_mas;
 
 /*
 ** READ_FUNCTION
