@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/31 16:42:51 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/11 14:07:45 by dsandshr         ###   ########.fr       */
+/*   Created: 2019/11/11 14:40:56 by dsandshr          #+#    #+#             */
+/*   Updated: 2019/11/11 15:18:29 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ typedef struct			l_info
 	int					c_ants;
 	int					c_rooms;
 	int					c_links;
+	int					c_path;
 	s_rooms				*rooms;
 	s_links				*links;
 }						s_info;
@@ -122,7 +123,7 @@ typedef struct			l_paths
 
 typedef struct			l_paths_mas
 {
-	s_paths_mas			*mas;
+	s_paths				*mas;
 	int					i;
 }						s_paths_mas;
 
@@ -157,5 +158,6 @@ void					delete_paths(s_paths **path);
 
 int						write_ferm(s_ferm **ferm, s_info* info, int flag);
 void					write_paths(s_paths *paths, s_ferm **ferm);
+void	find_way(s_paths *paths, s_info *info);
 
 #endif

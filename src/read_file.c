@@ -149,6 +149,7 @@ s_info	*read_file(char *file)
 	info->links = NULL;
 	info->c_rooms = 0;
 	info->c_links = 0;
+	info->c_path = 0;
 	fd = open(file, O_RDONLY);
 	if (fd <= 0)
 		error_processing(FILE_E, &info);
