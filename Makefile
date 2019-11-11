@@ -6,7 +6,7 @@
 #    By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 18:21:34 by dsandshr          #+#    #+#              #
-#    Updated: 2019/11/10 15:27:09 by tlorine          ###   ########.fr        #
+#    Updated: 2019/11/11 13:58:49 by tlorine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ OBJ_WITH_DIR		:=	$(addprefix $(DIR_BIN), $(OBJS))
 HEADERS				:=	lem_in.h
 LIBFT				:=	libft.a
 
-CFLAGS				:=	-Wextra -Werror -Wall -g
+CFLAGS				:=	-Wextra -Werror -Wall -O3
 CFLAG				:=	-c
 NFLAG				:=	-o
 IFLAG				:=	-I

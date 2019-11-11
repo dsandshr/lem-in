@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 16:42:51 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/10 20:14:19 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/11 14:20:25 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ typedef struct			l_info
 	int					c_ants;
 	int					c_rooms;
 	int					c_links;
+	int					c_path;
 	s_rooms				*rooms;
 	s_links				*links;
 }						s_info;
