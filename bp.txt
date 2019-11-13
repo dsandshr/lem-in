@@ -1,4 +1,4 @@
-248
+1
 #Here is the number of lines required: 71
 ##start
 Gtt1 1 1

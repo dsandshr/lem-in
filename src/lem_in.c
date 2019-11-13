@@ -130,6 +130,8 @@ int main(int argc, char **argv)
 	s_info *info;
 	s_ferm **ferm;
 	s_paths *paths;
+	s_p_matrix **matrix;
+	int *i;
 
 	if (argc != 2)
 		return (0);
@@ -137,11 +139,11 @@ int main(int argc, char **argv)
 	ferm = create_matrix(info);
 	matrix_orient(ferm, info);
 	paths = search_paths(ferm, info);
-	find_way(paths, info);
 	//write_paths(paths, ferm);
 	//ft_putnbr(info->c_path);
 	write_paths(paths, ferm);
-	create_path_matrix(paths);
+	matrix = create_path_matrix(paths);
+	i = find_way(matrix, info);
 	ferm = delete_ferm(ferm, info->c_rooms);
 	delete_info(&info);
 	delete_paths(&paths);

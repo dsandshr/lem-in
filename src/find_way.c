@@ -6,80 +6,85 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 14:46:06 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/11/12 14:51:01 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/11/13 19:10:36 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-static int	**adj_matrix(int o_ways)
+static int 	*findShortWay(s_p_matrix **matrix, int *shWay, int *lenShW)
 {
-	int **adj_mtx;
-	int buf;
+	int y;
 
-	buf = o_ways;
-	if (!(adj_mtx = (int **)malloc(sizeof(int *) * (o_ways + 1))))
+	y = 0;
+	*lenShW = matrix[0][0].len;
+	shWay[0] = y;
+	while (y < matrix[0][0].size)
+	{
+		if (*lenShW > matrix[y][y].len)
+		{
+			*lenShW = matrix[y][y].len;
+			shWay[0] = y;
+		}
+		y++;
+	}
+	shWay[1] = -1;
+	return (shWay);
+}
+
+static int	*findNesopWays(s_p_matrix **matrix, int *needWay, int *pos, int *len)
+{
+	int x;
+	int y;
+
+	y = 0;
+	while (y < matrix[0][0].size)
+	{
+		x = 0;
+		while (x < matrix[0][0].size)
+		{
+			if (matrix[y][x].connection == OPEN)
+			{
+				needWay[*pos] = y;
+				*len = *len + matrix[y][y].len;
+				*pos = *pos + 1;
+			}
+			x++;
+		}
+		y++;
+	}
+	needWay[*pos + 1] = -1;
+	return(needWay);
+}
+
+int	*find_way(s_p_matrix **matrix, s_info *info)
+{
+	s_needWays *needWays;
+
+	if (!(needWays = (s_needWays *)malloc(sizeof(s_needWays))))
 		exit (-1);
-	while (buf != 0)
+	if (!(needWays->ways = (int *)malloc(sizeof(int) * matrix[0][0].size + 1)))
+		exit (-1);
+	if (!(needWays->shWay = (int *)malloc(sizeof(int) * 2)))
+		exit (-1);
+	needWays->colWays = 0;
+	needWays->lenWays = 0;
+	needWays->ways = findNesopWays(matrix, needWays->ways, &needWays->colWays, &needWays->lenWays);
+	needWays->shWay = findShortWay(matrix, needWays->shWay, &needWays->lenShW);
+	if (((needWays->lenWays) + info->c_ants) / needWays->colWays < needWays->lenShW + info->c_ants)
 	{
-		adj_mtx[buf] = (int *)malloc(sizeof(int) * (o_ways + 1));
-		buf--;
-	}
-	while(buf <= o_ways)
-	{
-		adj_mtx[buf][buf] = 1;
-		buf++;
-	}
-}
-
-static void	find_o_ways(s_paths *paths, s_info *info, s_paths_mas *paths_mas)
-{
-	s_paths	*pointer;
-	int		l;
-
-	pointer = paths;
-	if (!(paths_mas = (s_paths_mas *)malloc(sizeof(s_paths_mas))))
-		exit(-1);
-	paths_mas->lenShWay = paths->len;
-	paths_mas->lenNepWay = paths->len;
-	paths_mas->i = 0;
-	if (!(paths_mas->mas = (s_paths *)malloc(sizeof(s_paths) * info->c_path)))
-		exit(-1);
-	while (paths)
-	{
-		if (paths->go == OPEN)
+		int i = 0;
+		while (i < needWays->colWays)
 		{
-			paths_mas->mas[paths_mas->i] = *paths;
-			paths_mas->lenShWay = paths_mas->lenShWay > paths->len ? paths->len : paths_mas->lenShWay;
-			if (paths->next == NULL)
-				break;
-			paths = paths->next;
-			paths_mas->i++;
+			ft_printf("%i	%i\n", needWays->ways[i], needWays->colWays);
+			i++;
 		}
-		if (paths->go == CLOSE)
-		{
-			if (paths->next == NULL)
-				break;
-			paths = paths->next;
-		}
+		return(needWays->ways);
 	}
-}
-
-void	find_way(s_paths *paths, s_info *info)
-{
-	s_paths_mas *paths_mas;
-	//int			ant;
-
-	paths_mas = NULL;
-	find_o_ways(paths, info, paths_mas);
-	paths_mas->adj_mtx = adj_matrix(paths_mas->i);
-	//find_Nep_Ways()
-	// ant = info->c_ants;
-	// deicstra();
-	// find_neperesec();
-	// while (ant)
-	// if (deicstra < find_neperesec())
-	// 	deicstra();
-	// else
-	// 	neperesec();
+	else
+	{
+		ft_printf("%i\n", needWays->shWay[0]);
+		return(needWays->shWay);
+	}
+	
 }

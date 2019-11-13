@@ -6,7 +6,7 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:29:03 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/11/13 13:29:17 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/11/13 18:19:21 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,6 +140,16 @@ typedef struct			l_paths_mas
 	int					ColAnts;
 }						s_paths_mas;
 
+typedef struct			l_needWyas
+{
+	int					*shWay;
+	int					*ways;
+	int					colWays;
+	int					lenWays;
+	int					lenShW;
+}						s_needWays;
+
+
 /*
 ** READ_FUNCTION
 */
@@ -171,6 +181,6 @@ void					delete_paths(s_paths **path);
 
 int						write_ferm(s_ferm **ferm, s_info* info, int flag);
 void					write_paths(s_paths *paths, s_ferm **ferm);
-void	find_way(s_paths *paths, s_info *info);
+int						*find_way(s_p_matrix **matrix, s_info *info);
 
 #endif
