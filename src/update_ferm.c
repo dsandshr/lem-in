@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:50:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/11 15:11:30 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/13 15:03:03 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,13 @@ void	add_num(int num, s_set_path **set, s_set_path **s_set)
 		*set = (s_set_path *)malloc(sizeof(s_set_path));
 		(*set)->var = num;
 		(*set)->next = NULL;
+		(*set)->back = NULL;
 		*s_set = *set;
 	}
 	else
 	{
 		(*set)->next = (s_set_path *)malloc(sizeof(s_set_path));
+		(*set)->next->back = *set;
 		*set = (*set)->next;
 		(*set)->var = num;
 		(*set)->next = NULL;

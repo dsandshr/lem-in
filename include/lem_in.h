@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lem_in.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/31 16:42:51 by tlorine           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2019/11/12 16:15:17 by tlorine          ###   ########.fr       */
-=======
-/*   Updated: 2019/11/11 14:07:45 by dsandshr         ###   ########.fr       */
->>>>>>> 86bd0d0b5c6cda231c4bd988d184ad86332331b1
+/*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
+/*   Updated: 2019/11/13 15:37:43 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +110,7 @@ typedef struct			l_set_path
 
 	int					var;
 	struct l_set_path	*next;
+	struct l_set_path	*back;
 }						s_set_path;
 
 typedef struct			l_paths
@@ -125,7 +122,6 @@ typedef struct			l_paths
 	struct l_paths		*next;
 }						s_paths;
 
-<<<<<<< HEAD
 typedef struct	l_paths_matrix
 {
 	int			connection;
@@ -133,14 +129,6 @@ typedef struct	l_paths_matrix
 	int			len;
 	s_set_path	*set;
 }				s_p_matrix;
-
-=======
-typedef struct			l_paths_mas
-{
-	s_paths_mas			*mas;
-	int					i;
-}						s_paths_mas;
->>>>>>> 86bd0d0b5c6cda231c4bd988d184ad86332331b1
 
 /*
 ** READ_FUNCTION
@@ -157,6 +145,19 @@ s_info					*read_file(char *file);
 s_ferm					**create_matrix(s_info *info);
 void					matrix_orient(s_ferm **ferm, s_info *info);
 s_paths					*search_paths(s_ferm **ferm, s_info *info);
+
+/*
+** MARCH !
+*/
+
+void					march(int *paths, s_p_matrix **matrix, s_ferm **ferm, s_info *info);
+
+/*
+** STACK
+*/
+
+void					push(s_set_path **stack, int id);
+void					delete(s_set_path **stack);
 
 /*
 ** FREE_FUNCTION

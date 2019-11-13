@@ -6,7 +6,7 @@
 #    By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 18:21:34 by dsandshr          #+#    #+#              #
-#    Updated: 2019/11/11 13:58:49 by tlorine          ###   ########.fr        #
+#    Updated: 2019/11/13 15:10:41 by tlorine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SRCS				:= valid_check.c \
 						update_ferm.c \
 						delete.c \
 						create_matrix.c \
-						matrix_orient.c
+						matrix_orient.c \
+						march_of_ants.c
 
 OBJS				:=	$(SRCS:.c=.o)
 OBJ_WITH_DIR		:=	$(addprefix $(DIR_BIN), $(OBJS))

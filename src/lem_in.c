@@ -96,32 +96,32 @@ s_p_matrix **create_path_matrix(s_paths *paths)
 	}
 	search_connect(matrix, paths);
 	/////////////////////
-	while (i < size)
-	{
-		ft_putchar('\t');
-		ft_putnbr(i);
-		i++;
-	}
-	ft_putchar('\n');
-	i = 0;
-	int i2 = 0;
-	while (i < size)
-	{
-		ft_putnbr(i);
-		while (i2 < size)
-		{
-			ft_putchar('\t');
-			if (matrix[i][i2].connection == CLOSE)
-				ft_putchar('-');
-			else
-				ft_putchar('+');
-			i2++;
-		}
-		i2 = 0;
-		ft_putchar('\n');
-		ft_putchar('\n');
-		i++;
-	}
+	// while (i < size)
+	// {
+	// 	ft_putchar('\t');
+	// 	ft_putnbr(i);
+	// 	i++;
+	// }
+	// ft_putchar('\n');
+	// i = 0;
+	// int i2 = 0;
+	// while (i < size)
+	// {
+	// 	ft_putnbr(i);
+	// 	while (i2 < size)
+	// 	{
+	// 		ft_putchar('\t');
+	// 		if (matrix[i][i2].connection == CLOSE)
+	// 			ft_putchar('-');
+	// 		else
+	// 			ft_putchar('+');
+	// 		i2++;
+	// 	}
+	// 	i2 = 0;
+	// 	ft_putchar('\n');
+	// 	ft_putchar('\n');
+	// 	i++;
+	// }
 	return (matrix);
 }
 
@@ -130,6 +130,7 @@ int main(int argc, char **argv)
 	s_info *info;
 	s_ferm **ferm;
 	s_paths *paths;
+	s_p_matrix **matrix;
 
 	if (argc != 2)
 		return (0);
@@ -137,8 +138,13 @@ int main(int argc, char **argv)
 	ferm = create_matrix(info);
 	matrix_orient(ferm, info);
 	paths = search_paths(ferm, info);
+	matrix = create_path_matrix(paths);
 	write_paths(paths, ferm);
-	create_path_matrix(paths);
+	int *p = (int *)malloc(sizeof(int) * 3);
+	p[0] = 0;
+	p[1] = -1;
+	p[2] = -1;
+	//march(p, matrix, ferm, info);
 	ferm = delete_ferm(ferm, info->c_rooms);
 	delete_info(&info);
 	delete_paths(&paths);
