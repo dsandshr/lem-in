@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   lem_in.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/31 16:42:51 by tlorine           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2019/11/12 16:15:17 by tlorine          ###   ########.fr       */
+=======
+/*   Updated: 2019/11/11 14:07:45 by dsandshr         ###   ########.fr       */
+>>>>>>> 86bd0d0b5c6cda231c4bd988d184ad86332331b1
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +125,7 @@ typedef struct			l_paths
 	struct l_paths		*next;
 }						s_paths;
 
+<<<<<<< HEAD
 typedef struct	l_paths_matrix
 {
 	int			connection;
@@ -129,6 +134,13 @@ typedef struct	l_paths_matrix
 	s_set_path	*set;
 }				s_p_matrix;
 
+=======
+typedef struct			l_paths_mas
+{
+	s_paths_mas			*mas;
+	int					i;
+}						s_paths_mas;
+>>>>>>> 86bd0d0b5c6cda231c4bd988d184ad86332331b1
 
 /*
 ** READ_FUNCTION
