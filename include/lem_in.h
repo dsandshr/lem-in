@@ -5,11 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/11 14:40:56 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/11/12 14:37:16 by dsandshr         ###   ########.fr       */
+/*   Created: 2019/11/13 13:29:03 by dsandshr          #+#    #+#             */
+/*   Updated: 2019/11/13 13:29:17 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef LEM_IN_H
 # define LEM_IN_H
@@ -121,6 +120,14 @@ typedef struct			l_paths
 	s_set_path			*set;
 	struct l_paths		*next;
 }						s_paths;
+
+typedef struct	l_paths_matrix
+{
+	int			connection;
+	int			size;
+	int			len;
+	s_set_path	*set;
+}				s_p_matrix;
 
 typedef struct			l_paths_mas
 {
