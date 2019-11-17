@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 20:20:52 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/11 14:56:57 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/15 19:54:20 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int valid_format(const char *line, s_info *info)
 	{
 		if((room_exists(line, info, '-')) == 0)
 			return(NO_ROOM_E);
-		while(line[room] != '-')
+		while(line[room] != '-' && line[room] != '\0')
 			room++;
 		if((room_exists(line + (room + 1), info, '\0')) == 0)
 			return(NO_ROOM_E);

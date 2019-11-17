@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/11/10 12:48:10 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/15 19:59:49 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 
 # define MAXLONG 			9223372036854775807
 # define FD_MAX				7198
-# define BUFF_SIZE			100
+# define BUFF_SIZE			1
 
 /*
 **OTHER

@@ -129,24 +129,30 @@ int main(int argc, char **argv)
 {
 	s_info *info;
 	s_ferm **ferm;
-	s_paths *paths;
-	s_p_matrix **matrix;
+	s_paths *paths = NULL;
+	//s_p_matrix **matrix;
 
 	if (argc != 2)
 		return (0);
 	info = read_file(argv[1]);
 	ferm = create_matrix(info);
-	matrix_orient(ferm, info);
+	//matrix_orient(info, ferm);
+	//write_ferm(ferm, info, 0);
 	paths = search_paths(ferm, info);
-	matrix = create_path_matrix(paths);
-	write_paths(paths, ferm);
-	int *p = (int *)malloc(sizeof(int) * 3);
-	p[0] = 0;
-	p[1] = -1;
-	p[2] = -1;
-	//march(p, matrix, ferm, info);
-	ferm = delete_ferm(ferm, info->c_rooms);
-	delete_info(&info);
-	delete_paths(&paths);
+	//matrix = create_path_matrix(paths);
+	//write_paths(paths, ferm);
+	// int *p = (int *)malloc(sizeof(int) * 10);
+	// p[0] = 0;
+	// p[-1] = 59;
+	// p[-1] = 81;
+	// p[3] = 112;
+	// p[4] = 147;
+	// p[5] = 156;
+	// p[6] = 170;
+	// p[7] = -1;
+	// march(p, matrix, ferm, info);
+	// ferm = delete_ferm(ferm, info->c_rooms);
+	// delete_info(&info);
+	// delete_paths(&paths);
 	return (0);
 }

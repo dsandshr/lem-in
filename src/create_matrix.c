@@ -6,21 +6,21 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:53:59 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/10 15:27:38 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/16 17:07:05 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void	create_tunnel(s_ferm *branch, s_rooms *rooms, s_info *info)
+void	create_tunnel(s_ferm *branch, s_rooms *rooms, s_info *info, int i)
 {
-	branch->type = rooms->type;
-	branch->name = rooms->name;
-	branch->pass = CLOSE;
-	if (branch->type == START)
-		branch->ants = info->c_ants;
+	branch[i].type = rooms->type;
+	branch[i].name = rooms->name;
+	branch[i].pass = CLOSE;
+	if (branch[i].type == START)
+		branch[i].ants = info->c_ants;
 	else
-		branch->ants = 0;
+		branch[i].ants = 0;
 }
 
 s_ferm	*create_branch(s_info *info)
@@ -34,7 +34,7 @@ s_ferm	*create_branch(s_info *info)
 	branch = (s_ferm *)malloc(sizeof(s_ferm) * info->c_rooms);
 	while (all_tunnel)
 	{
-		create_tunnel(&branch[i], all_tunnel, info);
+		create_tunnel(branch, all_tunnel, info, i);
 		all_tunnel = all_tunnel->next;
 		i++;
 	}
@@ -60,14 +60,14 @@ void	links_add(s_info *info, s_ferm **ferm)
 				{
 					if (room != branch)
 					{
-						if (ft_strcmp(ferm[branch][room].name, links->room1) == 0 || ft_strcmp(ferm[branch][room].name, links->room2) == 0)
+						if (ft_strcmp(ferm[room][room].name, links->room1) == 0 || ft_strcmp(ferm[room][room].name, links->room2) == 0)
 							break ;
 					}
 					room++;
 				}
 				ferm[branch][room].pass = OPEN;
 				ferm[room][branch].pass = OPEN;
-				break ;
+				branch = info->c_rooms;
 			}
 			branch++;
 		}
@@ -86,12 +86,29 @@ s_ferm	**create_matrix(s_info *info)
 	i = 0;
 	ferm = (s_ferm **)malloc(sizeof(s_ferm *) * (info->c_rooms));
 	rooms = info->rooms;
-	while (rooms)
+	while (i < info->c_rooms)
 	{
 		ferm[i] = create_branch(info);
 		i++;
 		rooms = rooms->next;
 	}
 	links_add(info, ferm);
+	// int i;
+	// int i2;
+	// int s;
+	
+	// s = 0;
+	// i = 0;
+	// i2 = 0;
+	// while (ferm[i][i].type != END)
+	// 	i++;
+	// while (i2 < info->c_rooms)
+	// {
+	// 	if(ferm[i][i2].pass == OPEN)
+	// 		s++;
+	// 	i2++;
+	// }
+	// ft_putnbr(s);
+	// exit(1);
 	return (ferm);
 }

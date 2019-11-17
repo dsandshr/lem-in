@@ -2,12 +2,13 @@
 
 char **delete_ar(char **ar, int size)
 {
-    while (size != -1)
-    {
-        free(ar[size]);
-        ar[size] = NULL;
-        size--;
-    }
+    // while (size != -1)
+    // {
+    //     free(ar[size]);
+    //     ar[size] = NULL;
+    //     size--;
+    // }
+	size = 9;
     free(ar);
     return (NULL);
 }

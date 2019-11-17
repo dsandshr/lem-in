@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:07:10 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/11 17:01:10 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/17 17:30:57 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,9 @@ int	write_ferm(s_ferm **ferm, s_info *info, const int flag)
 void write_paths(s_paths *paths, s_ferm **ferm)
 {
 	s_set_path *tmp;
+	int i;
 
+	i = 0;
 	while (paths)
 	{
 		tmp = paths->s_set;
@@ -59,7 +61,14 @@ void write_paths(s_paths *paths, s_ferm **ferm)
 		{
 			ft_putstr("\n_____________________________________\n");
 			if (paths->go == OPEN)
-				ft_putstr ("STATUS: OK\n");
+			{
+				ft_putstr("id :");
+				if (i > 100000000)
+					exit(1);
+				ft_putnbr(i);
+				i++;
+				ft_putstr ("\nSTATUS: OK\n");
+			}
 			else
 				ft_putstr ("STATUS: KO\n");
 			ft_putstr ("PATH-LEN: ");

@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/13 15:37:43 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/16 19:42:36 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@
 typedef struct			l_rooms
 {
 	char				*name;
-	int					x;
-	int					y;
+	// int					x;
+	// int					y;
 	int					type;
 	struct l_rooms		*next;
 
@@ -143,7 +143,7 @@ s_info					*read_file(char *file);
 */
 
 s_ferm					**create_matrix(s_info *info);
-void					matrix_orient(s_ferm **ferm, s_info *info);
+void					matrix_orient(s_info *info, s_ferm **ferm);
 s_paths					*search_paths(s_ferm **ferm, s_info *info);
 
 /*

@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:50:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/13 15:03:03 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/17 19:24:56 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,24 @@ s_paths *add_path(s_paths *parent, int len)
 		tmp = tmp->next;
 	}
 	path->len = len;
-	path->go = OPEN;
+	path->go = CLOSE;
 	path->next = NULL;
 	return (path);
+}
+
+int fixation(s_set_path *set, int num, int len)
+{
+	int i;
+
+	i = 0;
+	while (set && i < len)
+	{
+		if (set->var == num)
+			return (1);
+		set = set->next;
+		len++;
+	}
+	return (0);
 }
 
 void	create_paths(s_ferm **ferm, s_info *info, int branch, s_paths *paths)
@@ -91,43 +106,57 @@ void	create_paths(s_ferm **ferm, s_info *info, int branch, s_paths *paths)
 	room = 0;
 	add_num(branch, &(paths->set), &(paths->s_set));
 	paths->len++;
+	if (ferm[branch][branch].type == END)
+	{
+		info->c_path++;
+		paths->go = OPEN;
+		return ;
+	}
 	len = paths->len;
 	while (room < info->c_rooms)
 	{
-		if(ferm[branch][room].pass == OPEN)
+		if(ferm[branch][room].pass == OPEN && ferm[branch][room].type != START)
 		{
-			if (path > 0)
-			{
-				while (tmp->next)
+				if (path > 0)
+				{
+					while (tmp->next != NULL)
+						tmp = tmp->next;
+					tmp->next = add_path(paths, len);
 					tmp = tmp->next;
-				tmp->next = add_path(paths, len);
-				tmp = tmp->next;
-			}
-			create_paths(ferm, info, room, tmp);
-			path++;
+				}
+				ferm[room][branch].pass = CLOSE;
+				ferm[branch][room].pass = CLOSE;
+				create_paths(ferm, info, room, tmp);
+				ferm[room][branch].pass = OPEN;
+				ferm[branch][room].pass = OPEN;
+				path++;
 		}
 		room++;
 	}
-	if (path == 0 && ferm[branch][branch].type != END)
-		paths->go = CLOSE;
-	else if (ferm[branch][branch].type == END)
-		info->c_path++;
 }
 
 s_paths	*search_paths(s_ferm **ferm, s_info *info)
 {
 	int branch;
+	int rooms;
 	s_paths *paths;
 
 	branch = 0;
+	rooms = 0;
 	paths = (s_paths *)malloc(sizeof(s_paths));
 	paths->next = NULL;
 	paths->s_set = NULL;
 	paths->set = NULL;
 	paths->len = 0;
-	paths->go = OPEN;
+	paths->go = CLOSE;;
 	while (ferm[branch][branch].type != START)
 		branch++;
+	while (rooms < info->c_rooms)
+	{
+		if(ferm[branch][rooms].pass == OPEN)
+			ferm[rooms][branch].pass = CLOSE;
+		rooms++;
+	}
 	create_paths(ferm, info, branch, paths);
 	return (paths);
 }

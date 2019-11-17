@@ -6,7 +6,7 @@
 #    By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 18:21:34 by dsandshr          #+#    #+#              #
-#    Updated: 2019/11/13 15:10:41 by tlorine          ###   ########.fr        #
+#    Updated: 2019/11/16 19:43:14 by tlorine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,14 +27,15 @@ SRCS				:= valid_check.c \
 						delete.c \
 						create_matrix.c \
 						matrix_orient.c \
-						march_of_ants.c
+						march_of_ants.c \
+						stack.c
 
 OBJS				:=	$(SRCS:.c=.o)
 OBJ_WITH_DIR		:=	$(addprefix $(DIR_BIN), $(OBJS))
 HEADERS				:=	lem_in.h
 LIBFT				:=	libft.a
 
-CFLAGS				:=	-Wextra -Werror -Wall -O3
+CFLAGS				:=	-Wextra -Werror -Wall
 CFLAG				:=	-c
 NFLAG				:=	-o
 IFLAG				:=	-I

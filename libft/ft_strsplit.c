@@ -3,84 +3,90 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 07:22:29 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/12 16:23:16 by dsandshr         ###   ########.fr       */
+/*   Created: 2019/04/11 17:44:36 by tlorine           #+#    #+#             */
+/*   Updated: 2019/11/15 19:58:48 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+#include <stdlib.h>
 
-static void		ft_free_mem(char **p_str, size_t size_free)
+static size_t	ft_count_words(char const *s, char c)
 {
-	size_t i;
+	size_t words;
 
-	i = 0;
-	while (i < size_free)
+	words = 0;
+	while (*s)
 	{
-		ft_strdel(&p_str[i]);
-		++i;
-	}
-	free(p_str);
-}
-
-static void		ft_numbers_of_lines(char const *str, int n, size_t *sum)
-{
-	*sum = 0;
-	while (*str)
-	{
-		while (*str == n)
-			str++;
-		if (*str != '\0' && *str != n)
-			(*sum)++;
-		while (*str != '\0' && *str != n)
-			str++;
-	}
-}
-
-static void		ft_input_str(char const *s, char **p_str, char c, size_t sum)
-{
-	size_t		len;
-	size_t		i;
-	size_t		j;
-	char const	*beg_line;
-
-	j = 0;
-	i = 0;
-	while (j++ < sum && *s)
-	{
-		len = 0;
 		while (*s == c)
 			s++;
-		beg_line = s;
-		len = ft_strnlen(s, c);
-		s += len;
-		p_str[i] = ft_strnew(len);
-		if (!(p_str[i]))
+		if (*s)
 		{
-			ft_free_mem(p_str, i);
-			p_str = NULL;
-			return ;
+			words++;
+			while (*s && *s != c)
+				s++;
 		}
-		ft_strncpy(p_str[i++], beg_line, len);
 	}
-	p_str[i] = NULL;
+	return (words);
+}
+
+static char		*ft_get_word(char *word, char c)
+{
+	char *start;
+
+	start = word;
+	while (*word && *word != c)
+		word++;
+	*word = '\0';
+	return (ft_strdup(start));
+}
+
+static void		ft_free_words(char **words, size_t i)
+{
+	while (i--)
+		ft_strdel(&(words[i]));
+	free(*words);
+}
+
+static char		**ft_get_words(char *s, char c, size_t words_count)
+{
+	char	**words;
+	char	*word;
+	size_t	i;
+
+	i = 0;
+	if ((words = (char **)ft_memalloc(sizeof(char *) * (words_count + 1))))
+	{
+		while (i < words_count)
+		{
+			while (*s == c)
+				s++;
+			if (*s)
+			{
+				if (!(word = ft_get_word(s, c)))
+				{
+					ft_free_words(words, i);
+					return (NULL);
+				}
+				words[i++] = word;
+				s += (ft_strlen(word) + 1);
+			}
+		}
+		words[i] = NULL;
+	}
+	return (words);
 }
 
 char			**ft_strsplit(char const *s, char c)
 {
-	char		**p_str;
-	size_t		sum;
+	char	**words;
+	char	*line;
 
-	p_str = NULL;
-	if (s)
-	{
-		ft_numbers_of_lines(s, c, &sum);
-		if (!(p_str = (char **)malloc((sum + 1) * sizeof(char *))))
-			return (NULL);
-		ft_input_str(s, p_str, c, sum);
-	}
-	return (p_str);
+	if (!s || !(line = ft_strdup((char *)s)))
+		return (NULL);
+	words = ft_get_words(line, c, ft_count_words(line, c));
+	free(line);
+	return (words);
 }
