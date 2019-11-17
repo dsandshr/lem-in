@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:53:59 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/16 17:07:05 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/17 19:31:38 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	create_tunnel(s_ferm *branch, s_rooms *rooms, s_info *info, int i)
 	branch[i].type = rooms->type;
 	branch[i].name = rooms->name;
 	branch[i].pass = CLOSE;
+	branch[i].path_lenght = 1;
 	if (branch[i].type == START)
 		branch[i].ants = info->c_ants;
 	else

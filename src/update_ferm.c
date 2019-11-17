@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:50:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/17 19:24:56 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/17 19:34:58 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void	create_paths(s_ferm **ferm, s_info *info, int branch, s_paths *paths)
 	tmp = paths;
 	path = 0;
 	room = 0;
-	add_num(branch, &(paths->set), &(paths->s_set));
+	//add_num(branch, &(paths->set), &(paths->s_set));
 	paths->len++;
 	if (ferm[branch][branch].type == END)
 	{
@@ -115,21 +115,19 @@ void	create_paths(s_ferm **ferm, s_info *info, int branch, s_paths *paths)
 	len = paths->len;
 	while (room < info->c_rooms)
 	{
-		if(ferm[branch][room].pass == OPEN && ferm[branch][room].type != START)
+		if(ferm[branch][room].pass == OPEN && ferm[branch][room].type != START && ferm[room][room].path_lenght != -1)
 		{
-				if (path > 0)
-				{
-					while (tmp->next != NULL)
-						tmp = tmp->next;
-					tmp->next = add_path(paths, len);
-					tmp = tmp->next;
-				}
-				ferm[room][branch].pass = CLOSE;
-				ferm[branch][room].pass = CLOSE;
+				// if (path > 0)
+				// {
+				// 	while (tmp->next != NULL)
+				// 		tmp = tmp->next;
+				// 	tmp->next = add_path(paths, len);
+				// 	tmp = tmp->next;
+				// }
+				ferm[room][room].path_lenght = -1;
 				create_paths(ferm, info, room, tmp);
-				ferm[room][branch].pass = OPEN;
-				ferm[branch][room].pass = OPEN;
-				path++;
+				ferm[room][room].path_lenght = 1;
+				// path++;
 		}
 		room++;
 	}
