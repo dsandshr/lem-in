@@ -6,7 +6,7 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 14:46:06 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/11/26 17:01:10 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/11/26 18:02:46 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,22 +35,21 @@ s_paths	*find_way(s_info *info, s_ferm **ferm)
 	col_ways = 0;
 	if (!(new = suurbale(ferm, info, ++col_ways)))
 		return (NULL);
-	buf = new;
+	last = buf = new;
 	last_sum = (info->c_ants + (new->len - 2)) / col_ways;
 	while (1)
 	{
 		if (last_sum != -1)
 		{
-			last = buf;
-			delete_paths(&buf);
-			if (!(new = suurballe(ferm, info, ++col_ways)))
+			last = new;
+			if (!(new = suurbale(ferm, info, ++col_ways)))
 				return (last);
 			buf = new;
-			while (new->next != NULL)
-				new = new->next;
-			last_sum = calc_sum(last_sum, new, col_ways, info);
+			while (buf->next)
+				buf = buf->next;
+			last_sum = calc_sum(last_sum, buf, col_ways, info);
 		}
 		else
-			return (buf);
+			return (last);
 	}
 }

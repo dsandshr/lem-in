@@ -13,12 +13,14 @@ int main(int argc, char **argv)
 	int i;
 
 	i = 1;
-	while ((paths = suurbale(ferm, info, i)) != NULL)
-	{
-		delete_paths(&paths);
-		i++;
-	}
-	paths = find_way(paths, info, ferm);
+	// while ((paths = suurbale(ferm, info, i)) != NULL)
+	// {
+	// 	delete_paths(&paths);
+	// 	i++;
+	// }
+	// paths = suurbale(ferm, info, i - 1);
+	// write_paths(paths, ferm);
+	paths = find_way(info, ferm);
 	march(paths, ferm, info);
 	ferm = delete_ferm(ferm, info->c_rooms);
 	delete_info(&info);
