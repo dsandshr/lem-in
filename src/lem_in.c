@@ -5,7 +5,6 @@ int main(int argc, char **argv)
 	s_info *info;
 	s_ferm **ferm;
 	s_paths *paths = NULL;
-	//s_p_matrix **matrix;
 
 	if (argc != 2)
 		return (0);
@@ -19,10 +18,8 @@ int main(int argc, char **argv)
 		delete_paths(&paths);
 		i++;
 	}
-	paths = suurbale(ferm, info, i - 1);
+	paths = find_way(paths, info, ferm);
 	march(paths, ferm, info);
-	//write_ferm(ferm, info, 0);
-	// write_paths(paths, ferm);
 	ferm = delete_ferm(ferm, info->c_rooms);
 	delete_info(&info);
 	delete_paths(&paths);
