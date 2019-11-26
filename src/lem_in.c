@@ -11,7 +11,15 @@ int main(int argc, char **argv)
 		return (0);
 	info = read_file(argv[1]);
 	ferm = create_matrix(info);
-	paths = suurbale(ferm, info, 2);
+	int i;
+
+	i = 1;
+	while ((paths = suurbale(ferm, info, i)) != NULL)
+	{
+		delete_paths(&paths);
+		i++;
+	}
+	paths = suurbale(ferm, info, i - 1);
 	march(paths, ferm, info);
 	//write_ferm(ferm, info, 0);
 	// write_paths(paths, ferm);
