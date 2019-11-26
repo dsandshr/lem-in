@@ -6,7 +6,7 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 14:46:06 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/11/26 16:04:33 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/11/26 17:01:10 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,35 +24,33 @@ int	calc_sum(int l_s, s_paths *paths, int c_w, s_info *inf)
 	return (-1);
 }
 
-s_paths	*find_way(s_paths *paths, s_info *info, s_ferm *ferm)
+s_paths	*find_way(s_info *info, s_ferm **ferm)
 {
 	int last_sum;
-	int new_sum;
 	int col_ways;
 	s_paths *new;
 	s_paths *last;
+	s_paths *buf;
 
-	col_ways = 2;
-	last_sum = (last->len - 2) + info->c_ants;
-	new = last = paths;
-	if (!(new = suurballe(2, info, ferm)))
-		return (paths);
-	while (new->next != NULL)
-		new = new->next;
-	new_sum = calc_sum(last_sum, new, col_ways, info);
+	col_ways = 0;
+	if (!(new = suurbale(ferm, info, ++col_ways)))
+		return (NULL);
+	buf = new;
+	last_sum = (info->c_ants + (new->len - 2)) / col_ways;
 	while (1)
 	{
-		if (new_sum != -1)
+		if (last_sum != -1)
 		{
-			last_sum = new_sum;
-			last = new;
-			if (!(new = suurballe(++col_ways, info, ferm)))
+			last = buf;
+			delete_paths(&buf);
+			if (!(new = suurballe(ferm, info, ++col_ways)))
 				return (last);
+			buf = new;
 			while (new->next != NULL)
 				new = new->next;
-			new_sum = calc_sum(last_sum, new, col_ways, info);
+			last_sum = calc_sum(last_sum, new, col_ways, info);
 		}
 		else
-			return (last);
+			return (buf);
 	}
 }

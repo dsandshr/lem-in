@@ -2,12 +2,13 @@
 
 char **delete_ar(char **ar, int size)
 {
-    while (size != -1)
-    {
-        free(ar[size]);
-        ar[size] = NULL;
-        size--;
-    }
+    // while (size != -1)
+    // {
+    //     free(ar[size]);
+    //     ar[size] = NULL;
+    //     size--;
+    // }
+	size = 9;
     free(ar);
     return (NULL);
 }
@@ -19,6 +20,7 @@ void	delete_rooms(s_rooms **rooms)
 	if (*rooms != NULL)
 	{
 		ft_strdel(&(*rooms)->name);
+		(*rooms)->name = NULL;
 		free(*rooms);
 		*rooms = NULL;
 	}

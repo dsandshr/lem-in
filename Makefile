@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+         #
+#    By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 18:21:34 by dsandshr          #+#    #+#              #
-#    Updated: 2019/11/11 15:18:49 by dsandshr         ###   ########.fr        #
+#    Updated: 2019/11/26 14:52:30 by tlorine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,18 +23,20 @@ SRCS				:= valid_check.c \
 						write_ferm.c \
 						error_procrssing.c \
 						read_file.c \
-						update_ferm.c \
 						delete.c \
 						create_matrix.c \
-						matrix_orient.c \
-						find_way.c
+						march_of_ants.c \
+						search_paths.c \
+						suurbale.c \
+						paths_functions.c \
+						stack.c
 
 OBJS				:=	$(SRCS:.c=.o)
 OBJ_WITH_DIR		:=	$(addprefix $(DIR_BIN), $(OBJS))
 HEADERS				:=	lem_in.h
 LIBFT				:=	libft.a
 
-CFLAGS				:=	-Wextra -Werror -Wall -O3
+CFLAGS				:=	-Wextra -Werror -Wall
 CFLAG				:=	-c
 NFLAG				:=	-o
 IFLAG				:=	-I

@@ -41,9 +41,7 @@ int		add_rooms(s_info *info, const char *line, int type)
 	if (rooms == NULL)
 	{
 		info->rooms = (s_rooms *)malloc(sizeof(s_rooms));
-		info->rooms->name = ft_strdup(param[0]);
-		info->rooms->x = ft_atoi(param[1]);
-		info->rooms->y = ft_atoi(param[2]);
+		info->rooms->name = param[0];
 		info->rooms->type = type;
 		info->rooms->next = NULL;
 	}
@@ -52,9 +50,7 @@ int		add_rooms(s_info *info, const char *line, int type)
 		while(rooms->next != NULL)
 			rooms = rooms->next;
 		rooms->next = (s_rooms *)malloc(sizeof(s_rooms));
-		rooms->next->name = ft_strdup(param[0]);
-		rooms->next->x = ft_atoi(param[1]);
-		rooms->next->y = ft_atoi(param[2]);
+		rooms->next->name = param[0];
 		rooms->next->type = type;
 		rooms->next->next = NULL;
 	}
@@ -72,8 +68,8 @@ int		add_links(s_info *info, const char *line)
 	if (links == NULL)
 	{
 		info->links = (s_links *)malloc(sizeof(s_links));
-		info->links->room1 = ft_strdup(param[0]);
-		info->links->room2 = ft_strdup(param[1]);
+		info->links->room1 = param[0];
+		info->links->room2 = param[1];
 		info->links->next = NULL;
 	}
 	else
@@ -81,8 +77,8 @@ int		add_links(s_info *info, const char *line)
 		while (links->next)
 			links = links->next;
 		links->next = (s_links *)malloc(sizeof(s_links));
-		links->next->room1 = ft_strdup(param[0]);
-		links->next->room2 = ft_strdup(param[1]);
+		links->next->room1 = param[0];
+		links->next->room2 = param[1];
 		links->next->next = NULL;
 	}
 	param = delete_ar(param, 1);

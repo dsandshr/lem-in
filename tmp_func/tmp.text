@@ -1,0 +1,199 @@
+int		loop_check(s_ferm **ferm, int branch, s_history *history)
+{
+	int i;
+
+	i = 0;
+	history->buffer[history->max] = ferm[branch][branch].id;
+	while (i < history->max)
+	{
+		if (history->buffer[i] == history->buffer[history->max])
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int		search_end(s_ferm **ferm, int branch, s_info *info, s_history *history)
+{
+	int room;
+
+	room = 0;
+	if (!loop_check(ferm, branch, history))
+		return (CLOSE);
+	if (ferm[branch][branch].type == END)
+		return (OPEN);
+	while (room < info->c_rooms)
+	{
+		history->max = history->max + 1;
+		if (ferm[branch][room].pass == OPEN)
+			ferm[branch][room].pass = search_end(ferm, room, info, history);
+		history->max = history->max - 1;
+		room++;
+	}
+	room = 0;
+	while (room < info->c_rooms)
+	{
+		if (ferm[branch][room].pass == OPEN)
+			return (OPEN);
+		room++;
+	}
+	return (CLOSE);
+}
+void	search_dead_branch(s_ferm **ferm, s_info *info)
+{
+	int branch;
+	s_history *history;
+
+	history = (s_history *)malloc(sizeof(s_history));
+	history->buffer = (int *)malloc(sizeof(int) * info->c_rooms);
+	history->id = 0;
+	history->max = 0;
+	branch = 0;
+	while (branch < info->c_rooms && ferm[branch][branch].type != START)
+		branch++;
+	search_end(ferm, branch, info, history);
+	free (history->buffer);
+	history->buffer = NULL;
+	free(history);
+	history = NULL;
+}
+
+______________________________________________________-
+
+SEARCH_WIDTH
+
+void	delete(s_stack **stack)
+{
+	s_stack *tmp;
+
+	tmp = *stack;
+	*stack = (*stack)->next;
+	free(tmp);
+	tmp = NULL;
+}
+
+void	push(s_stack **stack, int id)
+{
+	s_stack *tmp;
+
+	tmp = *stack;
+	if (*stack == NULL)
+	{
+		*stack = (s_stack *)malloc(sizeof(s_stack));
+		(*stack)->id = id;
+		(*stack)->next = NULL;
+		return ;
+	}
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = (s_stack *)malloc(sizeof(s_stack));
+	tmp->next->id = id;
+	tmp->next->next = NULL;
+}
+
+void	search_dead_branch(s_ferm **ferm, s_info *info)
+{
+	int branch;
+	int room;
+	s_stack *stack;
+
+	branch = 0;
+	room = 0;
+	stack = NULL;
+	while (ferm[branch][branch].type != START)
+		branch++;
+	push(&stack, branch);
+	while (stack)
+	{
+		branch = stack->id;
+		ferm[branch][branch].visited = CLOSE;
+		while (room < info->c_rooms)
+		{
+			if (ferm[branch][room].pass == OPEN)
+			{
+				if (ferm[room][room].visited == CLOSE)
+					ferm[branch][room].pass = CLOSE;
+				else
+				{
+					ferm[room][room].visited = CLOSE;
+					push(&stack, room);
+				}
+			}
+			room++;
+		}
+		room = 0;
+		delete(&stack);
+	}
+}
+---------------------------------------------------
+
+#include "lem_in.h"
+
+void	delete(s_set_path **stack)
+{
+	s_set_path *tmp;
+
+	tmp = *stack;
+	*stack = (*stack)->next;
+	free(tmp);
+	tmp = NULL;
+}
+
+void	push(s_set_path **stack, int id)
+{
+	s_set_path *tmp;
+
+	tmp = *stack;
+	if (*stack == NULL)
+	{
+		*stack = (s_set_path *)malloc(sizeof(s_set_path));
+		(*stack)->var = id;
+		(*stack)->next = NULL;
+		return ;
+	}
+	while (tmp->next)
+		tmp = tmp->next;
+	tmp->next = (s_set_path *)malloc(sizeof(s_set_path));
+	tmp->next->var = id;
+	tmp->next->next = NULL;
+}
+
+void	matrix_orient(s_ferm **ferm, s_info *info)
+{
+	int branch;
+	int room;
+	s_set_path *stack;
+
+	branch = 0;
+	room = 0;
+	stack = NULL;
+	while (ferm[branch][branch].type != START)
+		branch++;
+	push(&stack, branch);
+	while (stack)
+	{
+		branch = stack->var;
+		while (room < info->c_rooms && ferm[branch][branch].type != END)
+		{
+			if (ferm[branch][room].pass == OPEN)
+			{
+				ferm[room][branch].pass = CLOSE;
+				push(&stack, room);
+			}
+			room++;
+		}
+		room = 0;
+		delete(&stack);
+	}
+	branch = 0;
+	while (ferm[branch][branch].type != END)
+		branch++;
+	room = 0;
+	while (room < info->c_rooms)
+	{
+		ferm[branch][room].pass = CLOSE;
+		room++;
+	}
+	write_ferm(ferm, info, 0);
+	exit (1);
+}
