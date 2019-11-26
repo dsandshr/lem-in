@@ -1,5 +1,3 @@
-#include "lem_in.h"
-
 void restore_ferm(s_info *info, s_ferm **ferm)
 {
 	int branch;
@@ -75,7 +73,7 @@ void wide_walk(s_info *info, s_ferm **ferm, int branch)
 	}
 }
 
-void matrix_orient(s_info *info, s_ferm **ferm)
+void search_paths(s_info *info, s_ferm **ferm)
 {
 	int branch;
 	int room;

@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/16 19:42:36 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/26 15:40:52 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,9 @@ typedef struct			l_ferm_matrix
 	int					ants;
 	int					pass;
 	int					type;
-	int					path_lenght;
+	int					visit;
+	int					split;
+	int					parent;
 }						s_ferm;
 
 typedef struct			l_set_path
@@ -115,20 +117,12 @@ typedef struct			l_set_path
 
 typedef struct			l_paths
 {
-	int					len;
 	int					go;
-	s_set_path			*s_set;
+	int					len;
 	s_set_path			*set;
+	s_set_path			*s_set;
 	struct l_paths		*next;
 }						s_paths;
-
-typedef struct	l_paths_matrix
-{
-	int			connection;
-	int			size;
-	int			len;
-	s_set_path	*set;
-}				s_p_matrix;
 
 /*
 ** READ_FUNCTION
@@ -143,14 +137,27 @@ s_info					*read_file(char *file);
 */
 
 s_ferm					**create_matrix(s_info *info);
-void					matrix_orient(s_info *info, s_ferm **ferm);
-s_paths					*search_paths(s_ferm **ferm, s_info *info);
+s_paths					*search_paths(s_info *info, s_ferm **ferm, int c_path);
+
+/*
+** SUURBALE
+*/
+
+s_paths					*suurbale(s_ferm **ferm, s_info *info, int c_paths);
+void					close_pass(s_ferm **ferm, s_info *info);
+void					remove_intersections(s_paths *paths, s_ferm **ferm, int flag);
 
 /*
 ** MARCH !
 */
 
-void					march(int *paths, s_p_matrix **matrix, s_ferm **ferm, s_info *info);
+void					march(s_paths *paths, s_ferm **ferm, s_info *info);
+
+/*
+** PATHS_FUNCTION
+*/
+
+void					add_num(int num, s_set_path **set, s_set_path **s_set);
 
 /*
 ** STACK

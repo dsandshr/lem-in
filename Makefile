@@ -6,7 +6,7 @@
 #    By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 18:21:34 by dsandshr          #+#    #+#              #
-#    Updated: 2019/11/16 19:43:14 by tlorine          ###   ########.fr        #
+#    Updated: 2019/11/26 14:52:30 by tlorine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,11 +23,12 @@ SRCS				:= valid_check.c \
 						write_ferm.c \
 						error_procrssing.c \
 						read_file.c \
-						update_ferm.c \
 						delete.c \
 						create_matrix.c \
-						matrix_orient.c \
 						march_of_ants.c \
+						search_paths.c \
+						suurbale.c \
+						paths_functions.c \
 						stack.c
 
 OBJS				:=	$(SRCS:.c=.o)

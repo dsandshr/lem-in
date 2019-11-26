@@ -20,6 +20,7 @@ void	delete_rooms(s_rooms **rooms)
 	if (*rooms != NULL)
 	{
 		ft_strdel(&(*rooms)->name);
+		(*rooms)->name = NULL;
 		free(*rooms);
 		*rooms = NULL;
 	}

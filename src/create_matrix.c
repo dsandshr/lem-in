@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:53:59 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/17 19:31:38 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/26 14:27:55 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void	create_tunnel(s_ferm *branch, s_rooms *rooms, s_info *info, int i)
 	branch[i].type = rooms->type;
 	branch[i].name = rooms->name;
 	branch[i].pass = CLOSE;
-	branch[i].path_lenght = 1;
+	branch[i].visit = 0;
+	branch[i].parent = 0;
 	if (branch[i].type == START)
 		branch[i].ants = info->c_ants;
 	else
@@ -66,8 +67,11 @@ void	links_add(s_info *info, s_ferm **ferm)
 					}
 					room++;
 				}
-				ferm[branch][room].pass = OPEN;
-				ferm[room][branch].pass = OPEN;
+				if (room < info->c_rooms)
+				{
+					ferm[branch][room].pass = OPEN;
+					ferm[room][branch].pass = OPEN;
+				}
 				branch = info->c_rooms;
 			}
 			branch++;
@@ -94,22 +98,5 @@ s_ferm	**create_matrix(s_info *info)
 		rooms = rooms->next;
 	}
 	links_add(info, ferm);
-	// int i;
-	// int i2;
-	// int s;
-	
-	// s = 0;
-	// i = 0;
-	// i2 = 0;
-	// while (ferm[i][i].type != END)
-	// 	i++;
-	// while (i2 < info->c_rooms)
-	// {
-	// 	if(ferm[i][i2].pass == OPEN)
-	// 		s++;
-	// 	i2++;
-	// }
-	// ft_putnbr(s);
-	// exit(1);
 	return (ferm);
 }

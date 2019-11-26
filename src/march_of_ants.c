@@ -36,13 +36,13 @@ void the_walking_line(s_ferm **ferm, s_info *info, int end)
 					{
 						ferm[room][room].ants--;
 						ferm[path][path].ants++;
-						ferm[path][path].path_lenght = ferm[room][room].path_lenght;
+						ferm[path][path].visit = ferm[room][room].visit;
 						ft_putstr(" L");
-						ft_putnbr(ferm[room][room].path_lenght);
+						ft_putnbr(ferm[room][room].visit);
 						ft_putchar('-');
 						ft_putstr(ferm[path][path].name);
 						if (ferm[room][room].type == START)
-							ferm[room][room].path_lenght++;
+							ferm[room][room].visit++;
 					}
 				}
 				room++;
@@ -54,7 +54,7 @@ void the_walking_line(s_ferm **ferm, s_info *info, int end)
 
 }
 
-void march(int *paths, s_p_matrix **matrix, s_ferm **ferm, s_info *info)
+void march(s_paths *paths, s_ferm **ferm, s_info *info)
 {
 	int i;
 	int start;
@@ -70,7 +70,7 @@ void march(int *paths, s_p_matrix **matrix, s_ferm **ferm, s_info *info)
 			if (ferm[i][i].type == START)
 			{
 				ferm[i][i].ants = info->c_ants;
-				ferm[i][i].path_lenght = 1;
+				ferm[i][i].visit = 1;
 				start = i;
 			}
 			else if (ferm[i][i].type == END)
@@ -78,7 +78,7 @@ void march(int *paths, s_p_matrix **matrix, s_ferm **ferm, s_info *info)
 			else
 			{
 				ferm[i][i].ants = 0;
-				ferm[i][i].path_lenght = 0;
+				ferm[i][i].visit = 0;
 			}
 			ferm[i][rooms].pass = CLOSE;
 			rooms++;
@@ -87,10 +87,6 @@ void march(int *paths, s_p_matrix **matrix, s_ferm **ferm, s_info *info)
 		i++;
 	}
 	i = 0;
-	while (paths[i] != -1)
-	{
-		build_paths(matrix[paths[i]][paths[i]].set, ferm);
-		i++;
-	}
+	remove_intersections(paths, ferm, END);
 	the_walking_line(ferm, info, end);
 }
