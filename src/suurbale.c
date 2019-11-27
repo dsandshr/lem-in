@@ -41,7 +41,6 @@ void	remove_intersections(s_paths *paths, s_ferm **ferm, int flag)
 			}
 			else
 				ferm[set->next->var][set->var].pass = OPEN;
-			//ferm[set->var][set->var].split = 0;
 			set = set->next;
 		}
 		paths = paths->next;
@@ -63,8 +62,6 @@ void	restore_ferm(s_ferm **ferm, s_info *info)
 			if (ferm[branch][room].pass == TMP_CLOSE)
 				ferm[branch][room].pass = OPEN;
 			ferm[branch][room].split = 0;
-			ferm[branch][room].parent = 0;
-			ferm[branch][room].visit = 0;
 			room++;
 		}
 		room = 0;

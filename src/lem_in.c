@@ -18,11 +18,12 @@ int main(int argc, char **argv)
 		i++;
 	}
 	paths = suurbale(ferm, info, i - 1);
+	write_paths(paths, ferm);
 	// write_paths(paths, ferm);
 	// exit (1);
 	//paths = find_way(paths, info, ferm);
 	// exit (1);
-	march(paths, ferm, info);
+	//march(paths, ferm, info);
 	ferm = delete_ferm(ferm, info->c_rooms);
 	delete_info(&info);
 	delete_paths(&paths);

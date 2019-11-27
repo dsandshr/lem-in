@@ -20,7 +20,7 @@ void update_ferm(s_ferm **ferm, s_info *info)
 	}
 }
 
-s_paths *mark_the_path(s_ferm **ferm, int end, s_info *info)
+s_paths *mark_the_path(s_ferm **ferm, int end)
 {
 	int parent;
 	s_paths		*path;
@@ -44,7 +44,6 @@ s_paths *mark_the_path(s_ferm **ferm, int end, s_info *info)
 	}
 	add_num(end, &path->set, &path->s_set);
 	path->len++;
-	update_ferm(ferm, info);
 	return (path);
 }
 
@@ -88,7 +87,7 @@ s_paths *bfs(s_info *info, s_ferm **ferm)
 			if (ferm[branch][room].pass == OPEN && ferm[room][room].visit == 0)
 			{
 				if ((mark_rooms(ferm, branch, room, &stack)) == END)
-					return (mark_the_path(ferm, room, info));
+					return (mark_the_path(ferm, room));
 			}
 			room++;
 		}
@@ -110,19 +109,18 @@ s_paths *search_paths(s_info *info, s_ferm **ferm, int c_paths)
 		if (paths == NULL)
 		{
 			paths = bfs(info, ferm);
-			if (paths == NULL)
-				return (NULL);
 			save = paths;
 		}
 		else
 		{
 			paths->next = bfs(info, ferm);
-			if (paths->next == NULL)
-			{
-				delete_paths(&save);
-				return (NULL);
-			}
 			paths = paths->next;
+		}
+		update_ferm(ferm, info);
+		if (paths == NULL)
+		{
+			delete_paths(&save);
+			return (NULL);
 		}
 		i++;
 	}
