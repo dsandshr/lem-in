@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lem_in.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/27 14:26:25 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/27 16:25:24 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,7 @@ s_info					*read_file(char *file);
 
 s_ferm					**create_matrix(s_info *info);
 s_paths					*search_paths(s_info *info, s_ferm **ferm, int c_path);
-s_paths					*find_way(s_paths *paths, s_info *info, s_ferm **ferm);
+s_paths					*find_way(s_info *info, s_ferm **ferm);
 
 /*
 ** SUURBALE
