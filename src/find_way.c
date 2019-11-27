@@ -6,38 +6,35 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 14:46:06 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/11/26 18:02:46 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/11/27 15:18:55 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int	calc_sum(int l_s, s_paths *paths, int c_w, s_info *inf)
+int			calc_sum(int l_s, s_paths *paths, int c_w, s_info *info)
 {
-	int c_a;
-	int sum;
+	int		sum;
 
-	c_a = inf->c_ants;
-	sum = (l_s + (paths->len - 2)) / c_w;
-	if (sum <= l_s)
+	sum = (l_s + (paths->len - 1)) / c_w;
+	if (sum <= l_s && info->c_ants > c_w)
 		return (sum);
 	return (-1);
 }
 
-s_paths	*find_way(s_info *info, s_ferm **ferm)
+s_paths		*find_way(s_info *info, s_ferm **ferm)
 {
-	int last_sum;
-	int col_ways;
-	s_paths *new;
-	s_paths *last;
-	s_paths *buf;
+	int		last_sum;
+	int		col_ways;
+	s_paths	*new;
+	s_paths	*last;
+	s_paths	*buf;
 
 	col_ways = 0;
 	if (!(new = suurbale(ferm, info, ++col_ways)))
 		return (NULL);
-	last = buf = new;
-	last_sum = (info->c_ants + (new->len - 2)) / col_ways;
-	while (1)
+	last_sum = info->c_ants + (new->len - 1);
+	while (21)
 	{
 		if (last_sum != -1)
 		{
@@ -50,6 +47,6 @@ s_paths	*find_way(s_info *info, s_ferm **ferm)
 			last_sum = calc_sum(last_sum, buf, col_ways, info);
 		}
 		else
-			return (last);
+			return (last = last == NULL ? new : last);
 	}
 }
