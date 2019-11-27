@@ -6,7 +6,7 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/10 14:46:06 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/11/27 16:44:37 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/11/27 18:00:42 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,18 @@
 int			calc_sum(int l_s, s_paths *paths, int c_w, s_info *info)
 {
 	int		n_s;
+	int		c_a;
 
 	n_s = info->c_ants;
+	c_a = info->c_ants;
 	while (paths->next)
 	{
 		n_s += (paths->len - 1);
+		c_a -= (paths->len - 2);
 		paths = paths->next;
 	}
 	n_s /= c_w;
-	if (n_s <= l_s && info->c_ants > c_w)
+	if (n_s <= l_s && c_a >= 0)
 		return (n_s);
 	return (-1);
 	// n_s = (l_s + (paths->len - 1)) / c_w;
