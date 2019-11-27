@@ -1,4 +1,4 @@
-4
+100
 ##start
 A 0 0
 ##end
@@ -9,12 +9,16 @@ D 0 0
 E 0 0
 F 0 0
 G 0 0
-A-E
+A-H
 A-B
-B-C
-E-D
-E-F
-C-D
+A-C
+A-D
+A-E
+A-F
+A-G
+G-H
+B-H
 D-H
-F-G
+E-H
+F-H
 G-H

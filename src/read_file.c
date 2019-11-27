@@ -129,6 +129,8 @@ int		read_main(s_info *info, int fd)
 		if (num < 1)
 			break;
 	}
+	if (srm.start != 1 || srm.end != 1)
+		num = START_2_E;
 	return (num > 0 ? 1 : num);
 }
 

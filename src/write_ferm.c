@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:07:10 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/17 17:30:57 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/27 15:10:01 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,16 @@ int	write_ferm(s_ferm **ferm, s_info *info, const int flag)
 		{
 			ft_putchar('\t');
 			if (flag != W_ANTS || ferm[i][g].ants == 0)
-				ft_putchar(ferm[i][g].pass == CLOSE ? '-' : '+');
+			{
+				if(ferm[i][g].pass == OPEN)
+					ft_putchar('+');
+				else if (ferm[i][g].pass == CLOSE)
+					ft_putchar('-');
+				else if (ferm[i][g].pass == TMP_CLOSE)
+					ft_putchar('T');
+				else
+					ft_putchar('X');
+			}
 			else
 				ft_putnbr(ferm[i][g].ants);
 			g++;
