@@ -36,8 +36,8 @@ s_paths *mark_the_path(s_ferm **ferm, int end, s_info *info)
 		add_num(end, &path->set, &path->s_set);
 		parent = ferm[end][end].parent;
 		ferm[end][parent].pass = OPEN;
-		ferm[parent][end].pass = CLOSE;
-		if (ferm[parent][parent].type != START)
+		ferm[parent][end].pass = TMP_CLOSE;
+		if (ferm[parent][parent].type != START && ferm[parent][parent].type != END)
 			ferm[parent][parent].split++;
 		end = parent;
 		path->len++;
@@ -119,7 +119,7 @@ s_paths *search_paths(s_info *info, s_ferm **ferm, int c_paths)
 			paths->next = bfs(info, ferm);
 			if (paths->next == NULL)
 			{
-				delete_paths(&paths);
+				delete_paths(&save);
 				return (NULL);
 			}
 			paths = paths->next;
