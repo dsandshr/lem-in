@@ -1,13 +1,18 @@
 #include "lem_in.h"
 
-void build_paths(s_set_path *set, s_ferm **ferm)
+void b_paths(s_paths *set, s_ferm **ferm)
 {
-	while (set->next)
-		set = set->next;
-	while (set->back)
+	s_set_path *mn;
+
+	while (set)
 	{
-		ferm[set->var][set->back->var].pass = OPEN;
-		set = set->back;
+		mn = set->s_set;
+		while (mn->next)
+		{
+			ferm[mn->var][mn->next->var].pass = OPEN;
+			mn = mn->next;
+		}
+		set = set->next;
 	}
 }
 
@@ -86,7 +91,10 @@ void march(s_paths *paths, s_ferm **ferm, s_info *info)
 		rooms = 0;
 		i++;
 	}
-	i = 0;
-	remove_intersections(paths, ferm, END);
+	//i = 0;
+	//paths = 0;
+	b_paths(paths, ferm);
+	// write_ferm(ferm, info, 0);
+	//exit (1);
 	the_walking_line(ferm, info, end);
 }

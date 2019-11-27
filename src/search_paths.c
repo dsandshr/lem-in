@@ -52,8 +52,11 @@ int	mark_rooms(s_ferm **ferm, int branch, int room, s_set_path **stack)
 	int parent;
 
 	parent = ferm[branch][branch].parent;
-	if (ferm[parent][parent].split == 0 && ferm[branch][branch].split > 0 && ferm[room][room].split == 0)
-		return (1);
+	if (ferm[parent][parent].split == 0 && ferm[branch][branch].split > 0)
+	{
+		if (ferm[room][room].split == 0)
+			return (1);
+	}
 	push(stack, room);
 	ferm[room][room].parent = branch;
 	ferm[room][room].visit = 1;

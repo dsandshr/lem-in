@@ -23,7 +23,7 @@ void	close_pass(s_ferm **ferm, s_info *info)
 }
 
 
-void	remove_intersections(s_paths *paths, s_ferm **ferm, int flag)
+void	remove_intersections(s_paths *paths, s_ferm **ferm)
 {
 	s_set_path *set;
 
@@ -32,9 +32,7 @@ void	remove_intersections(s_paths *paths, s_ferm **ferm, int flag)
 		set = paths->s_set;
 		while (set->next)
 		{
-			if (flag == END)
-				ferm[set->var][set->next->var].pass = OPEN;
-			else if (ferm[set->var][set->next->var].pass == OPEN)
+			if (ferm[set->var][set->next->var].pass == OPEN)
 			{
 				ferm[set->next->var][set->var].pass = TMP_CLOSE;
 				ferm[set->var][set->next->var].pass = TMP_CLOSE;
@@ -62,6 +60,8 @@ void	restore_ferm(s_ferm **ferm, s_info *info)
 			if (ferm[branch][room].pass == TMP_CLOSE)
 				ferm[branch][room].pass = OPEN;
 			ferm[branch][room].split = 0;
+			ferm[branch][room].visit = 0;
+			ferm[branch][room].parent = 0;
 			room++;
 		}
 		room = 0;
@@ -79,9 +79,9 @@ s_paths *suurbale(s_ferm **ferm, s_info *info, int c_paths)
 		return (NULL);
 	}
 	close_pass(ferm, info);
-	remove_intersections(paths, ferm, START);
+	remove_intersections(paths, ferm);
 	delete_paths(&paths);
-	paths = search_paths(info, ferm, c_paths);
+	paths = build_paths(ferm, info, c_paths);
 	restore_ferm(ferm, info);
 	return (paths);
 }
