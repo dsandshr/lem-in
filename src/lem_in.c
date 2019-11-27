@@ -18,6 +18,8 @@ int main(int argc, char **argv)
 		i++;
 	}
 	paths = suurbale(ferm, info, i - 1);
+	// write_paths(paths, ferm);
+	// exit (1);
 	//paths = find_way(paths, info, ferm);
 	// exit (1);
 	march(paths, ferm, info);
