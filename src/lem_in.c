@@ -22,6 +22,7 @@ int main(int argc, char **argv)
 	// exit (1);
 	paths = find_way(info, ferm);
 	//exit (1);
+	//write_paths(paths, ferm);
 	march(paths, ferm, info);
 	ferm = delete_ferm(ferm, info->c_rooms);
 	delete_info(&info);

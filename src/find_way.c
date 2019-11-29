@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 14:46:06 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/11/27 18:00:42 by dsandshr         ###   ########.fr       */
+/*   Created: 2019/11/27 19:46:16 by dsandshr          #+#    #+#             */
+/*   Updated: 2019/11/27 20:37:18 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,11 @@ int			calc_sum(int l_s, s_paths *paths, int c_w, s_info *info)
 	while (paths->next)
 	{
 		n_s += (paths->len - 1);
-		c_a -= (paths->len - 2);
+		c_a -= (paths->len - 1);
 		paths = paths->next;
 	}
 	n_s /= c_w;
+	ft_printf("%i	%i   %i\n", l_s, n_s, c_a);
 	if (n_s <= l_s && c_a >= 0)
 		return (n_s);
 	return (-1);
@@ -61,6 +62,9 @@ s_paths		*find_way(s_info *info, s_ferm **ferm)
 			// last_sum = calc_sum(last_sum, buf, col_ways, info);
 		}
 		else
+		{
+			write_paths (last, ferm);
 			return (last);
+		}
 	}
 }
