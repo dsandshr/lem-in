@@ -1,6 +1,6 @@
 #include "lem_in.h"
 
-int		read_ants(int fd)
+int		read_ants(int fd, s_info *info)
 {
 	char	*line;
 	int		ants;
@@ -26,6 +26,7 @@ int		read_ants(int fd)
 			ft_strdel(&line);
 			return (ants);
 		}
+		info->input = ft_strjoinendl(info->input, line);
 		ft_strdel(&line);
 	}
 	return (NO_ANTS_E);
@@ -123,6 +124,7 @@ int		read_main(s_info *info, int fd)
 				info->c_links += add_links(info, line);
 			srm.type = TUNNEL;
 		}
+		info->input = ft_strjoinendl(info->input, line);
 		ft_strdel(&line);
 		if (srm.start > 1 || srm.end > 1)
 			error_processing(srm.start > 1 ? START_2_E : END_2_E, &info);
@@ -134,7 +136,7 @@ int		read_main(s_info *info, int fd)
 	return (num > 0 ? 1 : num);
 }
 
-s_info	*read_file(char *file)
+s_info	*read_file()
 {
 	int		fd;
 	int		finish;
@@ -142,15 +144,16 @@ s_info	*read_file(char *file)
 
 	fd = 0;
 	finish = 0;
-	file = NULL;
 	if (!(info = (s_info *)malloc(sizeof(s_info))))
 		error_processing(MALLOC_E, &info);
+	info->input = (char *)malloc(1);
+	info->input[0] = '\0';
 	info->rooms = NULL;
 	info->links = NULL;
 	info->c_rooms = 0;
 	info->c_links = 0;
 	info->c_path = 0;
-	info->c_ants = read_ants(fd);
+	info->c_ants = read_ants(fd, info);
 	if (info->c_ants < 1)
 		error_processing(info->c_ants, &info);
 	finish = read_main(info, fd);

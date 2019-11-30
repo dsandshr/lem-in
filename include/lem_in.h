@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/30 15:06:54 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/30 17:26:59 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ typedef struct			l_info
 	int					c_links;
 	s_rooms				*rooms;
 	s_links				*links;
+	char				*input;
 }						s_info;
 
 typedef struct			l_read_main
@@ -132,7 +133,7 @@ typedef struct			l_paths
 
 void					error_processing(int error, s_info **info);
 int						valid_format(const char *line, s_info *info);
-s_info					*read_file(char *file);
+s_info					*read_file();
 
 /*
 ** MATRIX_FUNCTION

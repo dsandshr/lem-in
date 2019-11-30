@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/15 12:17:44 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/11/15 19:59:49 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/30 18:31:46 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,5 +197,6 @@ int				ft_qlines(char const *s, char c);
 int				ft_skipchar(const char *str, char c);
 int				ft_skipspace(const char *str);
 int				ft_thisnum(const char *line);
+char			*ft_strjoinendl(char const *s1, char const *s2);
 
 #endif

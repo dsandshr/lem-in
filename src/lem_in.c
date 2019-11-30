@@ -1,15 +1,14 @@
 #include "lem_in.h"
 
-int main(int argc, char **argv)
+int main()
 {
 	s_info *info;
 	s_ferm **ferm;
 	s_paths *paths;
 
 	paths = NULL;
-	if (argc != 1)
-		return (0);
-	info = read_file(argv[1]);
+	info = read_file();
+	ft_putendl(info->input);
 	ferm = create_matrix(info);
 	paths = find_way(info, ferm);
 	march(paths, ferm, info);

@@ -4,17 +4,20 @@ void b_paths(s_paths *set, s_ferm **ferm)
 {
 	s_set_path *mn;
 
+	int tmp_i;
+
+	tmp_i = 0;
 	while (set)
 	{
 		mn = set->s_set;
 		while (mn->next)
 		{
 			ferm[mn->var][mn->next->var].pass = OPEN;
+			ferm[mn->var][mn->var].split = set->go;
 			mn = mn->next;
 		}
 		set = set->next;
-		if (mn->next)
-			ferm[mn->var][mn->var].split = set->go;
+		tmp_i++;
 	}
 }
 
@@ -34,7 +37,7 @@ void the_walking_line(s_ferm **ferm, s_info *info, int end)
 		{
 			path = stack->var;
 			delete(&stack);
-			while (room < info->c_rooms ) // && (ferm[path][path].split != 0 || ferm[path][path].type == END))
+			while (room < info->c_rooms && (ferm[path][path].split > 0 || ferm[path][path].type == END))
 			{
 				if (ferm[path][room].pass == OPEN)
 				{
@@ -45,10 +48,11 @@ void the_walking_line(s_ferm **ferm, s_info *info, int end)
 						ferm[room][room].ants--;
 						ferm[path][path].ants++;
 						ferm[path][path].visit = ferm[room][room].visit;
-						write(1, " L", 2);
+						write(1, "L", 1);
 						ft_putnbr(ferm[room][room].visit);
 						write(1, "-", 1);
 						ft_putstr(ferm[path][path].name);
+						write(1, " ", 1);
 						if (ferm[room][room].type == START)
 							ferm[room][room].visit++;
 					}
@@ -57,7 +61,7 @@ void the_walking_line(s_ferm **ferm, s_info *info, int end)
 			}
 			room = 0;
 		}
-		ft_putchar('\n');
+		write(1, "\n", 1);
 	}
 
 }

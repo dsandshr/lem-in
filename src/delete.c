@@ -41,6 +41,7 @@ void	delete_links(s_links **links)
 
 void    delete_info(s_info **info)
 {
+	ft_strdel(&(*info)->input);
 	delete_rooms(&(*info)->rooms);
 	delete_links(&(*info)->links);
 	free(*info);
