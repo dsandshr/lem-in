@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/27 19:13:31 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/30 15:06:54 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,11 @@ typedef struct			l_links
 
 typedef struct			l_info
 {
-	int					c_ants;
 	int					c_rooms;
-	int					c_links;
 	int					c_path;
+	int					start_id;
+	int					c_ants;
+	int					c_links;
 	s_rooms				*rooms;
 	s_links				*links;
 }						s_info;
@@ -99,13 +100,13 @@ typedef struct			l_read_main
 
 typedef struct			l_ferm_matrix
 {
-	char				*name;
+	unsigned short		pass;
+	unsigned short		visit;
+	short				split;
+	unsigned int		parent;
+	unsigned short		type;
 	int					ants;
-	int					pass;
-	int					type;
-	int					visit;
-	int					split;
-	int					parent;
+	char				*name;
 }						s_ferm;
 
 typedef struct			l_set_path
@@ -118,11 +119,11 @@ typedef struct			l_set_path
 
 typedef struct			l_paths
 {
-	int					go;
 	int					len;
 	s_set_path			*set;
 	s_set_path			*s_set;
 	struct l_paths		*next;
+	int					go;
 }						s_paths;
 
 /*
@@ -138,8 +139,9 @@ s_info					*read_file(char *file);
 */
 
 s_ferm					**create_matrix(s_info *info);
-s_paths					*search_paths(s_info *info, s_ferm **ferm, int c_path);
-s_paths					*build_paths(s_ferm **ferm, s_info *info, int c_paths);
+s_paths					*search_paths(s_info *info, s_ferm **ferm, int c_path, int start);
+//s_paths					*build_paths(s_ferm **ferm, s_info *info, int c_paths, int start);
+s_paths					*bfs_for_build(s_info *info, s_ferm **ferm, int start);
 s_paths					*find_way(s_info *info, s_ferm **ferm);
 
 /*

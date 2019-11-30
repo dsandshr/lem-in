@@ -16,7 +16,7 @@ void update_ferm(s_ferm **ferm, s_info *info)
 			room++;
 		}
 		room = 0;
-		branch++;
+		branch = branch + 1;
 	}
 }
 
@@ -38,9 +38,9 @@ s_paths *mark_the_path(s_ferm **ferm, int end)
 		ferm[end][parent].pass = OPEN;
 		ferm[parent][end].pass = TMP_CLOSE;
 		if (ferm[parent][parent].type != START && ferm[parent][parent].type != END)
-			ferm[parent][parent].split++;
+			ferm[parent][parent].split = ferm[parent][parent].split + 1;
 		end = parent;
-		path->len++;
+		path->len = path->len + 1;
 	}
 	add_num(end, &path->set, &path->s_set);
 	path->len++;
@@ -69,17 +69,15 @@ int	mark_rooms(s_ferm **ferm, int branch, int room, s_set_path **stack)
 	return (1);
 }
 
-s_paths *bfs(s_info *info, s_ferm **ferm)
+s_paths *bfs(s_info *info, s_ferm **ferm, int start)
 {
 	int branch;
 	int room;
 	s_set_path *stack;
 
 	stack = NULL;
-	branch = 0;
+	branch = start;
 	room = 0;
-	while (ferm[branch][branch].type != START)
-		branch++;
 	push(&stack, branch);
 	while (stack)
 	{
@@ -92,18 +90,18 @@ s_paths *bfs(s_info *info, s_ferm **ferm)
 				if ((mark_rooms(ferm, branch, room, &stack)) == END)
 					return (mark_the_path(ferm, room));
 			}
-			room++;
+			room = room + 1;
 		}
 		room = 0;
 	}
 	return (NULL);
 }
 
-s_paths *search_paths(s_info *info, s_ferm **ferm, int c_paths)
+s_paths *search_paths(s_info *info, s_ferm **ferm, int c_paths, int start)
 {
+	int i;
 	s_paths *paths;
 	s_paths *save;
-	int i;
 
 	paths = NULL;
 	i = 0;
@@ -111,12 +109,12 @@ s_paths *search_paths(s_info *info, s_ferm **ferm, int c_paths)
 	{
 		if (paths == NULL)
 		{
-			paths = bfs(info, ferm);
+			paths = bfs(info, ferm, start);
 			save = paths;
 		}
 		else
 		{
-			paths->next = bfs(info, ferm);
+			paths->next = bfs(info, ferm, start);
 			paths = paths->next;
 		}
 		update_ferm(ferm, info);

@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:53:59 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/26 14:27:55 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/11/30 14:15:43 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ void	create_tunnel(s_ferm *branch, s_rooms *rooms, s_info *info, int i)
 	branch[i].visit = 0;
 	branch[i].parent = 0;
 	if (branch[i].type == START)
+	{
+		info->start_id = i;
 		branch[i].ants = info->c_ants;
+	}
 	else
 		branch[i].ants = 0;
 }
@@ -38,7 +41,7 @@ s_ferm	*create_branch(s_info *info)
 	{
 		create_tunnel(branch, all_tunnel, info, i);
 		all_tunnel = all_tunnel->next;
-		i++;
+		i = i + 1;
 	}
 	return (branch);
 }
@@ -65,7 +68,7 @@ void	links_add(s_info *info, s_ferm **ferm)
 						if (ft_strcmp(ferm[room][room].name, links->room1) == 0 || ft_strcmp(ferm[room][room].name, links->room2) == 0)
 							break ;
 					}
-					room++;
+					room = room + 1;
 				}
 				if (room < info->c_rooms)
 				{
@@ -74,7 +77,7 @@ void	links_add(s_info *info, s_ferm **ferm)
 				}
 				branch = info->c_rooms;
 			}
-			branch++;
+			branch = branch + 1;
 		}
 		room = 0;
 		branch = 0;
@@ -94,7 +97,7 @@ s_ferm	**create_matrix(s_info *info)
 	while (i < info->c_rooms)
 	{
 		ferm[i] = create_branch(info);
-		i++;
+		i = i + 1;
 		rooms = rooms->next;
 	}
 	links_add(info, ferm);

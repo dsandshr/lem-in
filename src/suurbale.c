@@ -15,9 +15,9 @@ void	close_pass(s_ferm **ferm, s_info *info)
 				ferm[branch][room].pass = TMP_CLOSE;
 			if (ferm[branch][room].split != 0)
 				ferm[branch][room].split = 0;
-			room++;
+			room = room + 1;
 		}
-		branch++;
+		branch = branch + 1;
 		room = 0;
 	}
 }
@@ -62,10 +62,10 @@ void	restore_ferm(s_ferm **ferm, s_info *info)
 			ferm[branch][room].split = 0;
 			ferm[branch][room].visit = 0;
 			ferm[branch][room].parent = 0;
-			room++;
+			room = room + 1;
 		}
 		room = 0;
-		branch++;
+		branch = branch + 1;
 	}
 }
 
@@ -73,7 +73,7 @@ s_paths *suurbale(s_ferm **ferm, s_info *info, int c_paths)
 {
 	s_paths *paths;
 
-	if((paths = search_paths(info, ferm, c_paths)) == NULL)
+	if((paths = search_paths(info, ferm, c_paths, info->start_id)) == NULL)
 	{
 		restore_ferm(ferm, info);
 		return (NULL);
@@ -81,7 +81,7 @@ s_paths *suurbale(s_ferm **ferm, s_info *info, int c_paths)
 	close_pass(ferm, info);
 	remove_intersections(paths, ferm);
 	delete_paths(&paths);
-	paths = build_paths(ferm, info, c_paths);
+	paths = bfs_for_build(info, ferm, info->start_id);
 	restore_ferm(ferm, info);
 	return (paths);
 }

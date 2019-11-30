@@ -140,7 +140,9 @@ s_info	*read_file(char *file)
 	int		finish;
 	s_info	*info;
 
+	fd = 0;
 	finish = 0;
+	file = NULL;
 	if (!(info = (s_info *)malloc(sizeof(s_info))))
 		error_processing(MALLOC_E, &info);
 	info->rooms = NULL;
@@ -148,9 +150,6 @@ s_info	*read_file(char *file)
 	info->c_rooms = 0;
 	info->c_links = 0;
 	info->c_path = 0;
-	fd = open(file, O_RDONLY);
-	if (fd <= 0)
-		error_processing(FILE_E, &info);
 	info->c_ants = read_ants(fd);
 	if (info->c_ants < 1)
 		error_processing(info->c_ants, &info);
