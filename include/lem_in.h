@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/30 17:26:59 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/01 17:06:53 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,13 @@ typedef struct			l_rooms
 
 }						s_rooms;
 
+typedef struct			l_map
+{
+	char				*map;
+	struct l_map		*next;
+
+}						s_map;
+
 typedef struct			l_links
 {
 	char				*room1;
@@ -85,7 +92,7 @@ typedef struct			l_info
 	int					c_links;
 	s_rooms				*rooms;
 	s_links				*links;
-	char				*input;
+	// char				*input;
 }						s_info;
 
 typedef struct			l_read_main
@@ -133,7 +140,7 @@ typedef struct			l_paths
 
 void					error_processing(int error, s_info **info);
 int						valid_format(const char *line, s_info *info);
-s_info					*read_file();
+s_info					*read_file(s_map *map);
 
 /*
 ** MATRIX_FUNCTION
@@ -141,7 +148,6 @@ s_info					*read_file();
 
 s_ferm					**create_matrix(s_info *info);
 s_paths					*search_paths(s_info *info, s_ferm **ferm, int c_path, int start);
-//s_paths					*build_paths(s_ferm **ferm, s_info *info, int c_paths, int start);
 s_paths					*bfs_for_build(s_info *info, s_ferm **ferm, int start);
 s_paths					*find_way(s_info *info, s_ferm **ferm);
 

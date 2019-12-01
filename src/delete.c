@@ -20,7 +20,6 @@ void	delete_rooms(s_rooms **rooms)
 	if (*rooms != NULL)
 	{
 		ft_strdel(&(*rooms)->name);
-		(*rooms)->name = NULL;
 		free(*rooms);
 		*rooms = NULL;
 	}
@@ -41,7 +40,6 @@ void	delete_links(s_links **links)
 
 void    delete_info(s_info **info)
 {
-	ft_strdel(&(*info)->input);
 	delete_rooms(&(*info)->rooms);
 	delete_links(&(*info)->links);
 	free(*info);

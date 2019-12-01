@@ -1,6 +1,6 @@
 #include "lem_in.h"
 
-int		read_ants(int fd, s_info *info)
+int		read_ants(int fd, s_map **map)
 {
 	char	*line;
 	int		ants;
@@ -9,25 +9,21 @@ int		read_ants(int fd, s_info *info)
 	line = NULL;
 	while(get_next_line(fd, &line))
 	{
+		(*map)->map = line;
+		(*map)->next = (s_map *)malloc(sizeof(s_map));
+		(*map) = (*map)->next;
 		if (line != NULL && line[0] != '#')
 		{
 			if (ft_thisnum(line))
-			{
-				ants = ft_atoi(line);
-				ft_strdel(&line);
-				return (ants);
-			}
-			ft_strdel(&line);
+				return (ft_atoi(line));
 			return (FORMAT_E);
 		}
 		else if (ft_strcmp(line, "##start") == 0 || ft_strcmp(line, "##end") == 0)
 		{
 			ants = line[2] == 's' ? START_1_E : END_1_E;
-			ft_strdel(&line);
 			return (ants);
 		}
-		info->input = ft_strjoinendl(info->input, line);
-		ft_strdel(&line);
+		line = NULL;
 	}
 	return (NO_ANTS_E);
 }
@@ -86,11 +82,12 @@ int		add_links(s_info *info, const char *line)
 	return (1);
 }
 
-int		read_main(s_info *info, int fd)
+int		read_main(s_info *info, int fd, s_map *map)
 {
 	char		*line;
 	int			num;
 	s_read_main	srm;
+	s_map *tmp;
 
 	srm.type = TUNNEL;
 	srm.start = 0;
@@ -99,6 +96,10 @@ int		read_main(s_info *info, int fd)
 	line = NULL;
 	while (get_next_line(fd, &line))
 	{
+		tmp = map;
+		map->map = line;
+		map->next = (s_map *)malloc(sizeof(s_map));
+		map = map->next;
 		num = 1;
 		if (line[0] == '\0')
 			error_processing(EMPTY_LINE_E, &info);
@@ -124,19 +125,24 @@ int		read_main(s_info *info, int fd)
 				info->c_links += add_links(info, line);
 			srm.type = TUNNEL;
 		}
-		info->input = ft_strjoinendl(info->input, line);
-		ft_strdel(&line);
+		line = NULL;
 		if (srm.start > 1 || srm.end > 1)
 			error_processing(srm.start > 1 ? START_2_E : END_2_E, &info);
 		if (num < 1)
 			break;
+	}
+	if (tmp)
+	{
+		free(map);
+		map = NULL;
+		tmp->next = NULL;
 	}
 	if (srm.start != 1 || srm.end != 1)
 		num = START_2_E;
 	return (num > 0 ? 1 : num);
 }
 
-s_info	*read_file()
+s_info	*read_file(s_map *map)
 {
 	int		fd;
 	int		finish;
@@ -146,19 +152,16 @@ s_info	*read_file()
 	finish = 0;
 	if (!(info = (s_info *)malloc(sizeof(s_info))))
 		error_processing(MALLOC_E, &info);
-	info->input = (char *)malloc(1);
-	info->input[0] = '\0';
 	info->rooms = NULL;
 	info->links = NULL;
 	info->c_rooms = 0;
 	info->c_links = 0;
 	info->c_path = 0;
-	info->c_ants = read_ants(fd, info);
+	info->c_ants = read_ants(fd, &map);
 	if (info->c_ants < 1)
 		error_processing(info->c_ants, &info);
-	finish = read_main(info, fd);
+	finish = read_main(info, fd, map);
 	if ((finish < 1))
 		error_processing(finish, &info);
-	close(fd);
 	return (info);
 }
