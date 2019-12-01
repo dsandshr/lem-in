@@ -5,13 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/10 14:46:06 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/12/01 19:34:05 by dsandshr         ###   ########.fr       */
+/*   Created: 2019/12/01 19:43:42 by dsandshr          #+#    #+#             */
+/*   Updated: 2019/12/01 19:45:59 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-
 
 s_paths		*null_go(s_paths *paths)
 {
