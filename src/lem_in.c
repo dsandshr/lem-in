@@ -8,7 +8,7 @@ int main()
 
 	paths = NULL;
 	info = read_file();
-	ft_putendl(info->input);
+//	ft_putendl(info->input);
 	ferm = create_matrix(info);
 	paths = find_way(info, ferm);
 	march(paths, ferm, info);
