@@ -6,7 +6,7 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/01 19:43:42 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/12/03 17:00:55 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/03 18:38:32 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,15 @@ s_paths	*calc_go(s_paths *pth)
 	bf = pth;
 	while (bf)
 	{
-		if (bf->len <= bf->next->len && bf->next)
+		if (bf->next)
 		{
-			bf->len++;
-			bf->go++;
+			while (bf->len <= bf->next->len)
+			{
+				bf->len++;
+				bf->go++;
+			}
 		}
-		if (!bf->next && bf->len <= pth->len)
+		if (!bf->next && bf->len < pth->len)
 		{
 			bf->len++;
 			bf->go++;
@@ -75,16 +78,22 @@ int			calc_sum(int l_s, s_paths *paths, int c_w, s_info *inf)
 {
 	int n_s;
 	s_paths *buf;
+	s_paths *bbuf;
 
 	n_s = 0;
+	bbuf = paths;
 	n_s = calc_ant(paths, inf->c_ants, n_s);
 	buf = paths;
 	n_s = 0;
-	while (buf)
+	while (buf)// && //bbuf)
 	{
 		n_s += buf->len - 1;
+		// if ((buf->next && buf->go > 0 && buf->next->go == 0) \
+		// || (!buf->next && buf->go > 0))
+		// 	n_s = (bbuf->len - 1) + buf->go;
 	ft_printf(" go = %i len = %i \n", buf->go, buf->len);
 		buf = buf->next;
+	//bbuf = bbuf->next;
 	}
 	n_s /= c_w;
 	ft_printf(" ns = %i ls = %i\n------------------\n", n_s, l_s);
