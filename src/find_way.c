@@ -6,7 +6,7 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/01 19:43:42 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/12/01 19:45:59 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/03 18:38:32 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,36 +25,51 @@ s_paths		*null_go(s_paths *paths)
 	return (paths);
 }
 
-int		calc_go(s_paths *pth, int c_a, int c_s)
+s_paths	*calc_go(s_paths *pth)
 {
+	s_paths *bf;
+
+	bf = pth;
+	while (bf)
+	{
+		if (bf->next)
+		{
+			while (bf->len <= bf->next->len)
+			{
+				bf->len++;
+				bf->go++;
+			}
+		}
+		if (!bf->next && bf->len < pth->len)
+		{
+			bf->len++;
+			bf->go++;
+		}
+		bf = bf->next;
+	}
+	return (pth);
+}
+
+int		calc_ant(s_paths *pth, int c_a, int c_s)
+{
+	int		c_ab;
 	s_paths *buf;
 
 	buf = null_go(pth);
+	c_ab = c_a;
 	while (c_a > 0)
 	{
 		buf = pth;
+		buf = calc_go(buf);
 		while (buf)
 		{
-			if (c_a <= 0)
-				break;
-			if (buf->len <= buf->next->len && buf->next)
-			{
-				buf->len++;
-				buf->go++;
-				c_a--;
-			}
-			if (c_a <= 0)
-				break;
-			if (!buf->next && buf->len <= pth->len)
-			{
-				buf->len++;
-				buf->go++;
-				c_a--;
-			}
-			if (c_a <= 0)
-				break;
+			c_a -= buf->go;
 			buf = buf->next;
 		}
+		if (c_a > 0)
+			c_a = c_ab;
+		else if (c_a <= 0)
+			break;
 	}
 	return (c_s);
 }
@@ -63,17 +78,25 @@ int			calc_sum(int l_s, s_paths *paths, int c_w, s_info *inf)
 {
 	int n_s;
 	s_paths *buf;
+	s_paths *bbuf;
 
 	n_s = 0;
-	n_s = calc_go(paths, inf->c_ants, n_s);
+	bbuf = paths;
+	n_s = calc_ant(paths, inf->c_ants, n_s);
 	buf = paths;
 	n_s = 0;
-	while (buf)
+	while (buf)// && //bbuf)
 	{
-		n_s += buf->len;
+		n_s += buf->len - 1;
+		// if ((buf->next && buf->go > 0 && buf->next->go == 0) \
+		// || (!buf->next && buf->go > 0))
+		// 	n_s = (bbuf->len - 1) + buf->go;
+	ft_printf(" go = %i len = %i \n", buf->go, buf->len);
 		buf = buf->next;
+	//bbuf = bbuf->next;
 	}
 	n_s /= c_w;
+	ft_printf(" ns = %i ls = %i\n------------------\n", n_s, l_s);
 	if (l_s < n_s || c_w > inf->c_ants)
 		return (-1);
 	return (n_s);
@@ -97,14 +120,18 @@ s_paths		*find_way(s_info *info, s_ferm **ferm)
 			last = new;
 			if (!(new = suurbale(ferm, info, ++col_ways)))
 			{
-				//exit (-1);
+				printf("\n\n%i", col_ways);
 				return (last);
 			}
 			last_sum = calc_sum(last_sum, new, col_ways, info);
+			if (last_sum != -1)
+				delete_paths(&last);
+			if (last_sum == -1 && new)
+				delete_paths(&new);
 		}
 		else
 		{
-			//exit (-1);
+			printf("\n\n2");
 			return (last);
 		}
 	}

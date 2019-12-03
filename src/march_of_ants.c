@@ -59,7 +59,7 @@ void the_walking_line(s_ferm **ferm, s_info *info, int end)
 		{
 			path = stack->var;
 			delete(&stack);
-			while (room < info->c_rooms) //&& (ferm[path][path].split > 0 || ferm[path][path].type == END))
+			while (room < info->c_rooms && (ferm[path][path].split > 0 || ferm[path][path].type == END))
 			{
 				step(ferm, &stack, path, room);
 				room++;

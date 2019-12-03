@@ -28,8 +28,6 @@ int main()
 	info = read_file(map);
 	//write_map(&map);
 	ferm = create_matrix(info);
-	paths = find_way(info, ferm);
-	march(paths, ferm, info);
 	delete_paths(&paths);
 	ferm = delete_ferm(ferm, info->c_rooms);
 	delete_info(&info);
