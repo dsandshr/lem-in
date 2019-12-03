@@ -23,10 +23,10 @@ int main()
 	s_paths *paths;
 	s_map	*map;
 	paths = NULL;
-
+//	ft_putendl(info->input);
 	map = (s_map *)malloc(sizeof(s_map));
 	info = read_file(map);
-	write_map(&map);
+	//write_map(&map);
 	ferm = create_matrix(info);
 	//paths = find_way(info, ferm);
 	int i;
