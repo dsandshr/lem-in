@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/03 16:00:33 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/03 20:50:20 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,11 +89,11 @@ typedef struct			l_info
 	int					c_rooms;
 	int					c_path;
 	int					start_id;
+	int					end_id;
 	int					c_ants;
 	int					c_links;
 	s_rooms				*rooms;
 	s_links				*links;
-	// char				*input;
 }						s_info;
 
 typedef struct			l_read_main
@@ -124,6 +124,7 @@ typedef struct			l_set_path
 	int					var;
 	struct l_set_path	*next;
 	struct l_set_path	*back;
+	struct l_set_path	*last_elem;
 }						s_set_path;
 
 typedef struct			l_paths
@@ -148,7 +149,7 @@ s_info					*read_file(s_map *map);
 */
 
 s_ferm					**create_matrix(s_info *info);
-s_paths					*search_paths(s_info *info, s_ferm **ferm, int c_path, int start);
+int						search_paths(s_info *info, s_ferm **ferm, int c_paths, int start);
 s_paths					*bfs_for_build(s_info *info, s_ferm **ferm, int start);
 s_paths					*find_way(s_info *info, s_ferm **ferm);
 

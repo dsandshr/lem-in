@@ -23,23 +23,13 @@ int main()
 	s_paths *paths;
 	s_map	*map;
 	paths = NULL;
-//	ft_putendl(info->input);
+
 	map = (s_map *)malloc(sizeof(s_map));
 	info = read_file(map);
 	//write_map(&map);
 	ferm = create_matrix(info);
-	//paths = find_way(info, ferm);
-	int i;
-
-	i = 1;
-	while (i != 8)
-	{
-		paths = suurbale(ferm, info, i);
-		i++;
-	}
-	paths = suurbale(ferm, info, i);
-	write_paths(paths, ferm);
-	//march(paths, ferm, info);
+	paths = find_way(info, ferm);
+	march(paths, ferm, info);
 	delete_paths(&paths);
 	ferm = delete_ferm(ferm, info->c_rooms);
 	delete_info(&info);

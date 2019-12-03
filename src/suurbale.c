@@ -73,15 +73,14 @@ s_paths *suurbale(s_ferm **ferm, s_info *info, int c_paths)
 {
 	s_paths *paths;
 
-	if((paths = search_paths(info, ferm, c_paths, info->start_id)) == NULL)
+	paths = NULL;
+	if((search_paths(info, ferm, c_paths, info->start_id)) == 0)
 	{
 		restore_ferm(ferm, info);
-		return (NULL);
+		return (paths);
 	}
-	// close_pass(ferm, info);
-	remove_intersections(paths, ferm);
-	delete_paths(&paths);
-	paths = bfs_for_build(info, ferm, info->start_id);
+	paths = bfs_for_build(info, ferm, info->end_id);
 	restore_ferm(ferm, info);
+	// write_paths(paths, ferm);
 	return (paths);
 }

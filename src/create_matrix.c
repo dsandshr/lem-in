@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:53:59 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/30 14:15:43 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/03 20:50:09 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ void	create_tunnel(s_ferm *branch, s_rooms *rooms, s_info *info, int i)
 	}
 	else
 		branch[i].ants = 0;
+	if (branch[i].type == END)
+		info->end_id = i;
 }
 
 s_ferm	*create_branch(s_info *info)
