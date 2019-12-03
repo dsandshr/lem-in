@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/01 17:06:53 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/03 16:00:33 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@
 # define OPEN 4
 # define CLOSE 5
 # define TMP_CLOSE 6
+# define TMP_OPEN 7
 
 /*
 ** TMP FLAGS ! POTOM DELETE NADO BUDET NE ZABIT

@@ -51,7 +51,7 @@ s_paths *bfs_for_build(s_info *info, s_ferm **ferm, int start)
 		delete(&stack);
 		while (room < info->c_rooms)
 		{
-			if (ferm[branch][room].pass == OPEN && ferm[room][room].visit == 0)
+			if (ferm[branch][room].pass == TMP_OPEN && ferm[room][room].visit == 0)
 			{
 				if (ferm[room][room].type != END)
 				{
@@ -87,23 +87,23 @@ s_paths *bfs_for_build(s_info *info, s_ferm **ferm, int start)
 	return (save);
 }
 
-void build_update(s_ferm **ferm, s_info *info)
-{
-	int branch;
-	int room;
+// void build_update(s_ferm **ferm, s_info *info)
+// {
+// 	int branch;
+// 	int room;
 
-	room = 0;
-	branch = 0;
-	while (branch < info->c_rooms)
-	{
-		while (room < info->c_rooms)
-		{
-			if (ferm[room][room].split != -1)
-				ferm[branch][room].visit = 0;
-			ferm[branch][room].parent = 0;
-			room = room + 1;
-		}
-		room = 0;
-		branch = branch + 1;
-	}
-}
+// 	room = 0;
+// 	branch = 0;
+// 	while (branch < info->c_rooms)
+// 	{
+// 		while (room < info->c_rooms)
+// 		{
+// 			if (ferm[room][room].split != -1)
+// 				ferm[branch][room].visit = 0;
+// 			ferm[branch][room].parent = 0;
+// 			room = room + 1;
+// 		}
+// 		room = 0;
+// 		branch = branch + 1;
+// 	}
+// }

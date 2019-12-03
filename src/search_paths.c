@@ -35,7 +35,7 @@ s_paths *mark_the_path(s_ferm **ferm, int end)
 	{
 		add_num(end, &path->set, &path->s_set);
 		parent = ferm[end][end].parent;
-		ferm[end][parent].pass = OPEN;
+		//ferm[end][parent].pass = OPEN;
 		ferm[parent][end].pass = TMP_CLOSE;
 		if (ferm[parent][parent].type != START && ferm[parent][parent].type != END)
 			ferm[parent][parent].split = ferm[parent][parent].split + 1;

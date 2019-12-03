@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:07:10 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/27 15:10:01 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/03 16:36:54 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,21 +65,8 @@ void write_paths(s_paths *paths, s_ferm **ferm)
 	i = 0;
 	while (paths)
 	{
-		tmp = paths->s_set;
-		if (paths->go == OPEN)
-		{
+			tmp = paths->s_set;
 			ft_putstr("\n_____________________________________\n");
-			if (paths->go == OPEN)
-			{
-				ft_putstr("id :");
-				if (i > 100000000)
-					exit(1);
-				ft_putnbr(i);
-				i++;
-				ft_putstr ("\nSTATUS: OK\n");
-			}
-			else
-				ft_putstr ("STATUS: KO\n");
 			ft_putstr ("PATH-LEN: ");
 			ft_putnbr(paths->len);
 			ft_putstr("\n\n");
@@ -92,7 +79,6 @@ void write_paths(s_paths *paths, s_ferm **ferm)
 			}
 			ft_putstr("\n_____________________________________\n\n");
 			ft_putstr("⬇");
-		}
-		paths = paths->next;
+			paths = paths->next;
 	}
 }
