@@ -19,18 +19,19 @@ void write_map(s_map **map)
 int main()
 {
 	s_info	*info;
-	s_ferm	**ferm;
+	s_ferm	*ferm;
 	s_paths *paths;
 	s_map	*map;
 	paths = NULL;
+	ferm = NULL;
 
 	map = (s_map *)malloc(sizeof(s_map));
 	info = read_file(map);
-	//write_map(&map);
 	ferm = create_matrix(info);
+	paths = find_way(info, ferm);
+	march(paths, ferm, info);
 	delete_paths(&paths);
 	ferm = delete_ferm(ferm, info->c_rooms);
 	delete_info(&info);
-	delete_paths(&paths);
 	return (0);
 }

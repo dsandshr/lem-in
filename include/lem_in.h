@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/03 20:50:20 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/04 16:05:57 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@
 */
 
 # define OPEN 4
-# define CLOSE 5
-# define TMP_CLOSE 6
-# define TMP_OPEN 7
+# define CLOSE 6
+# define TMP_CLOSE 7
+# define TMP_OPEN 5
 
 /*
 ** TMP FLAGS ! POTOM DELETE NADO BUDET NE ZABIT
@@ -107,24 +107,12 @@ typedef struct			l_read_main
 ** MAIN_STRUCT
 */
 
-typedef struct			l_ferm_matrix
-{
-	unsigned short		pass;
-	unsigned short		visit;
-	short				split;
-	unsigned int		parent;
-	unsigned short		type;
-	int					ants;
-	char				*name;
-}						s_ferm;
-
 typedef struct			l_set_path
 {
 
 	int					var;
 	struct l_set_path	*next;
 	struct l_set_path	*back;
-	struct l_set_path	*last_elem;
 }						s_set_path;
 
 typedef struct			l_paths
@@ -135,6 +123,23 @@ typedef struct			l_paths
 	struct l_paths		*next;
 	int					go;
 }						s_paths;
+
+typedef struct			l_matrix
+{
+	int					ants;
+	unsigned short		pass;
+	unsigned short		visit;
+	short				split;
+	unsigned int		parent;
+	unsigned short		type;
+	char				*name;
+}						s_matrix;
+
+typedef struct			l_ferm_matrix
+{
+	s_set_path			*links;
+	s_matrix			*matrix;
+}						s_ferm;
 
 /*
 ** READ_FUNCTION
@@ -148,23 +153,23 @@ s_info					*read_file(s_map *map);
 ** MATRIX_FUNCTION
 */
 
-s_ferm					**create_matrix(s_info *info);
-int						search_paths(s_info *info, s_ferm **ferm, int c_paths, int start);
-s_paths					*bfs_for_build(s_info *info, s_ferm **ferm, int start);
-s_paths					*find_way(s_info *info, s_ferm **ferm);
+s_ferm					*create_matrix(s_info *info);
+int						search_paths(s_info *info, s_ferm *ferm, int c_paths, int start);
+s_paths					*bfs_for_build(s_info *info, s_ferm *ferm, int start);
+s_paths					*find_way(s_info *info, s_ferm *ferm);
 
 /*
 ** SUURBALE
 */
 
-s_paths					*suurbale(s_ferm **ferm, s_info *info, int c_paths);
+s_paths					*suurbale(s_ferm *ferm, s_info *info, int c_paths);
 void					close_pass(s_ferm **ferm, s_info *info);
 
 /*
 ** MARCH !
 */
 
-void					march(s_paths *paths, s_ferm **ferm, s_info *info);
+void					march(s_paths *paths, s_ferm *ferm, s_info *info);
 
 /*
 ** PATHS_FUNCTION
@@ -185,14 +190,14 @@ void					delete(s_set_path **stack);
 
 char					**delete_ar(char **ar, int size);
 void					delete_info(s_info **info);
-s_ferm					**delete_ferm(s_ferm **ferm, int room);
+s_ferm					*delete_ferm(s_ferm *ferm, int room);
 void					delete_paths(s_paths **path);
 
 /*
 ** TMP_FUNCTION
 */
 
-int						write_ferm(s_ferm **ferm, s_info* info, int flag);
-void					write_paths(s_paths *paths, s_ferm **ferm);
+int						write_ferm(s_ferm *ferm, s_info* info, int flag);
+void					write_paths(s_paths *paths, s_ferm *ferm);
 
 #endif

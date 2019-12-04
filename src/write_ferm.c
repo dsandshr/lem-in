@@ -6,13 +6,13 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:07:10 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/03 16:36:54 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/04 17:58:13 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int	write_ferm(s_ferm **ferm, s_info *info, const int flag)
+int	write_ferm(s_ferm *ferm, s_info *info, const int flag)
 {
 	int i;
 	int g;
@@ -23,7 +23,7 @@ int	write_ferm(s_ferm **ferm, s_info *info, const int flag)
 	while(i < info->c_rooms)
 	{
 		ft_putstr("\t");
-		ft_putstr(ferm[0][i].name);
+		ft_putstr(ferm[0].matrix[i].name);
 		i++;
 	}
 	ft_putstr("\n");
@@ -32,23 +32,23 @@ int	write_ferm(s_ferm **ferm, s_info *info, const int flag)
 	{
 		g = 0;
 		ft_putstr("\n");
-		ft_putstr(ferm[0][i].name);
+		ft_putstr(ferm[0].matrix[i].name);
 		while (g < info->c_rooms)
 		{
 			ft_putchar('\t');
-			if (flag != W_ANTS || ferm[i][g].ants == 0)
+			if (flag != W_ANTS || ferm[i].matrix[g].ants == 0)
 			{
-				if(ferm[i][g].pass == OPEN)
+				if(ferm[i].matrix[g].pass == OPEN)
 					ft_putchar('+');
-				else if (ferm[i][g].pass == CLOSE)
+				else if (ferm[i].matrix[g].pass == CLOSE)
 					ft_putchar('-');
-				else if (ferm[i][g].pass == TMP_CLOSE)
+				else if (ferm[i].matrix[g].pass == TMP_CLOSE)
 					ft_putchar('T');
 				else
 					ft_putchar('X');
 			}
 			else
-				ft_putnbr(ferm[i][g].ants);
+				ft_putnbr(ferm[i].matrix[g].ants);
 			g++;
 		}
 		ft_putstr("\n");
@@ -57,7 +57,7 @@ int	write_ferm(s_ferm **ferm, s_info *info, const int flag)
 	return (0);
 }
 
-void write_paths(s_paths *paths, s_ferm **ferm)
+void write_paths(s_paths *paths, s_ferm *ferm)
 {
 	s_set_path *tmp;
 	int i;
@@ -72,7 +72,7 @@ void write_paths(s_paths *paths, s_ferm **ferm)
 			ft_putstr("\n\n");
 			while (tmp)
 			{
-				ft_putstr(ferm[tmp->var][tmp->var].name);
+				ft_putstr(ferm[tmp->var].matrix[tmp->var].name);
 				if (tmp->next)
 					ft_putstr(" → ");
 				tmp = tmp->next;

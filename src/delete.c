@@ -40,13 +40,15 @@ void    delete_info(s_info **info)
 	*info = NULL;
 }
 
-s_ferm	**delete_ferm(s_ferm **ferm, int room)
+s_ferm	*delete_ferm(s_ferm *ferm, int room)
 {
 	room = room - 1;
 	while (room != -1)
 	{
-		free(ferm[room]);
-		ferm[room] = NULL;
+		free(ferm[room].matrix);
+		ferm[room].matrix = NULL;
+		//free(ferm[room]);
+		//ferm[room] = NULL;
 		room--;
 	}
 	free(ferm);

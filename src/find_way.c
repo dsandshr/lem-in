@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_way.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/01 19:43:42 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/12/03 18:38:32 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/04 16:15:01 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,18 +91,18 @@ int			calc_sum(int l_s, s_paths *paths, int c_w, s_info *inf)
 		// if ((buf->next && buf->go > 0 && buf->next->go == 0) \
 		// || (!buf->next && buf->go > 0))
 		// 	n_s = (bbuf->len - 1) + buf->go;
-	ft_printf(" go = %i len = %i \n", buf->go, buf->len);
+	// ft_printf(" go = %i len = %i \n", buf->go, buf->len);
 		buf = buf->next;
 	//bbuf = bbuf->next;
 	}
 	n_s /= c_w;
-	ft_printf(" ns = %i ls = %i\n------------------\n", n_s, l_s);
+	// ft_printf(" ns = %i ls = %i\n------------------\n", n_s, l_s);
 	if (l_s < n_s || c_w > inf->c_ants)
 		return (-1);
 	return (n_s);
 }
 
-s_paths		*find_way(s_info *info, s_ferm **ferm)
+s_paths		*find_way(s_info *info, s_ferm *ferm)
 {
 	int		last_sum;
 	int		col_ways;
@@ -120,7 +120,7 @@ s_paths		*find_way(s_info *info, s_ferm **ferm)
 			last = new;
 			if (!(new = suurbale(ferm, info, ++col_ways)))
 			{
-				printf("\n\n%i", col_ways);
+				// printf("\n\n%i", col_ways);
 				return (last);
 			}
 			last_sum = calc_sum(last_sum, new, col_ways, info);
@@ -131,7 +131,7 @@ s_paths		*find_way(s_info *info, s_ferm **ferm)
 		}
 		else
 		{
-			printf("\n\n2");
+			// printf("\n\n2");
 			return (last);
 		}
 	}

@@ -1,6 +1,6 @@
 #include "lem_in.h"
 
-s_paths *fill_paths(s_ferm **ferm, int end)
+s_paths *fill_paths(s_ferm *ferm, int end)
 {
 	int parent;
 	s_paths		*path;
@@ -12,17 +12,17 @@ s_paths *fill_paths(s_ferm **ferm, int end)
 	path->set = NULL;
 	path->s_set = NULL;
 	parent = 0;
-	while (ferm[end][end].type != END)
+	while (ferm[end].matrix[end].type != END)
 	{
-		parent = ferm[end][end].parent;
-		if (ferm[parent][parent].split == -1)
+		parent = ferm[end].matrix[end].parent;
+		if (ferm[parent].matrix[parent].split == -1)
 		{
 			delete_paths(&path);
 			return (NULL);
 		}
 		add_num(end, &path->set, &path->s_set);
-		if (ferm[parent][parent].type != START && ferm[parent][parent].type != END)
-			ferm[parent][parent].split = -1;
+		if (ferm[parent].matrix[parent].type != START && ferm[parent].matrix[parent].type != END)
+			ferm[parent].matrix[parent].split = -1;
 		end = parent;
 		path->len++;
 	}
@@ -33,7 +33,7 @@ s_paths *fill_paths(s_ferm **ferm, int end)
 
 
 
-s_paths *bfs_for_build(s_info *info, s_ferm **ferm, int start)
+s_paths *bfs_for_build(s_info *info, s_ferm *ferm, int start)
 {
 	int branch;
 	int room;
@@ -53,15 +53,15 @@ s_paths *bfs_for_build(s_info *info, s_ferm **ferm, int start)
 		delete(&stack);
 		while (room < info->c_rooms)
 		{
-			if (ferm[branch][room].pass == TMP_OPEN && ferm[room][room].visit == 0)
+			if (ferm[branch].matrix[room].pass == TMP_OPEN && ferm[room].matrix[room].visit == 0)
 			{
-				if (ferm[room][room].type != END && ferm[room][room].type != START)
+				if (ferm[room].matrix[room].type != END && ferm[room].matrix[room].type != START)
 				{
 					push(&stack, room);
-					ferm[room][room].visit = 1;
+					ferm[room].matrix[room].visit = 1;
 				}
-				ferm[room][room].parent = branch;
-				if (ferm[room][room].type == START)
+				ferm[room].matrix[room].parent = branch;
+				if (ferm[room].matrix[room].type == START)
 				{
 					if (paths == NULL)
 					{
