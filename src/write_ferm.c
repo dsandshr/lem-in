@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:07:10 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/04 17:58:13 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/06 20:41:12 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ int	write_ferm(s_ferm *ferm, s_info *info, const int flag)
 				else if (ferm[i].matrix[g].pass == CLOSE)
 					ft_putchar('-');
 				else if (ferm[i].matrix[g].pass == TMP_CLOSE)
-					ft_putchar('T');
+					ft_putstr("TC");
 				else
-					ft_putchar('X');
+					ft_putstr("TO");
 			}
 			else
 				ft_putnbr(ferm[i].matrix[g].ants);
@@ -67,7 +67,9 @@ void write_paths(s_paths *paths, s_ferm *ferm)
 	{
 			tmp = paths->s_set;
 			ft_putstr("\n_____________________________________\n");
-			ft_putstr ("PATH-LEN: ");
+			ft_putstr ("PATH-ANTS: ");
+			ft_putnbr(paths->go);
+			ft_putstr ("	PATH-LEN: ");
 			ft_putnbr(paths->len);
 			ft_putstr("\n\n");
 			while (tmp)
