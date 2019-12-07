@@ -6,9 +6,10 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/01 19:43:42 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/12/07 17:43:53 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/07 17:50:36 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "lem_in.h"
 
@@ -82,12 +83,12 @@ int			calc_sum(int l_s, s_paths *paths, int c_w, s_info *inf)
 		// if ((buf->next && buf->go > 0 && buf->next->go == 0) \
 		// || (!buf->next && buf->go > 0))
 		// 	n_s = (bbuf->len - 1) + buf->go;
-	ft_printf(" go = %i len = %i \n", buf->go, buf->len);
+	//ft_printf(" go = %i len = %i \n", buf->go, buf->len);
 		buf = buf->next;
 	//bbuf = bbuf->next;
 	}
 	n_s /= c_w;
-	ft_printf(" ns = %i ls = %i\n------------------\n", n_s, l_s);
+	//ft_printf(" ns = %i ls = %i\n------------------\n", n_s, l_s);
 	if (l_s < n_s || c_w > inf->c_ants)
 		return (-1);
 	return (n_s);

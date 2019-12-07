@@ -32,18 +32,27 @@ int mark_the_path(s_ferm *ferm, int end)
 	while (ferm[end].matrix[end].type != START)
 	{
 		parent = ferm[end].matrix[end].parent;
-		if (ferm[end].matrix[parent].pass == TMP_CLOSE)
-			ferm[parent].matrix[end].pass = TMP_CLOSE;
-		else
-		{
+		if (ferm[parent].matrix[end].pass != TMP_OPEN)
 			ferm[end].matrix[parent].pass = TMP_OPEN;
+		else
 			ferm[parent].matrix[end].pass = TMP_CLOSE;
-		}
+		ferm[parent].matrix[end].pass = TMP_CLOSE;
 		if (ferm[parent].matrix[parent].type != START && ferm[parent].matrix[parent].type != END)
 			ferm[parent].matrix[parent].split = 1;
 		end = parent;
 	}
 	return (1);
+}
+
+int split_vertex(s_set_path *links, s_ferm *ferm, int branch)
+{
+	while (links)
+	{
+		if (ferm[links->var].matrix[links->var].split > 0 && ferm[branch].matrix[links->var].pass <= TMP_OPEN)
+			return (1);
+		links = links->next;
+	}
+	return (0);
 }
 
 int	mark_rooms(s_ferm *ferm, int branch, int room, s_set_path **stack)
@@ -53,8 +62,8 @@ int	mark_rooms(s_ferm *ferm, int branch, int room, s_set_path **stack)
 	parent = ferm[branch].matrix[branch].parent;
 	if (ferm[parent].matrix[parent].split == 0 && ferm[branch].matrix[branch].split > 0)
 	{
-		if (ferm[room].matrix[room].split == 0)
-			return (1);
+		if (ferm[room].matrix[room].split == 0 && split_vertex(ferm[branch].links, ferm, branch))
+			return(1);
 	}
 	push(stack, room);
 	ferm[room].matrix[room].parent = branch;
@@ -87,9 +96,9 @@ int	bfs(s_info *info, s_ferm *ferm, int branch)
 		while (links)
 		{
 			room = links->var;
-			if (ferm[branch].matrix[room].pass < CLOSE)
+			if (ferm[branch].matrix[room].pass == TMP_OPEN || ferm[branch].matrix[room].pass == OPEN)
 			{
-				if(ferm[room].matrix[room].visit == 0)
+				if(ferm[room].matrix[room].visit == 0 && ferm[room].matrix[room].type != START)
 				{
 					if ((mark_rooms(ferm, branch, room, &stack)) == END)
 						return (mark_the_path(ferm, room));
@@ -110,7 +119,10 @@ int search_paths(s_info *info, s_ferm *ferm, int c_paths, int start)
 	while (i < c_paths)
 	{
 		if (bfs(info, ferm, start) == 0)
+		{
+			update_ferm(ferm, info);
 			return (0);
+		}
 		update_ferm(ferm, info);
 		i++;
 	}

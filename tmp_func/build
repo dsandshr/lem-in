@@ -1,0 +1,31 @@
+	// {
+			// 	if (ferm[room].matrix[room].type != END && ferm[room].matrix[room].type != START)
+			// 	{
+			// 		push(&stack, room);
+			// 		ferm[room].matrix[room].visit = 1;
+			// 	}
+			// 	ferm[room].matrix[room].parent = branch;
+			// 	if (ferm[room].matrix[room].type == START)
+			// 	{
+			// 		if (paths == NULL)
+			// 		{
+			// 			paths = fill_paths(ferm, room);
+			// 			save = paths;
+			// 		}
+			// 		else
+			// 		{
+			// 			paths->next = fill_paths(ferm, room);
+			// 			paths = paths->next;
+			// 		}
+			// 		update_ferm(ferm, info);
+			// 		branch = start;
+			// 		room = 0;
+			// 		while (stack)
+			// 				delete(&stack);
+			// 		if (paths == NULL)
+			// 		{
+			// 			delete_paths(&save);
+			// 			return (NULL);
+			// 		}
+			// 	}
+			// }

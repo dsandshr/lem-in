@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   delete.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/12/07 16:17:04 by tlorine           #+#    #+#             */
+/*   Updated: 2019/12/07 16:19:18 by tlorine          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
-char **delete_ar(char **ar, int size)
+char	**delete_ar(char **ar, int size)
 {
 	size = 9;
-    free(ar);
-    return (NULL);
+	free(ar);
+	return (NULL);
 }
 
 void	delete_rooms(s_rooms **rooms)
@@ -32,7 +44,7 @@ void	delete_links(s_links **links)
 	}
 }
 
-void    delete_info(s_info **info)
+void	delete_info(s_info **info)
 {
 	delete_rooms(&(*info)->rooms);
 	delete_links(&(*info)->links);
@@ -47,8 +59,6 @@ s_ferm	*delete_ferm(s_ferm *ferm, int room)
 	{
 		free(ferm[room].matrix);
 		ferm[room].matrix = NULL;
-		//free(ferm[room]);
-		//ferm[room] = NULL;
 		room--;
 	}
 	free(ferm);

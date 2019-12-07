@@ -6,7 +6,7 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/07 17:30:16 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/07 17:51:06 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,6 +157,7 @@ s_info					*read_file(s_map *map);
 s_ferm					*create_matrix(s_info *info);
 int						search_paths(s_info *info, s_ferm *ferm, int c_paths, int start);
 s_paths					*bfs_for_build(s_info *info, s_ferm *ferm, int start);
+void					update_ferm(s_ferm *ferm, s_info *info);
 s_paths					*find_way(s_info *info, s_ferm *ferm);
 
 /*
