@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lem_in.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/04 16:05:57 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/07 17:30:16 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@
 */
 
 #define W_ANTS -10
+#define MAX_INT 2147483647
 
 /*
 ** READ_STRUCT
@@ -199,5 +200,6 @@ void					delete_paths(s_paths **path);
 
 int						write_ferm(s_ferm *ferm, s_info* info, int flag);
 void					write_paths(s_paths *paths, s_ferm *ferm);
+s_paths					*null_go(s_paths *paths);
 
 #endif

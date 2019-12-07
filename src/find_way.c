@@ -3,86 +3,77 @@
 /*                                                        :::      ::::::::   */
 /*   find_way.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/01 19:43:42 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/12/04 16:15:01 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/07 17:43:53 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-s_paths		*null_go(s_paths *paths)
+static void		count_ants_for_paths(int *dist, s_paths *path)
 {
-	s_paths *buf;
+	int			i;
 
-	buf = paths;
-	while (buf)
+	i = 0;
+	while (path)
 	{
-		buf->go = 0;
-		buf = buf->next;
+		path->go = dist[i] - path->len;
+		path->len = dist[i];
+		++i;
+		path = path->next;
 	}
-	return (paths);
 }
 
-s_paths	*calc_go(s_paths *pth)
+static void init_dist(int * dist, s_paths *pth, int c_w)
 {
 	s_paths *bf;
+	int		i;
 
 	bf = pth;
-	while (bf)
+	i = 0;
+	while (i < c_w)
 	{
-		if (bf->next)
-		{
-			while (bf->len <= bf->next->len)
-			{
-				bf->len++;
-				bf->go++;
-			}
-		}
-		if (!bf->next && bf->len < pth->len)
-		{
-			bf->len++;
-			bf->go++;
-		}
+		dist[i] = bf->len;
 		bf = bf->next;
+		i++;
 	}
-	return (pth);
 }
 
-int		calc_ant(s_paths *pth, int c_a, int c_s)
+static s_paths *calc_go(int c_w, s_paths *paths, int c_a)
 {
-	int		c_ab;
-	s_paths *buf;
+	int			dist_increment[c_w + 1];
+	int			max_use_index;
+	int			i;
 
-	buf = null_go(pth);
-	c_ab = c_a;
-	while (c_a > 0)
+	paths = null_go(paths);
+	init_dist(dist_increment, paths, c_w);
+	dist_increment[c_w] = MAX_INT;
+	max_use_index = 0;
+	while (c_a)
 	{
-		buf = pth;
-		buf = calc_go(buf);
-		while (buf)
+		while (dist_increment[max_use_index] >=
+				dist_increment[max_use_index + 1])
+			++max_use_index;
+		i = 0;
+		while (i <= max_use_index && c_a)
 		{
-			c_a -= buf->go;
-			buf = buf->next;
+			++dist_increment[i];
+			++i;
+			--c_a;
 		}
-		if (c_a > 0)
-			c_a = c_ab;
-		else if (c_a <= 0)
-			break;
 	}
-	return (c_s);
+	count_ants_for_paths(dist_increment, paths);
+	return (paths);
 }
 
 int			calc_sum(int l_s, s_paths *paths, int c_w, s_info *inf)
 {
 	int n_s;
 	s_paths *buf;
-	s_paths *bbuf;
 
-	n_s = 0;
-	bbuf = paths;
-	n_s = calc_ant(paths, inf->c_ants, n_s);
+	calc_go(c_w, paths, inf->c_ants);
 	buf = paths;
 	n_s = 0;
 	while (buf)// && //bbuf)
@@ -91,12 +82,12 @@ int			calc_sum(int l_s, s_paths *paths, int c_w, s_info *inf)
 		// if ((buf->next && buf->go > 0 && buf->next->go == 0) \
 		// || (!buf->next && buf->go > 0))
 		// 	n_s = (bbuf->len - 1) + buf->go;
-	// ft_printf(" go = %i len = %i \n", buf->go, buf->len);
+	ft_printf(" go = %i len = %i \n", buf->go, buf->len);
 		buf = buf->next;
 	//bbuf = bbuf->next;
 	}
 	n_s /= c_w;
-	// ft_printf(" ns = %i ls = %i\n------------------\n", n_s, l_s);
+	ft_printf(" ns = %i ls = %i\n------------------\n", n_s, l_s);
 	if (l_s < n_s || c_w > inf->c_ants)
 		return (-1);
 	return (n_s);
