@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/07 16:20:07 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/07 16:20:26 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/09 14:49:54 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int		main(void)
 	info = read_file(map);
 	ferm = create_matrix(info);
 	paths = find_way(info, ferm);
+	write_paths(paths, ferm);
 	march(paths, ferm, info);
 	delete_paths(&paths);
 	ferm = delete_ferm(ferm, info->c_rooms);

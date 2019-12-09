@@ -1,71 +1,64 @@
 
 _____________________________________
-PATH-ANTS: 47	PATH-LEN: 65
+PATH-ANTS: 60	PATH-LEN: 68
 
-Azw5 → Rnx6 → Dzw5 → Hqy5 → Oil7 → Ysy2 → Rwb8 → K_d3 → Cqn3 → R_f3 → Tnn3 → Nds1 → I_f7 → Tqf0 → Hau7 → Yjq0 → M_j1 → Pbq5
+Kvj7 → Nan3 → I_l4 → Blu4 → Ycb6 → Qiw8 → Q_s4 → Tdg3
 _____________________________________
 
 ⬇
 _____________________________________
-PATH-ANTS: 28	PATH-LEN: 70
+PATH-ANTS: 50	PATH-LEN: 67
 
-Azw5 → Unk8 → Rxg5 → Kkq4 → Jzq8 → Xtr0 → Kgo2 → Chj0 → Nup4 → I_u1 → Jhq1 → Dyk9 → Zjr9 → Ulm2 → Kfg3 → N_o5 → Ept1 → Iam0 → Icl4 → Uk_1 → Klo6 → Pll4 → Myp4 → Eqo5 → V_r8 → Cxh5 → Uo_8 → Tsk3 → Rzv1 → Mog8 → Nzh5 → Yhg3 → Otk5 → Ta_1 → Qua8 → R_v1 → Pog8 → Ujw1 → Xzc1 → Czl8 → Bfo5 → Pbq5
+Kvj7 → Yyu0 → Jwr3 → P_h9 → Ewm0 → Xyr8 → Ena4 → Nwz9 → Nqa8 → Tnb6 → Kjz8 → Kvj3 → Sbq1 → Uek5 → Tt_0 → Zsh8 → Tdg3
 _____________________________________
 
 ⬇
 _____________________________________
-PATH-ANTS: 33	PATH-LEN: 76
+PATH-ANTS: 42	PATH-LEN: 67
 
-Azw5 → Kue7 → Qpj7 → Tjq2 → Uf_2 → Gtx1 → Ihj2 → J_f3 → Bhc5 → Yre4 → Qee6 → Eot6 → Uen1 → Voa5 → Qry5 → Fxi0 → I_w2 → Hov3 → Dqd0 → C_t3 → Hts5 → Ssi1 → Bvh2 → Jnm9 → Upp1 → T_f2 → Pzw6 → Fo_3 → Vkn2 → Iwq4 → Ned9 → Umi7 → Apd3 → Dex3 → Tvd7 → Tli6 → Ipy3 → Xic3 → Fvp6 → Twj0 → Q_k1 → Ws_1 → Pbq5
+Kvj7 → Gjs3 → Avq1 → Dld5 → Jln6 → Pt_0 → Ymi8 → Udg8 → Ksc2 → Cde5 → Ntr9 → Dwp2 → Ucq8 → Odp6 → Vp_2 → Duh2 → Og_2 → Y_k5 → Gst1 → Y_j4 → Rur1 → Dhp8 → Jev2 → Yke0 → Tdg3
 _____________________________________
 
 ⬇
 _____________________________________
-PATH-ANTS: 29	PATH-LEN: 75
+PATH-ANTS: 40	PATH-LEN: 67
 
-Azw5 → Kfx5 → Prm5 → Amp1 → Btq5 → Wnv5 → Xov4 → Fbl3 → Ts_0 → Vdi9 → Jyo5 → Kju9 → Bpg1 → Ziz6 → Huu2 → Fbs4 → T_i8 → Qta6 → Arh8 → Yya0 → V_m5 → Kqo2 → Otc8 → Jbn9 → Mch1 → Vee0 → Qwq7 → Xx_7 → Cmy5 → Uai5 → G__1 → Zgc5 → Rcr8 → N_p2 → Zmz0 → Xsu7 → Far5 → Yxa7 → Mln0 → Tn_0 → Koh0 → Uhf9 → Pmv5 → Vox0 → Opo2 → Pbq5
+Kvj7 → Wtd6 → Kxy2 → Txb7 → Rcy8 → Agx2 → Jmz4 → Svp9 → Td_0 → Fkl0 → Ov_5 → Ase8 → Xvp0 → Yiy9 → Npv9 → Ur_7 → Ylv0 → Fwo9 → Y_k5 → Hup6 → Zed7 → Vmh6 → Rub2 → Iaa8 → Bfd0 → Wkx9 → Tdg3
 _____________________________________
 
 ⬇
 _____________________________________
-PATH-ANTS: 25	PATH-LEN: 74
+PATH-ANTS: 20	PATH-LEN: 67
 
-Azw5 → Bgo7 → Nz_9 → Dog5 → Mfe7 → Ere0 → Uxb4 → Bix1 → Mnb9 → Erp4 → Wis5 → Djl6 → Dar2 → Sxg6 → Bkj0 → Owe4 → Ijb6 → Rph0 → Hhr7 → Fjg8 → Eud7 → Wtu6 → Psc8 → Xtx7 → Trz8 → Xuw9 → H__6 → Wvj2 → B_s0 → Vyj2 → Iuq4 → Bpq3 → D_w6 → Nnk9 → Dwp7 → Asq1 → Alo7 → Wdi9 → Jlz0 → Sbf9 → Yux7 → Bex0 → Hcb5 → Gst6 → Njt6 → Zsq6 → Ycm4 → Oda5 → Pbq5
+Kvj7 → Qz_8 → Obh5 → Rga4 → Dkt8 → Isk4 → Twr0 → Yhv8 → Gwf0 → Tgz7 → Iip0 → Fr_8 → Amy6 → Skq0 → Wkl0 → Tsp9 → K_i5 → Do_0 → Ttm1 → Dmc8 → Emn6 → Rdr7 → Nfu5 → Ca_2 → Qvl9 → Xqz7 → Xkl9 → Hue2 → Fyg1 → Wfe0 → Yiz5 → Avg2 → Okg1 → Qvm2 → Tgs4 → Amr0 → Yxe0 → Zlq9 → Uxs7 → Ozy4 → Zdg1 → Inw9 → Yfn3 → Iny6 → Rpf0 → Hi_5 → Tdg3
 _____________________________________
 
 ⬇
 _____________________________________
-PATH-ANTS: 20	PATH-LEN: 73
+PATH-ANTS: 19	PATH-LEN: 67
 
-Azw5 → Yfx8 → Iqa4 → Wdr0 → Ieq8 → Ops6 → M_a7 → Oig3 → Kxu8 → Tj_0 → P_s2 → N_b0 → Jkb2 → T_q4 → Vra3 → Zqm1 → Pgc7 → Bxe9 → Onl1 → Hgo3 → Rjg9 → Rzl4 → Stf2 → Nrt7 → Ilv5 → Sar6 → Xwp5 → Fhz3 → Sl_1 → Tlu3 → H_f5 → Nal3 → Mgm6 → Gum8 → R_v3 → Qft7 → Itt6 → Xpm5 → Hnt3 → Cqu5 → Qye9 → X__3 → Sfu5 → Cek9 → Fsu8 → Qki7 → U_n5 → Pjk0 → Xll5 → Fry1 → Fqu1 → Fah7 → Pbq5
+Kvj7 → A_y5 → B_n7 → Rcw9 → Ufa0 → W_w4 → Bbf5 → Xng0 → Ymt7 → Bvr4 → Bjx2 → W_m5 → Qtq8 → Oig1 → Rrx5 → Xwh8 → Jve8 → Rpn6 → Xwg8 → Fsu5 → Neq1 → Ujx2 → Mol4 → Wjs0 → Xkb2 → Zzy0 → Cqf3 → Ikw3 → Mon7 → So_8 → Olx5 → Oil2 → G_f1 → Cfz3 → Mtj9 → Ovl2 → Co_4 → Yau9 → Epp6 → Wvu0 → Mpx2 → Ezv9 → Vek3 → As_4 → Cvy5 → Kod1 → U_o1 → Tdg3
 _____________________________________
 
 ⬇
 _____________________________________
-PATH-ANTS: 14	PATH-LEN: 72
+PATH-ANTS: 17	PATH-LEN: 67
 
-Azw5 → Jhq6 → Daz8 → Ued4 → Dbi7 → Eyi0 → T_l5 → Afx6 → Dxx1 → E_x5 → Cw_2 → Biy8 → Ibq4 → Usy0 → Zsv9 → Hzu0 → D_j3 → Ycz6 → Iat8 → Wuu6 → Hyh0 → Np_1 → D__9 → Ghd1 → Gzg7 → Bto1 → Wbu4 → Twx8 → Gfz1 → Irs9 → Yes6 → Rir9 → Sut9 → Xpr0 → Sbz4 → Owo2 → Yxi6 → Ad_3 → Dig3 → Xpr6 → Zbe9 → Ady9 → Iwd6 → Kv_9 → Hiv0 → Qkr1 → Ini2 → Qtd8 → Pji6 → Fmk3 → Sav3 → Mjn8 → Ptg4 → Pen7 → Ncs7 → Gs_3 → Igr5 → Pbq5
+Kvj7 → Yst3 → G_a3 → Knb5 → Xcv5 → Ymw5 → Uzi5 → Sjv9 → Y_d7 → Dzd7 → Reb4 → Shb9 → Gzs9 → Wnt0 → Njx9 → U__2 → D_d3 → Ctg1 → Fnm0 → War6 → Tvw1 → Joy2 → Oiw0 → Zm_5 → Wka8 → Ner4 → Gze0 → Pfx7 → Tmn3 → Ffl3 → Pg_0 → Fms1 → Imk4 → Fll4 → Zfx4 → Sr_9 → Gxp2 → Gv_1 → Zno7 → Oqg4 → C_x4 → Gbq2 → Mnm9 → Xhx4 → Zhy7 → Glv1 → Xwl7 → Vgj4 → Ssd2 → Tdg3
 _____________________________________
 
 ⬇
 _____________________________________
-PATH-ANTS: 13	PATH-LEN: 71
+PATH-ANTS: 9	PATH-LEN: 67
 
-Azw5 → Uvt9 → Pdt6 → Dte3 → Uvf5 → Ycv6 → Ps_0 → Ots8 → V_k7 → Ypw2 → Pu_3 → Ppa6 → Drr1 → Wiv1 → Dyc1 → Knf7 → Mxa2 → O_d1 → Zte9 → Pee3 → Dx_2 → Khv2 → V_i9 → Tfa1 → Jok0 → Mxp7 → Ago9 → Dwc1 → Ohq9 → Fai3 → Cjv3 → Y_h9 → Ojt1 → M_o0 → Kyd0 → Tvm8 → Bk_1 → Cr_9 → Uqx4 → Qdz7 → Ntx8 → R_j5 → Wdf4 → Hig4 → Hhr9 → Vtb5 → Oij1 → Qt_9 → Zio4 → Gct8 → Cnk1 → Vfy1 → Bh_2 → P_q3 → Fvt5 → Pl_2 → Rmm6 → Pbq5
+Kvj7 → Iby2 → Ubd5 → A_x6 → Hj_1 → Wkf9 → E_u1 → Ujb0 → O_p0 → Myv4 → Stx8 → Vc_1 → Qbo0 → E_z7 → Ncz2 → Zyu6 → Nun7 → Jdj3 → Pdm9 → Zgu0 → Zjp1 → Wh_2 → Xtb3 → Xat9 → Ptc9 → Ezo4 → Wwz2 → Qlv3 → Rg_5 → Yul6 → Ean4 → Qxd8 → Wke6 → Wl_6 → Uud2 → Igc2 → Fmv6 → Yxm0 → Xke4 → Bwd3 → Ffs9 → Bgr2 → Icx5 → Fno0 → Exn9 → Cbw1 → M_u0 → Plh2 → Yrd7 → Yvw6 → Shs5 → Yt_2 → Zcz9 → Q_m1 → Srq2 → Zlf7 → Eji4 → Tdg3
 _____________________________________
 
 ⬇
 _____________________________________
-PATH-ANTS: 7	PATH-LEN: 70
+PATH-ANTS: 7	PATH-LEN: 67
 
-Azw5 → Myq4 → Tcj5 → Bv_2 → Oso0 → Vqm5 → Egy6 → Hu_8 → Cop1 → Nmv4 → Tdf5 → Pyt1 → Ior4 → Gdy4 → Jqw9 → Sbe6 → Gib3 → Ml_0 → Ca_9 → Jnj4 → Tra1 → Cpl9 → Uq_3 → Fsp4 → Chs0 → Gy_0 → Qt_5 → Jhx4 → Bej7 → Bjo7 → Izd7 → Emj7 → Jpv8 → Xnr4 → Evw9 → A_a6 → Rfs2 → Bce0 → Wtu1 → Kxi9 → C_r5 → Hcu4 → Vml2 → Dbw2 → Ulb3 → Wrn2 → Rnd2 → Cua9 → Sct4 → Sgv4 → Mog7 → Ttn3 → Dfz3 → Qtx6 → Smd3 → Xca2 → Gxi4 → Cm_0 → O__7 → Uqc8 → Oi_7 → Iyu7 → Pbq5
-_____________________________________
-
-⬇
-_____________________________________
-PATH-ANTS: 0	PATH-LEN: 69
-
-Azw5 → Myq2 → Owo7 → Ukh1 → Oge0 → Zsf2 → Mqz2 → Zra9 → Mgi4 → Qnn1 → Bhk0 → Boj8 → Zfl5 → B_q2 → Mba9 → Ujm4 → Ib_0 → Xpy6 → Foi4 → Zqi4 → Euz3 → Hyh1 → Col1 → Mb_5 → Cma9 → Oai5 → Rwy3 → Dhb7 → Bvr0 → Onc0 → Djc1 → Ubu8 → Trc5 → Zca9 → Juz1 → Dfx4 → Nkc3 → Bz_8 → Aui0 → G_n4 → Bhe4 → Hue5 → Vt_0 → Dtz9 → Uj_7 → E__0 → Zrf8 → P__3 → Nij9 → Xvn0 → Qoj6 → Whx7 → Mop2 → Ogb9 → Ndw1 → Phq2 → Whu9 → Wfs5 → Vse2 → Mt_6 → Kao3 → Wij5 → X_l5 → Uuv4 → C_d4 → Cff9 → Dan5 → Gel0 → Pbq5
+Kvj7 → Rw_3 → Zja7 → Rqm5 → Bcy3 → Mg_9 → Iya2 → I_l3 → Xui4 → Qlr8 → Dpb3 → Ubr0 → Jsr0 → A_f3 → Vjm7 → Snb7 → Gpo3 → Ulm5 → Nbo3 → Ytm1 → Dbi1 → Sua9 → Vqn9 → Zsz2 → Zeq9 → Abw6 → Odi8 → Fiu4 → Heu8 → Unw0 → Tuf0 → Dds0 → Bhy2 → G_l7 → Ye_6 → Osl8 → Jqd4 → Ioe8 → Cab0 → Iiq4 → Ojj3 → Yqp7 → Mno2 → Ign4 → Zqk9 → Irp2 → Y_r7 → Eqr9 → Tk_5 → Xdg2 → Jdl1 → Tt_2 → Klr3 → Wna5 → Now9 → Hbn4 → Vlu3 → Yaj0 → M_k5 → Tdg3
 _____________________________________
 
 ⬇

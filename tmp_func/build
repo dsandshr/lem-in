@@ -29,3 +29,23 @@
 			// 		}
 			// 	}
 			// }
+
+            {
+				if ((flag = mark_vertex(room, branch, ferm, &paths)) == 1)
+					push(&stack, room);
+				else
+				{
+					if (flag == 2)
+						save = paths;
+					update_ferm(ferm, info);
+					branch = start;
+					room = -1;
+					while (stack)
+						delete(&stack);
+					if (flag == 0)
+					{
+						delete_paths(&paths);
+						return (NULL);
+					}
+				}
+			}
