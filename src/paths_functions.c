@@ -1,6 +1,6 @@
 #include "lem_in.h"
 
-void	delete_paths(s_paths **path)
+s_paths	*delete_paths(s_paths **path)
 {
 	s_set_path *tmp_set;
 	s_paths *tmp_paths;
@@ -20,6 +20,7 @@ void	delete_paths(s_paths **path)
 		free(tmp_paths);
 		tmp_paths = NULL;
 	}
+	return(*path);
 }
 
 void	add_num(int num, s_set_path **set, s_set_path **s_set)

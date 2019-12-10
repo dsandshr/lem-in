@@ -6,16 +6,16 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/07 16:22:41 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/07 19:51:13 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/09 19:39:14 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-s_paths	*fill_paths(s_ferm *ferm, int end)
+s_paths		*fill_paths(s_ferm *ferm, int end)
 {
-	int parent;
-	s_paths		*path;
+	int		parent;
+	s_paths	*path;
 
 	path = (s_paths *)malloc(sizeof(s_paths));
 	path->next = NULL;
@@ -29,14 +29,7 @@ s_paths	*fill_paths(s_ferm *ferm, int end)
 		parent = ferm[end].matrix[end].parent;
 		ferm[end].matrix[parent].pass = TMP_CLOSE;
 		ferm[parent].matrix[end].pass = TMP_CLOSE;
-		// if (ferm[parent].matrix[parent].split == -1)
-		// {
-		// 	delete_paths(&path);
-		// 	return (NULL);
-		// }
 		add_num(end, &path->set, &path->s_set);
-		// if (ferm[parent].matrix[parent].type != START && ferm[parent].matrix[parent].type != END)
-		// 	ferm[parent].matrix[parent].split = -1;
 		end = parent;
 		path->len++;
 	}
@@ -45,61 +38,74 @@ s_paths	*fill_paths(s_ferm *ferm, int end)
 	return (path);
 }
 
-s_paths	*bfs_for_build(s_info *info, s_ferm *ferm, int start)
+void		add_paths(s_bfb *bfb, s_ferm *ferm)
 {
-	int branch;
-	int room;
-	s_set_path *stack;
-	s_paths *paths;
-	s_paths *save;
-
-	paths = NULL;
-	stack = NULL;
-	save = NULL;
-	branch = start;
-	room = 0;
-	push(&stack, branch);
-	while (stack)
+	if (bfb->paths == NULL)
 	{
-		branch = stack->var;
-		delete(&stack);
-		while (room < info->c_rooms)
-		{
-			if (ferm[branch].matrix[room].pass == TMP_OPEN && ferm[room].matrix[room].visit == 0) //&& ferm[room].matrix[room].split != -1)
-			{
-				if (ferm[room].matrix[room].type != END && ferm[room].matrix[room].type != START)
-				{
-					push(&stack, room);
-					ferm[room].matrix[room].visit = 1;
-				}
-				ferm[room].matrix[room].parent = branch;
-				if (ferm[room].matrix[room].type == START)
-				{
-					if (paths == NULL)
-					{
-						paths = fill_paths(ferm, room);
-						save = paths;
-					}
-					else
-					{
-						paths->next = fill_paths(ferm, room);
-						paths = paths->next;
-					}
-					update_ferm(ferm, info);
-					branch = start;
-					room = -1;
-					while (stack)
-							delete(&stack);
-					if (paths == NULL)
-					{
-						delete_paths(&save);
-						return (NULL);
-					}
-				}
-			}
-			room = room + 1;
-		}
-		room = 0;
+		bfb->paths = fill_paths(ferm, bfb->room);
+		bfb->save = bfb->paths;
 	}
-	return (save);
+	else
+	{
+		(bfb->paths)->next = fill_paths(ferm, bfb->room);
+		bfb->paths = (bfb->paths)->next;
+	}
+}
+
+int			create_paths(s_bfb *bfb, s_ferm *ferm, s_info *info, int start)
+{
+	if (ferm[bfb->room].matrix[bfb->room].type == START)
+	{
+		add_paths(bfb, ferm);
+		update_ferm(ferm, info);
+		bfb->branch = start;
+		bfb->room = -1;
+		while (bfb->stack)
+			delete(&(bfb->stack));
+		if (bfb->paths == NULL)
+		{
+			delete_paths(&(bfb->save));
+			return (0);
+		}
+	}
+	return (1);
+}
+
+void		init_bfb(s_bfb *bfb, int start)
+{
+	bfb->branch = start;
+	bfb->room = 0;
+	bfb->paths = NULL;
+	bfb->save = NULL;
+	bfb->stack = NULL;
+	push(&(bfb->stack), bfb->branch);
+}
+
+s_paths		*bfs_for_build(s_info *info, s_ferm *ferm, int start)
+{
+	s_bfb	bfb;
+
+	init_bfb(&bfb, start);
+	while (bfb.stack)
+	{
+		bfb.branch = bfb.stack->var;
+		delete(&(bfb.stack));
+		while (bfb.room < info->c_rooms)
+		{
+			if (ferm[bfb.branch].matrix[bfb.room].pass == TMP_OPEN \
+			&& ferm[bfb.room].matrix[bfb.room].visit == 0)
+			{
+				if (ferm[bfb.room].matrix[bfb.room].type != START)
+					push(&(bfb.stack), bfb.room);
+				if (ferm[bfb.room].matrix[bfb.room].type != START)
+					ferm[bfb.room].matrix[bfb.room].visit = 1;
+				ferm[bfb.room].matrix[bfb.room].parent = bfb.branch;
+				if (!create_paths(&bfb, ferm, info, start))
+					return (NULL);
+			}
+			bfb.room++;
+		}
+		bfb.room = 0;
+	}
+	return (bfb.save);
 }

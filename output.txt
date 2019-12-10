@@ -1,64 +1,3180 @@
+Qne9->Vwi5->F__4	0
+-----------------
 
-_____________________________________
-PATH-ANTS: 60	PATH-LEN: 68
+F__4          pass: OPEN          split: 0
 
-Kvj7 → Nan3 → I_l4 → Blu4 → Ycb6 → Qiw8 → Q_s4 → Tdg3
-_____________________________________
+B_f5          pass: OPEN          split: 0
 
-⬇
-_____________________________________
-PATH-ANTS: 50	PATH-LEN: 67
+Qne9          pass: OPEN          split: 0
 
-Kvj7 → Yyu0 → Jwr3 → P_h9 → Ewm0 → Xyr8 → Ena4 → Nwz9 → Nqa8 → Tnb6 → Kjz8 → Kvj3 → Sbq1 → Uek5 → Tt_0 → Zsh8 → Tdg3
-_____________________________________
+Gor5          pass: OPEN          split: 0
 
-⬇
-_____________________________________
-PATH-ANTS: 42	PATH-LEN: 67
+-----------------
+Qne9->Vwi5->B_f5	0
+-----------------
 
-Kvj7 → Gjs3 → Avq1 → Dld5 → Jln6 → Pt_0 → Ymi8 → Udg8 → Ksc2 → Cde5 → Ntr9 → Dwp2 → Ucq8 → Odp6 → Vp_2 → Duh2 → Og_2 → Y_k5 → Gst1 → Y_j4 → Rur1 → Dhp8 → Jev2 → Yke0 → Tdg3
-_____________________________________
+F__4          pass: OPEN          split: 0
 
-⬇
-_____________________________________
-PATH-ANTS: 40	PATH-LEN: 67
+B_f5          pass: OPEN          split: 0
 
-Kvj7 → Wtd6 → Kxy2 → Txb7 → Rcy8 → Agx2 → Jmz4 → Svp9 → Td_0 → Fkl0 → Ov_5 → Ase8 → Xvp0 → Yiy9 → Npv9 → Ur_7 → Ylv0 → Fwo9 → Y_k5 → Hup6 → Zed7 → Vmh6 → Rub2 → Iaa8 → Bfd0 → Wkx9 → Tdg3
-_____________________________________
+Qne9          pass: OPEN          split: 0
 
-⬇
-_____________________________________
-PATH-ANTS: 20	PATH-LEN: 67
+Gor5          pass: OPEN          split: 0
 
-Kvj7 → Qz_8 → Obh5 → Rga4 → Dkt8 → Isk4 → Twr0 → Yhv8 → Gwf0 → Tgz7 → Iip0 → Fr_8 → Amy6 → Skq0 → Wkl0 → Tsp9 → K_i5 → Do_0 → Ttm1 → Dmc8 → Emn6 → Rdr7 → Nfu5 → Ca_2 → Qvl9 → Xqz7 → Xkl9 → Hue2 → Fyg1 → Wfe0 → Yiz5 → Avg2 → Okg1 → Qvm2 → Tgs4 → Amr0 → Yxe0 → Zlq9 → Uxs7 → Ozy4 → Zdg1 → Inw9 → Yfn3 → Iny6 → Rpf0 → Hi_5 → Tdg3
-_____________________________________
+-----------------
+Qne9->Vwi5->Gor5	0
+-----------------
 
-⬇
-_____________________________________
-PATH-ANTS: 19	PATH-LEN: 67
+F__4          pass: OPEN          split: 0
 
-Kvj7 → A_y5 → B_n7 → Rcw9 → Ufa0 → W_w4 → Bbf5 → Xng0 → Ymt7 → Bvr4 → Bjx2 → W_m5 → Qtq8 → Oig1 → Rrx5 → Xwh8 → Jve8 → Rpn6 → Xwg8 → Fsu5 → Neq1 → Ujx2 → Mol4 → Wjs0 → Xkb2 → Zzy0 → Cqf3 → Ikw3 → Mon7 → So_8 → Olx5 → Oil2 → G_f1 → Cfz3 → Mtj9 → Ovl2 → Co_4 → Yau9 → Epp6 → Wvu0 → Mpx2 → Ezv9 → Vek3 → As_4 → Cvy5 → Kod1 → U_o1 → Tdg3
-_____________________________________
+B_f5          pass: OPEN          split: 0
 
-⬇
-_____________________________________
-PATH-ANTS: 17	PATH-LEN: 67
+Qne9          pass: OPEN          split: 0
 
-Kvj7 → Yst3 → G_a3 → Knb5 → Xcv5 → Ymw5 → Uzi5 → Sjv9 → Y_d7 → Dzd7 → Reb4 → Shb9 → Gzs9 → Wnt0 → Njx9 → U__2 → D_d3 → Ctg1 → Fnm0 → War6 → Tvw1 → Joy2 → Oiw0 → Zm_5 → Wka8 → Ner4 → Gze0 → Pfx7 → Tmn3 → Ffl3 → Pg_0 → Fms1 → Imk4 → Fll4 → Zfx4 → Sr_9 → Gxp2 → Gv_1 → Zno7 → Oqg4 → C_x4 → Gbq2 → Mnm9 → Xhx4 → Zhy7 → Glv1 → Xwl7 → Vgj4 → Ssd2 → Tdg3
-_____________________________________
+Gor5          pass: OPEN          split: 0
 
-⬇
-_____________________________________
-PATH-ANTS: 9	PATH-LEN: 67
+-----------------
+Qne9->Vwi5->F__4	0
+-----------------
 
-Kvj7 → Iby2 → Ubd5 → A_x6 → Hj_1 → Wkf9 → E_u1 → Ujb0 → O_p0 → Myv4 → Stx8 → Vc_1 → Qbo0 → E_z7 → Ncz2 → Zyu6 → Nun7 → Jdj3 → Pdm9 → Zgu0 → Zjp1 → Wh_2 → Xtb3 → Xat9 → Ptc9 → Ezo4 → Wwz2 → Qlv3 → Rg_5 → Yul6 → Ean4 → Qxd8 → Wke6 → Wl_6 → Uud2 → Igc2 → Fmv6 → Yxm0 → Xke4 → Bwd3 → Ffs9 → Bgr2 → Icx5 → Fno0 → Exn9 → Cbw1 → M_u0 → Plh2 → Yrd7 → Yvw6 → Shs5 → Yt_2 → Zcz9 → Q_m1 → Srq2 → Zlf7 → Eji4 → Tdg3
-_____________________________________
+F__4          pass: OPEN          split: 0
 
-⬇
-_____________________________________
-PATH-ANTS: 7	PATH-LEN: 67
+B_f5          pass: OPEN          split: 0
 
-Kvj7 → Rw_3 → Zja7 → Rqm5 → Bcy3 → Mg_9 → Iya2 → I_l3 → Xui4 → Qlr8 → Dpb3 → Ubr0 → Jsr0 → A_f3 → Vjm7 → Snb7 → Gpo3 → Ulm5 → Nbo3 → Ytm1 → Dbi1 → Sua9 → Vqn9 → Zsz2 → Zeq9 → Abw6 → Odi8 → Fiu4 → Heu8 → Unw0 → Tuf0 → Dds0 → Bhy2 → G_l7 → Ye_6 → Osl8 → Jqd4 → Ioe8 → Cab0 → Iiq4 → Ojj3 → Yqp7 → Mno2 → Ign4 → Zqk9 → Irp2 → Y_r7 → Eqr9 → Tk_5 → Xdg2 → Jdl1 → Tt_2 → Klr3 → Wna5 → Now9 → Hbn4 → Vlu3 → Yaj0 → M_k5 → Tdg3
-_____________________________________
+Qne9          pass: OPEN          split: 0
 
-⬇
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Qne9	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Qne9	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->Qne9	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Qne9	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->Qne9	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Qne9	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->Qne9	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Qne9	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->Qne9	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Qne9	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->Qne9	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Qne9	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->Qne9	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Qne9	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->Qne9	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: TMP_CLOSE          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: TMP_CLOSE          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Qne9	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->Qne9	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: TMP_CLOSE          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: TMP_CLOSE          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: TMP_CLOSE          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: TMP_CLOSE          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Qne9	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 0
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->B_f5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->Qne9	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+F__4->Vwi5->Gor5	0
+-----------------
+
+F__4          pass: OPEN          split: 0
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: OPEN          split: 0
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->B_f5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+Qne9->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: OPEN          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: TMP_CLOSE          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: TMP_CLOSE          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: TMP_CLOSE          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: TMP_CLOSE          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->F__4	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: TMP_CLOSE          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------
+B_f5->Vwi5->Gor5	1
+-----------------
+
+F__4          pass: TMP_OPEN          split: 1
+
+B_f5          pass: TMP_CLOSE          split: 1
+
+Qne9          pass: TMP_CLOSE          split: 1
+
+Gor5          pass: OPEN          split: 0
+
+-----------------

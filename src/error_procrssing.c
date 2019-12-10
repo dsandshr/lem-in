@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 20:01:19 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/07 16:16:43 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/09 18:44:03 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	error_processing(int error, s_info **info)
 		ft_putstr("[2] : NO_ANTS");
 	else if (error == NEW_L_E)
 		ft_putendl("[12] the room cannot start with L");
+	else if (error == NULL_PATHS_E)
+		ft_putendl("[13] no paths found");
 	delete_info(info);
 	exit(1);
 }
