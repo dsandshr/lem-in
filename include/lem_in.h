@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lem_in.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/07 17:51:06 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/09 19:10:18 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 # define ROOM_EXIST_E -10
 # define MALLOC_E -11
 # define NEW_L_E -12
+# define NULL_PATHS_E -13
 
 /*
 ** ROOM_FLAG
@@ -63,11 +64,8 @@
 typedef struct			l_rooms
 {
 	char				*name;
-	// int					x;
-	// int					y;
 	int					type;
 	struct l_rooms		*next;
-
 }						s_rooms;
 
 typedef struct			l_map
@@ -124,6 +122,15 @@ typedef struct			l_paths
 	struct l_paths		*next;
 	int					go;
 }						s_paths;
+
+typedef struct			l_bfb
+{
+	int					branch;
+	int					room;
+	s_paths				*paths;
+	s_paths				*save;
+	s_set_path			*stack;
+}						s_bfb;
 
 typedef struct			l_matrix
 {
@@ -193,7 +200,7 @@ void					delete(s_set_path **stack);
 char					**delete_ar(char **ar, int size);
 void					delete_info(s_info **info);
 s_ferm					*delete_ferm(s_ferm *ferm, int room);
-void					delete_paths(s_paths **path);
+s_paths					*delete_paths(s_paths **path);
 
 /*
 ** TMP_FUNCTION

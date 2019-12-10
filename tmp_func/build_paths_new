@@ -1,0 +1,27 @@
+// int	mark_vertex(int room, int branch, s_ferm *ferm, s_paths **paths)
+// {
+// 	int ret;
+// 	ret = 3;
+// 	if (ferm[room].matrix[room].type != END && ferm[room].matrix[room].type != START)
+// 	{
+// 		ret = 1;
+// 		ferm[room].matrix[room].visit = 1;
+// 	}
+// 	ferm[room].matrix[room].parent = branch;
+// 	if (ferm[room].matrix[room].type == START)
+// 	{
+// 		if (*paths == NULL)
+// 		{
+// 			*paths = fill_paths(ferm, room);
+// 			ret = 2;
+// 		}
+// 		else
+// 		{
+// 			(*paths)->next = fill_paths(ferm, room);
+// 			*paths = (*paths)->next;
+// 		}
+// 		if (*paths == NULL)
+// 			return (0);
+// 	}
+// 	return (ret);
+// }

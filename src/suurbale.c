@@ -42,6 +42,8 @@ s_paths *suurbale(s_ferm *ferm, s_info *info, int c_paths)
 		restore_ferm(ferm, info);
 		return (paths);
 	}
+	// write_ferm(ferm, info, 0);
+	// exit (1);
 	paths = bfs_for_build(info, ferm, info->end_id);
 	restore_ferm(ferm, info);
 	return (paths);
