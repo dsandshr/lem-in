@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   null_go.c                                          :+:      :+:    :+:   */
+/*   split_vertex.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/07 17:29:48 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/12/10 19:47:56 by tlorine          ###   ########.fr       */
+/*   Created: 2019/12/10 19:42:56 by tlorine           #+#    #+#             */
+/*   Updated: 2019/12/10 19:45:40 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-s_paths		*null_go(s_paths *paths)
+int				split_vertex(s_set_path *links, s_ferm *ferm, int branch)
 {
-	s_paths *buf;
-
-	buf = paths;
-	while (buf)
+	while (links)
 	{
-		buf->go = 0;
-		buf = buf->next;
+		if (ferm[links->var].matrix[branch].pass == TMP_OPEN\
+		|| ferm[branch].matrix[links->var].pass == TMP_OPEN)
+			return (1);
+		links = links->next;
 	}
-	return (paths);
+	return (0);
 }

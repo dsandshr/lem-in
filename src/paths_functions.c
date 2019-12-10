@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   paths_functions.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/12/10 16:01:29 by tlorine           #+#    #+#             */
+/*   Updated: 2019/12/10 16:02:11 by tlorine          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
-s_paths	*delete_paths(s_paths **path)
+s_paths			*delete_paths(s_paths **path)
 {
-	s_set_path *tmp_set;
-	s_paths *tmp_paths;
+	s_set_path	*tmp_set;
+	s_paths		*tmp_paths;
 
 	tmp_set = (*path)->s_set;
 	while ((*path))
@@ -20,10 +32,10 @@ s_paths	*delete_paths(s_paths **path)
 		free(tmp_paths);
 		tmp_paths = NULL;
 	}
-	return(*path);
+	return (*path);
 }
 
-void	add_num(int num, s_set_path **set, s_set_path **s_set)
+void			add_num(int num, s_set_path **set, s_set_path **s_set)
 {
 	if (*set == NULL)
 	{

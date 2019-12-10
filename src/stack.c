@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/12/10 16:33:27 by tlorine           #+#    #+#             */
+/*   Updated: 2019/12/10 16:34:46 by tlorine          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
-void	delete(s_set_path **stack)
+void			delete(s_set_path **stack)
 {
-	s_set_path *tmp;
+	s_set_path	*tmp;
 
 	tmp = *stack;
 	*stack = (*stack)->next;
@@ -10,7 +22,7 @@ void	delete(s_set_path **stack)
 	tmp = NULL;
 }
 
-void	push(s_set_path **stack, int id)
+void			push(s_set_path **stack, int id)
 {
 	s_set_path *tmp;
 

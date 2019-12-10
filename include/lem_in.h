@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/09 19:10:18 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/10 19:52:53 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,6 +130,7 @@ typedef struct			l_bfb
 	s_paths				*paths;
 	s_paths				*save;
 	s_set_path			*stack;
+	s_set_path			*links;
 }						s_bfb;
 
 typedef struct			l_matrix
@@ -155,7 +156,8 @@ typedef struct			l_ferm_matrix
 
 void					error_processing(int error, s_info **info);
 int						valid_format(const char *line, s_info *info);
-s_info					*read_file(s_map *map);
+s_info					*read_file(s_map *map, int fd);
+int						read_main(s_info *info, int fd, s_map **map, int num);
 
 /*
 ** MATRIX_FUNCTION
@@ -185,6 +187,7 @@ void					march(s_paths *paths, s_ferm *ferm, s_info *info);
 */
 
 void					add_num(int num, s_set_path **set, s_set_path **s_set);
+int						split_vertex(s_set_path *links, s_ferm *ferm, int branch);
 
 /*
 ** STACK

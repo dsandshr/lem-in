@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 15:54:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/10 15:56:57 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/10 16:01:12 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,23 +57,24 @@ void			step(s_ferm *ferm, s_set_path **stack, int path, int room)
 void			the_walking_line(s_ferm *ferm, s_info *info, int end)
 {
 	int			room;
-	int			path;
+	int			p;
 	s_set_path	*stack;
 
 	stack = NULL;
-	path = 0;
+	p = 0;
 	room = 0;
 	while (ferm[end].matrix[end].ants < info->c_ants)
 	{
 		push(&stack, end);
 		while (stack)
 		{
-			path = stack->var;
+			p = stack->var;
 			delete(&stack);
 			while (room < info->c_rooms)
 			{
-				if ((ferm[path].matrix[path].split > 0 || ferm[path].matrix[path].type == END))
-					step(ferm, &stack, path, room);
+				if ((ferm[p].matrix[p].split > 0 \
+				|| ferm[p].matrix[p].type == END))
+					step(ferm, &stack, p, room);
 				room++;
 			}
 			room = 0;
@@ -81,6 +82,7 @@ void			the_walking_line(s_ferm *ferm, s_info *info, int end)
 		write(1, "\n", 1);
 	}
 }
+
 void			march(s_paths *paths, s_ferm *ferm, s_info *info)
 {
 	int	i;
