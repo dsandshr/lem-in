@@ -6,17 +6,17 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 16:31:24 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/10 20:06:03 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/11 16:29:35 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void			update_ferm(s_ferm *ferm, s_info *info)
+void			update_ferm(t_ferm *ferm, t_info *info)
 {
 	int			branch;
 	int			room;
-	s_set_path	*links;
+	t_set_path	*links;
 
 	room = 0;
 	branch = 0;

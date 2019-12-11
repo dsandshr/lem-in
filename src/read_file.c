@@ -6,13 +6,13 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 18:27:26 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/10 19:34:36 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/11 16:29:26 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int		read_ants(int fd, s_map **map)
+int		read_ants(int fd, t_map **map)
 {
 	char	*line;
 	int		ants;
@@ -22,7 +22,7 @@ int		read_ants(int fd, s_map **map)
 	while (get_next_line(fd, &line))
 	{
 		(*map)->map = line;
-		(*map)->next = (s_map *)malloc(sizeof(s_map));
+		(*map)->next = (t_map *)malloc(sizeof(t_map));
 		(*map) = (*map)->next;
 		if (line != NULL && line[0] != '#')
 		{
@@ -41,15 +41,15 @@ int		read_ants(int fd, s_map **map)
 	return (NO_ANTS_E);
 }
 
-s_info	*read_file(s_map *map, int fd)
+t_info	*read_file(t_map *map, int fd)
 {
 	int		finish;
-	s_info	*info;
-	s_map	*map_save;
+	t_info	*info;
+	t_map	*map_save;
 
 	map_save = map;
 	finish = 0;
-	if (!(info = (s_info *)malloc(sizeof(s_info))))
+	if (!(info = (t_info *)malloc(sizeof(t_info))))
 		error_processing(MALLOC_E, &info);
 	info->rooms = NULL;
 	info->links = NULL;

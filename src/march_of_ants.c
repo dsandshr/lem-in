@@ -6,15 +6,15 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 15:54:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/10 16:01:12 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/11 16:29:20 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void			b_paths(s_paths *set, s_ferm *ferm)
+void			b_paths(t_paths *set, t_ferm *ferm)
 {
-	s_set_path	*mn;
+	t_set_path	*mn;
 	int			tmp_i;
 
 	tmp_i = 0;
@@ -32,7 +32,7 @@ void			b_paths(s_paths *set, s_ferm *ferm)
 	}
 }
 
-void			step(s_ferm *ferm, s_set_path **stack, int path, int room)
+void			step(t_ferm *ferm, t_set_path **stack, int path, int room)
 {
 	if (ferm[path].matrix[room].pass == TMP_OPEN)
 	{
@@ -54,11 +54,11 @@ void			step(s_ferm *ferm, s_set_path **stack, int path, int room)
 	}
 }
 
-void			the_walking_line(s_ferm *ferm, s_info *info, int end)
+void			the_walking_line(t_ferm *ferm, t_info *info, int end)
 {
 	int			room;
 	int			p;
-	s_set_path	*stack;
+	t_set_path	*stack;
 
 	stack = NULL;
 	p = 0;
@@ -83,7 +83,7 @@ void			the_walking_line(s_ferm *ferm, s_info *info, int end)
 	}
 }
 
-void			march(s_paths *paths, s_ferm *ferm, s_info *info)
+void			march(t_paths *paths, t_ferm *ferm, t_info *info)
 {
 	int	i;
 	int	start;

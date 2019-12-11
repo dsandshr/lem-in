@@ -6,13 +6,13 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 17:07:10 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/06 20:41:12 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/11 16:56:04 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int	write_ferm(s_ferm *ferm, s_info *info, const int flag)
+int	write_ferm(t_ferm *ferm, t_info *info, const int flag)
 {
 	int i;
 	int g;
@@ -57,9 +57,9 @@ int	write_ferm(s_ferm *ferm, s_info *info, const int flag)
 	return (0);
 }
 
-void write_paths(s_paths *paths, s_ferm *ferm)
+void write_paths(t_paths *paths, t_ferm *ferm)
 {
-	s_set_path *tmp;
+	t_set_path *tmp;
 	int i;
 
 	i = 0;

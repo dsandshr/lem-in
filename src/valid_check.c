@@ -6,15 +6,15 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 20:20:52 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/10 16:30:48 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/11 16:29:36 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int			room_exists(const char *line, s_info *info, char end)
+int			room_exists(const char *line, t_info *info, char end)
 {
-	s_rooms	*room;
+	t_rooms	*room;
 	int		i;
 
 	i = 0;
@@ -70,7 +70,7 @@ int			thislink(const char *line)
 	return (line[i] == '\0' ? 1 : 0);
 }
 
-int			valid_format(const char *line, s_info *info)
+int			valid_format(const char *line, t_info *info)
 {
 	int		room;
 	int		link;

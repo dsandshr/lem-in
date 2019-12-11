@@ -6,22 +6,22 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 16:56:57 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/10 19:40:44 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/11 16:29:28 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int				add_rooms(s_info *info, const char *line, int type)
+int				add_rooms(t_info *info, const char *line, int type)
 {
-	s_rooms	*rooms;
+	t_rooms	*rooms;
 	char	**param;
 
 	rooms = info->rooms;
 	param = ft_strsplit(line, ' ');
 	if (rooms == NULL)
 	{
-		info->rooms = (s_rooms *)malloc(sizeof(s_rooms));
+		info->rooms = (t_rooms *)malloc(sizeof(t_rooms));
 		info->rooms->name = param[0];
 		info->rooms->type = type;
 		info->rooms->next = NULL;
@@ -30,7 +30,7 @@ int				add_rooms(s_info *info, const char *line, int type)
 	{
 		while (rooms->next != NULL)
 			rooms = rooms->next;
-		rooms->next = (s_rooms *)malloc(sizeof(s_rooms));
+		rooms->next = (t_rooms *)malloc(sizeof(t_rooms));
 		rooms->next->name = param[0];
 		rooms->next->type = type;
 		rooms->next->next = NULL;
@@ -41,16 +41,16 @@ int				add_rooms(s_info *info, const char *line, int type)
 	return (1);
 }
 
-int				add_links(s_info *info, const char *line)
+int				add_links(t_info *info, const char *line)
 {
-	s_links	*links;
+	t_links	*links;
 	char	**param;
 
 	links = info->links;
 	param = ft_strsplit(line, '-');
 	if (links == NULL)
 	{
-		info->links = (s_links *)malloc(sizeof(s_links));
+		info->links = (t_links *)malloc(sizeof(t_links));
 		info->links->room1 = param[0];
 		info->links->room2 = param[1];
 		info->links->next = NULL;
@@ -59,7 +59,7 @@ int				add_links(s_info *info, const char *line)
 	{
 		while (links->next)
 			links = links->next;
-		links->next = (s_links *)malloc(sizeof(s_links));
+		links->next = (t_links *)malloc(sizeof(t_links));
 		links->next->room1 = param[0];
 		links->next->room2 = param[1];
 		links->next->next = NULL;
@@ -69,7 +69,7 @@ int				add_links(s_info *info, const char *line)
 	return (1);
 }
 
-void			comment(s_read_main *srm, char *line)
+void			comment(t_read_main *srm, char *line)
 {
 	if (ft_strcmp(line, "##start") == 0)
 	{
@@ -83,7 +83,7 @@ void			comment(s_read_main *srm, char *line)
 	}
 }
 
-int				room_or_links(s_read_main *srm, s_info *info, char *line)
+int				room_or_links(t_read_main *srm, t_info *info, char *line)
 {
 	int		num;
 
@@ -104,10 +104,10 @@ int				room_or_links(s_read_main *srm, s_info *info, char *line)
 	return (num);
 }
 
-int				read_main(s_info *info, int fd, s_map **map, int num)
+int				read_main(t_info *info, int fd, t_map **map, int num)
 {
-	s_read_main	srm;
-	s_map		*tmp;
+	t_read_main	srm;
+	t_map		*tmp;
 
 	srm.type = TUNNEL;
 	srm.start = 0;
@@ -118,7 +118,7 @@ int				read_main(s_info *info, int fd, s_map **map, int num)
 	{
 		num = room_or_links(&srm, info, (*map)->map);
 		tmp = *map;
-		(*map)->next = (s_map *)malloc(sizeof(s_map));
+		(*map)->next = (t_map *)malloc(sizeof(t_map));
 		*map = (*map)->next;
 		(*map)->map = NULL;
 		if (srm.start > 1 || srm.end > 1)

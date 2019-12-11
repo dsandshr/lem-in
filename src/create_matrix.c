@@ -6,13 +6,13 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:53:59 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/10 20:06:06 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/11 16:29:13 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void		mark_links(s_ferm *ferm, s_info *info, int room, int branch)
+void		mark_links(t_ferm *ferm, t_info *info, int room, int branch)
 {
 	if (room < info->c_rooms)
 	{
@@ -23,7 +23,7 @@ void		mark_links(s_ferm *ferm, s_info *info, int room, int branch)
 	}
 }
 
-void		search_links(s_info *info, s_ferm *ferm, s_links *links)
+void		search_links(t_info *info, t_ferm *ferm, t_links *links)
 {
 	int		branch;
 	int		room;
@@ -52,9 +52,9 @@ void		search_links(s_info *info, s_ferm *ferm, s_links *links)
 	}
 }
 
-void		links_add(s_info *info, s_ferm *ferm)
+void		links_add(t_info *info, t_ferm *ferm)
 {
-	s_links	*links;
+	t_links	*links;
 
 	links = info->links;
 	while (links != NULL)
@@ -64,10 +64,10 @@ void		links_add(s_info *info, s_ferm *ferm)
 	}
 }
 
-void		create_branch(s_info *info, s_matrix *branch)
+void		create_branch(t_info *info, t_matrix *branch)
 {
 	int		i;
-	s_rooms	*all_tunnel;
+	t_rooms	*all_tunnel;
 
 	i = 0;
 	all_tunnel = info->rooms;
@@ -93,16 +93,16 @@ void		create_branch(s_info *info, s_matrix *branch)
 	}
 }
 
-s_ferm		*create_matrix(s_info *info)
+t_ferm		*create_matrix(t_info *info)
 {
-	s_ferm	*ferm;
+	t_ferm	*ferm;
 	int		i;
 
 	i = 0;
-	ferm = (s_ferm *)malloc(sizeof(s_ferm) * (info->c_rooms));
+	ferm = (t_ferm *)malloc(sizeof(t_ferm) * (info->c_rooms));
 	while (i < info->c_rooms)
 	{
-		ferm[i].matrix = (s_matrix *)malloc(sizeof(s_matrix) * (info->c_rooms));
+		ferm[i].matrix = (t_matrix *)malloc(sizeof(t_matrix) * (info->c_rooms));
 		ferm[i].links = NULL;
 		create_branch(info, ferm[i].matrix);
 		i = i + 1;

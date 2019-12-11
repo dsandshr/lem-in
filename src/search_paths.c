@@ -6,13 +6,13 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 16:03:18 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/10 19:47:41 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/11 16:29:29 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int				mark_the_path(s_ferm *ferm, int end)
+int				mark_the_path(t_ferm *ferm, int end)
 {
 	int			parent;
 
@@ -37,7 +37,7 @@ int				mark_the_path(s_ferm *ferm, int end)
 	return (1);
 }
 
-int				mark_rooms(s_ferm *ferm, int b, int room, s_set_path **stack)
+int				mark_rooms(t_ferm *ferm, int b, int room, t_set_path **stack)
 {
 	int			parent;
 
@@ -62,10 +62,10 @@ int				mark_rooms(s_ferm *ferm, int b, int room, s_set_path **stack)
 	return (1);
 }
 
-int				begin(s_set_path **stack, s_ferm *ferm, int branch)
+int				begin(t_set_path **stack, t_ferm *ferm, int branch)
 {
 	int			r;
-	s_set_path	*links;
+	t_set_path	*links;
 
 	while (*stack)
 	{
@@ -91,11 +91,11 @@ int				begin(s_set_path **stack, s_ferm *ferm, int branch)
 	return (0);
 }
 
-int				bfs(s_info *info, s_ferm *ferm, int branch)
+int				bfs(t_info *info, t_ferm *ferm, int branch)
 {
 	int			room;
 	int			c_room;
-	s_set_path	*stack;
+	t_set_path	*stack;
 
 	stack = NULL;
 	room = 0;
@@ -105,7 +105,7 @@ int				bfs(s_info *info, s_ferm *ferm, int branch)
 	return (begin(&stack, ferm, branch));
 }
 
-int				search_paths(s_info *info, s_ferm *ferm, int c_paths, int start)
+int				search_paths(t_info *info, t_ferm *ferm, int c_paths, int start)
 {
 	int			i;
 

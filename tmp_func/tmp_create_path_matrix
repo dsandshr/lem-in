@@ -1,6 +1,6 @@
-int			begin_set_path(s_set_path *path, s_set_path *com_paths)
+int			begin_set_path(t_set_path *path, t_set_path *com_paths)
 {
-	s_set_path *save;
+	t_set_path *save;
 
 	save = com_paths;
 	path = path->next;
@@ -18,10 +18,10 @@ int			begin_set_path(s_set_path *path, s_set_path *com_paths)
 	}
 	return (OPEN);
 }
-void		search_connect(s_p_matrix **matrix, s_paths *paths)
+void		search_connect(s_p_matrix **matrix, t_paths *paths)
 {
-	s_paths *save;
-	s_paths *tmp;
+	t_paths *save;
+	t_paths *tmp;
 	int i;
 	int set;
 
@@ -60,9 +60,9 @@ void		search_connect(s_p_matrix **matrix, s_paths *paths)
 	}
 }
 
-s_p_matrix **create_path_matrix(s_paths *paths)
+s_p_matrix **create_path_matrix(t_paths *paths)
 {
-	s_paths *tmp;
+	t_paths *tmp;
 	s_p_matrix **matrix;
 	int size;
 	int i;

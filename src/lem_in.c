@@ -6,15 +6,15 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/07 16:20:07 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/10 20:03:32 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/11 16:29:16 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void	write_map(s_map **map)
+void	write_map(t_map **map)
 {
-	s_map *tmp;
+	t_map *tmp;
 
 	while (*map != NULL)
 	{
@@ -30,12 +30,12 @@ void	write_map(s_map **map)
 
 int		main(void)
 {
-	s_info	*info;
-	s_ferm	*ferm;
-	s_paths *paths;
-	s_map	*map;
+	t_info	*info;
+	t_ferm	*ferm;
+	t_paths *paths;
+	t_map	*map;
 
-	map = (s_map *)malloc(sizeof(s_map));
+	map = (t_map *)malloc(sizeof(t_map));
 	info = read_file(map, 0);
 	ferm = create_matrix(info);
 	paths = find_way(info, ferm);

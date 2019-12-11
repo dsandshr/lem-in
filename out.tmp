@@ -1,5 +1,0 @@
-./Lem_in/42_lem_in_tools/42_lem_in_tools/comparator.sh: line 163: 55268 Segmentation fault: 11  $bin < $MAP
-
-real	0m0.311s
-user	0m0.185s
-sys	0m0.087s

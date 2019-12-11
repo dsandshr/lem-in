@@ -1,4 +1,4 @@
-// int	mark_vertex(int room, int branch, s_ferm *ferm, s_paths **paths)
+// int	mark_vertex(int room, int branch, t_ferm *ferm, t_paths **paths)
 // {
 // 	int ret;
 // 	ret = 3;

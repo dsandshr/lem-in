@@ -6,13 +6,13 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/07 16:17:04 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/10 20:06:07 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/11 16:29:08 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void	delete_rooms(s_rooms *rooms)
+void	delete_rooms(t_rooms *rooms)
 {
 	if (rooms != NULL)
 	{
@@ -23,7 +23,7 @@ void	delete_rooms(s_rooms *rooms)
 	}
 }
 
-void	delete_links(s_links *links)
+void	delete_links(t_links *links)
 {
 	if (links != NULL)
 	{
@@ -35,7 +35,7 @@ void	delete_links(s_links *links)
 	}
 }
 
-void	delete_info(s_info **info)
+void	delete_info(t_info **info)
 {
 	delete_rooms((*info)->rooms);
 	(*info)->rooms = NULL;
@@ -45,7 +45,7 @@ void	delete_info(s_info **info)
 	*info = NULL;
 }
 
-s_ferm	*delete_ferm(s_ferm *ferm, int room)
+t_ferm	*delete_ferm(t_ferm *ferm, int room)
 {
 	room = room - 1;
 	while (room != -1)

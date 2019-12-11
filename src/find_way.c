@@ -6,13 +6,13 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/01 19:43:42 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/12/10 20:06:05 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/11 16:29:12 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-static void		count_ants_for_paths(int *dist, s_paths *path)
+static void		count_ants_for_paths(int *dist, t_paths *path)
 {
 	int			i;
 
@@ -26,9 +26,9 @@ static void		count_ants_for_paths(int *dist, s_paths *path)
 	}
 }
 
-static void		init_dist(int *dist, s_paths *pth, int c_w)
+static void		init_dist(int *dist, t_paths *pth, int c_w)
 {
-	s_paths		*bf;
+	t_paths		*bf;
 	int			i;
 
 	bf = pth;
@@ -41,7 +41,7 @@ static void		init_dist(int *dist, s_paths *pth, int c_w)
 	}
 }
 
-static s_paths	*calc_go(int c_w, s_paths *paths, int c_a)
+static t_paths	*calc_go(int c_w, t_paths *paths, int c_a)
 {
 	int			dist_increment[c_w + 1];
 	int			max_use_index;
@@ -68,10 +68,10 @@ static s_paths	*calc_go(int c_w, s_paths *paths, int c_a)
 	return (paths);
 }
 
-int				calc_sum(int l_s, s_paths *paths, int c_w, s_info *inf)
+int				calc_sum(int l_s, t_paths *paths, int c_w, t_info *inf)
 {
 	int			n_s;
-	s_paths		*buf;
+	t_paths		*buf;
 
 	calc_go(c_w, paths, inf->c_ants);
 	buf = paths;
@@ -87,12 +87,12 @@ int				calc_sum(int l_s, s_paths *paths, int c_w, s_info *inf)
 	return (n_s);
 }
 
-s_paths			*find_way(s_info *info, s_ferm *ferm)
+t_paths			*find_way(t_info *info, t_ferm *ferm)
 {
 	int			last_sum;
 	int			col_ways;
-	s_paths		*new;
-	s_paths		*last;
+	t_paths		*new;
+	t_paths		*last;
 
 	col_ways = 0;
 	if (!(new = suurbale(ferm, info, ++col_ways)))
