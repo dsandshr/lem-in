@@ -6,7 +6,7 @@
 #    By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 18:21:34 by dsandshr          #+#    #+#              #
-#    Updated: 2019/12/07 17:39:57 by dsandshr         ###   ########.fr        #
+#    Updated: 2019/12/11 18:26:53 by dsandshr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,6 +32,9 @@ SRCS				:= valid_check.c \
 						find_way.c \
 						builds_paths.c \
 						stack.c \
+						update_ferm.c \
+						read_main.c \
+						split_vertex.c \
 						null_go.c
 
 OBJS				:=	$(SRCS:.c=.o)

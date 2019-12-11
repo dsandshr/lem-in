@@ -6,18 +6,18 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/07 16:22:41 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/09 19:39:14 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/11 16:29:14 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-s_paths		*fill_paths(s_ferm *ferm, int end)
+t_paths		*fill_paths(t_ferm *ferm, int end)
 {
 	int		parent;
-	s_paths	*path;
+	t_paths	*path;
 
-	path = (s_paths *)malloc(sizeof(s_paths));
+	path = (t_paths *)malloc(sizeof(t_paths));
 	path->next = NULL;
 	path->len = 0;
 	path->go = OPEN;
@@ -38,7 +38,7 @@ s_paths		*fill_paths(s_ferm *ferm, int end)
 	return (path);
 }
 
-void		add_paths(s_bfb *bfb, s_ferm *ferm)
+void		add_paths(t_bfb *bfb, t_ferm *ferm)
 {
 	if (bfb->paths == NULL)
 	{
@@ -52,7 +52,7 @@ void		add_paths(s_bfb *bfb, s_ferm *ferm)
 	}
 }
 
-int			create_paths(s_bfb *bfb, s_ferm *ferm, s_info *info, int start)
+int			create_paths(t_bfb *bfb, t_ferm *ferm, t_info *info, int start)
 {
 	if (ferm[bfb->room].matrix[bfb->room].type == START)
 	{
@@ -71,7 +71,7 @@ int			create_paths(s_bfb *bfb, s_ferm *ferm, s_info *info, int start)
 	return (1);
 }
 
-void		init_bfb(s_bfb *bfb, int start)
+void		init_bfb(t_bfb *bfb, int start)
 {
 	bfb->branch = start;
 	bfb->room = 0;
@@ -81,9 +81,9 @@ void		init_bfb(s_bfb *bfb, int start)
 	push(&(bfb->stack), bfb->branch);
 }
 
-s_paths		*bfs_for_build(s_info *info, s_ferm *ferm, int start)
+t_paths		*bfs_for_build(t_info *info, t_ferm *ferm, int start)
 {
-	s_bfb	bfb;
+	t_bfb	bfb;
 
 	init_bfb(&bfb, start);
 	while (bfb.stack)

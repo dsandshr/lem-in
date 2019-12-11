@@ -6,16 +6,16 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 20:20:52 by tlorine           #+#    #+#             */
-/*   Updated: 2019/11/15 19:54:20 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/11 16:29:36 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int room_exists(const char *line, s_info *info, char end)
+int			room_exists(const char *line, t_info *info, char end)
 {
-	s_rooms *room;
-	int i;
+	t_rooms	*room;
+	int		i;
 
 	i = 0;
 	room = info->rooms;
@@ -24,7 +24,7 @@ int room_exists(const char *line, s_info *info, char end)
 		while (line[i] != end && room->name[i] != '\0')
 		{
 			if (line[i] != room->name[i])
-				break;
+				break ;
 			i++;
 		}
 		if (line[i] == end && room->name[i] == '\0')
@@ -35,9 +35,9 @@ int room_exists(const char *line, s_info *info, char end)
 	return (0);
 }
 
-int thisroom(const char *line)
+int			thisroom(const char *line)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (line[i] != ' ' && line[i] != '\0')
@@ -55,9 +55,9 @@ int thisroom(const char *line)
 	return (line[i] == '\0' ? 1 : 0);
 }
 
-int thislink(const char *line)
+int			thislink(const char *line)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	while (line[i] != '-' && line[i] != '\0' && line[i] > 32)
@@ -70,28 +70,27 @@ int thislink(const char *line)
 	return (line[i] == '\0' ? 1 : 0);
 }
 
-int valid_format(const char *line, s_info *info)
+int			valid_format(const char *line, t_info *info)
 {
-	int room;
-	int	link;
+	int		room;
+	int		link;
 
 	room = thisroom(line);
 	link = thislink(line);
-
 	if (room)
 	{
 		if (line[0] == 'L')
 			return (NEW_L_E);
-		return((room_exists(line, info, ' ')) == 1 ? ROOM_EXIST_E : 1);
+		return ((room_exists(line, info, ' ')) == 1 ? ROOM_EXIST_E : 1);
 	}
 	else if (link)
 	{
-		if((room_exists(line, info, '-')) == 0)
-			return(NO_ROOM_E);
-		while(line[room] != '-' && line[room] != '\0')
+		if ((room_exists(line, info, '-')) == 0)
+			return (NO_ROOM_E);
+		while (line[room] != '-' && line[room] != '\0')
 			room++;
-		if((room_exists(line + (room + 1), info, '\0')) == 0)
-			return(NO_ROOM_E);
+		if ((room_exists(line + (room + 1), info, '\0')) == 0)
+			return (NO_ROOM_E);
 		return (2);
 	}
 	else

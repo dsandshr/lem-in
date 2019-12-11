@@ -1,33 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   search_paths.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/12/10 16:03:18 by tlorine           #+#    #+#             */
+/*   Updated: 2019/12/11 16:29:29 by tlorine          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
-void update_ferm(s_ferm *ferm, s_info *info)
+int				mark_the_path(t_ferm *ferm, int end)
 {
-	int branch;
-	int room;
-	s_set_path *links;
-
-	room = 0;
-	branch = 0;
-	while (branch < info->c_rooms)
-	{
-		links = ferm[branch].links;
-		while (links)
-		{
-			room = links->var;
-			ferm[branch].matrix[room].parent = 0;
-			ferm[branch].matrix[room].visit = 0;
-			links = links->next;
-		}
-		ferm[branch].matrix[branch].parent = 0;
-		ferm[branch].matrix[branch].visit = 0;
-		room = 0;
-		branch++;
-	}
-}
-
-int mark_the_path(s_ferm *ferm, int end)
-{
-	int parent;
+	int			parent;
 
 	while (ferm[end].matrix[end].type != START)
 	{
@@ -42,125 +29,85 @@ int mark_the_path(s_ferm *ferm, int end)
 			ferm[end].matrix[parent].pass = TMP_CLOSE;
 			ferm[parent].matrix[end].pass = TMP_CLOSE;
 		}
-		if (ferm[parent].matrix[parent].type != START && ferm[parent].matrix[parent].type != END)
+		if (ferm[parent].matrix[parent].type != START\
+		&& ferm[parent].matrix[parent].type != END)
 			ferm[parent].matrix[parent].split = 1;
 		end = parent;
 	}
 	return (1);
 }
 
-int split_vertex(s_set_path *links, s_ferm *ferm, int branch)
+int				mark_rooms(t_ferm *ferm, int b, int room, t_set_path **stack)
 {
-	while (links)
-	{
-		// if (ferm[branch].matrix[links->var].pass == OPEN && ferm[links->var].matrix[links->var].split == 1)
-		// {
-		// 	if (links->var != branch)
-		// 		return (1);
-		// }
-		if (ferm[links->var].matrix[branch].pass == TMP_OPEN || ferm[branch].matrix[links->var].pass == TMP_OPEN)
-		{
-				return (1);
-		}
-		links = links->next;
-	}
-	return (0);
-}
+	int			parent;
 
-int	mark_rooms(s_ferm *ferm, int branch, int room, s_set_path **stack)
-{
-	int parent;
-
-	parent = ferm[branch].matrix[branch].parent;
-	// ft_putstr(ferm[room].matrix[branch].name);
-	// ft_putchar('-');
-	// ft_putendl(ferm[room].matrix[room].name);
-	// if ((ft_strcmp("Qgy8", ferm[branch].matrix[branch].name)) == 0)
-	// {
-	// 	s_set_path *links;
-
-	// 	links = ferm[branch].links;
-	// 	ft_putstr (ferm[parent].matrix[parent].name);
-	// 	ft_putstr("->");
-	// 	ft_putstr (ferm[branch].matrix[branch].name);
-	// 	ft_putstr("->");
-	// 	ft_putstr (ferm[room].matrix[room].name);
-	// 	ft_putstr("\t");
-	// 	ft_putnbr(ferm[branch].matrix[branch].split);
-	// 	ft_putendl("\n-----------------");
-	// 	while (links)
-	// 	{
-	// 		write(1, "\n", 1);
-	// 		ft_putstr (ferm[links->var].matrix[links->var].name);
-	// 		ft_putstr("          pass: ");
-	// 		if(ferm[branch].matrix[links->var].pass == TMP_CLOSE)
-	// 			ft_putstr("TMP_CLOSE");
-	// 		if(ferm[branch].matrix[links->var].pass == TMP_OPEN)
-	// 			ft_putstr("TMP_OPEN");
-	// 		if(ferm[branch].matrix[links->var].pass == OPEN)
-	// 			ft_putstr("OPEN");
-	// 		ft_putstr("          split: ");
-	// 		ft_putnbr(ferm[links->var].matrix[links->var].split);
-	// 		links = links->next;
-	// 		write(1, "\n", 1);
-	// 	}
-	// 	ft_putendl("\n-----------------");
-	// }
+	parent = ferm[b].matrix[b].parent;
 	ferm[room].matrix[room].visit = 1;
-	if ((ferm[parent].matrix[branch].pass == OPEN || ferm[parent].matrix[parent].type == START) && ferm[branch].matrix[branch].split == 1)
+	if ((ferm[parent].matrix[b].pass == OPEN\
+	|| ferm[parent].matrix[parent].type == START)\
+	&& ferm[b].matrix[b].split == 1)
 	{
-		if (ferm[branch].matrix[room].pass == OPEN && (split_vertex(ferm[branch].links, ferm, branch)) == 1)
-			return(1);
+		if (ferm[b].matrix[room].pass == OPEN\
+		&& (split_vertex(ferm[b].links, ferm, b)) == 1)
+			return (1);
 	}
 	push(stack, room);
-	ferm[room].matrix[room].parent = branch;
+	ferm[room].matrix[room].parent = b;
 	if (ferm[room].matrix[room].type == END)
 	{
-		while(*stack)
+		while (*stack)
 			delete(stack);
 		return (END);
 	}
 	return (1);
 }
 
-int	bfs(s_info *info, s_ferm *ferm, int branch)
+int				begin(t_set_path **stack, t_ferm *ferm, int branch)
 {
-	int room;
-	int c_room;
-	s_set_path *stack;
-	s_set_path *links;
+	int			r;
+	t_set_path	*links;
+
+	while (*stack)
+	{
+		r = 0;
+		branch = (*stack)->var;
+		links = ferm[branch].links;
+		delete(stack);
+		while (links)
+		{
+			r = links->var;
+			if ((ferm[branch].matrix[r].pass == TMP_OPEN\
+			|| ferm[branch].matrix[r].pass == OPEN) && r != branch)
+			{
+				if (ferm[r].matrix[r].visit == 0 && ferm[r].matrix[r].type != 1)
+				{
+					if ((mark_rooms(ferm, branch, r, stack)) == END)
+						return (mark_the_path(ferm, r));
+				}
+			}
+			links = links->next;
+		}
+	}
+	return (0);
+}
+
+int				bfs(t_info *info, t_ferm *ferm, int branch)
+{
+	int			room;
+	int			c_room;
+	t_set_path	*stack;
 
 	stack = NULL;
 	room = 0;
 	c_room = info->c_rooms;
 	ferm[branch].matrix[branch].visit = 1;
 	push(&stack, branch);
-	while (stack)
-	{
-		branch = stack->var;
-		links = ferm[branch].links;
-		delete(&stack);
-		while (links)
-		{
-			room = links->var;
-			if ((ferm[branch].matrix[room].pass == TMP_OPEN || ferm[branch].matrix[room].pass == OPEN) && room != branch)
-			{
-				if(ferm[room].matrix[room].visit == 0 && ferm[room].matrix[room].type != START)
-				{
-					if ((mark_rooms(ferm, branch, room, &stack)) == END)
-						return (mark_the_path(ferm, room));
-				}
-			}
-			links = links->next;
-		}
-		room = 0;
-	}
-	return (0);
+	return (begin(&stack, ferm, branch));
 }
 
-int search_paths(s_info *info, s_ferm *ferm, int c_paths, int start)
+int				search_paths(t_info *info, t_ferm *ferm, int c_paths, int start)
 {
-	int i;
+	int			i;
 
 	i = 0;
 	while (i < c_paths)

@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/09 19:10:18 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/11 16:25:33 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,36 +54,36 @@
 ** TMP FLAGS ! POTOM DELETE NADO BUDET NE ZABIT
 */
 
-#define W_ANTS -10
-#define MAX_INT 2147483647
+# define W_ANTS -10
+# define MAX_INT 2147483647
 
 /*
 ** READ_STRUCT
 */
 
-typedef struct			l_rooms
+typedef struct			s_rooms
 {
 	char				*name;
 	int					type;
-	struct l_rooms		*next;
-}						s_rooms;
+	struct s_rooms		*next;
+}						t_rooms;
 
-typedef struct			l_map
+typedef struct			s_map
 {
 	char				*map;
-	struct l_map		*next;
+	struct s_map		*next;
 
-}						s_map;
+}						t_map;
 
-typedef struct			l_links
+typedef struct			s_links
 {
 	char				*room1;
 	char				*room2;
-	struct l_links		*next;
+	struct s_links		*next;
 
-}						s_links;
+}						t_links;
 
-typedef struct			l_info
+typedef struct			s_info
 {
 	int					c_rooms;
 	int					c_path;
@@ -91,48 +91,49 @@ typedef struct			l_info
 	int					end_id;
 	int					c_ants;
 	int					c_links;
-	s_rooms				*rooms;
-	s_links				*links;
-}						s_info;
+	t_rooms				*rooms;
+	t_links				*links;
+}						t_info;
 
-typedef struct			l_read_main
+typedef struct			s_read_main
 {
 	int					type;
 	int					start;
 	int					end;
-}						s_read_main;
+}						t_read_main;
 
 /*
 ** MAIN_STRUCT
 */
 
-typedef struct			l_set_path
+typedef struct			s_set_path
 {
 
 	int					var;
-	struct l_set_path	*next;
-	struct l_set_path	*back;
-}						s_set_path;
+	struct s_set_path	*next;
+	struct s_set_path	*back;
+}						t_set_path;
 
-typedef struct			l_paths
+typedef struct			s_paths
 {
 	int					len;
-	s_set_path			*set;
-	s_set_path			*s_set;
-	struct l_paths		*next;
+	t_set_path			*set;
+	t_set_path			*s_set;
+	struct s_paths		*next;
 	int					go;
-}						s_paths;
+}						t_paths;
 
-typedef struct			l_bfb
+typedef struct			s_bfb
 {
 	int					branch;
 	int					room;
-	s_paths				*paths;
-	s_paths				*save;
-	s_set_path			*stack;
-}						s_bfb;
+	t_paths				*paths;
+	t_paths				*save;
+	t_set_path			*stack;
+	t_set_path			*links;
+}						t_bfb;
 
-typedef struct			l_matrix
+typedef struct			s_matrix
 {
 	int					ants;
 	unsigned short		pass;
@@ -141,73 +142,77 @@ typedef struct			l_matrix
 	unsigned int		parent;
 	unsigned short		type;
 	char				*name;
-}						s_matrix;
+}						t_matrix;
 
-typedef struct			l_ferm_matrix
+typedef struct			s_ferm
 {
-	s_set_path			*links;
-	s_matrix			*matrix;
-}						s_ferm;
+	t_set_path			*links;
+	t_matrix			*matrix;
+}						t_ferm;
 
 /*
 ** READ_FUNCTION
 */
 
-void					error_processing(int error, s_info **info);
-int						valid_format(const char *line, s_info *info);
-s_info					*read_file(s_map *map);
+void					error_processing(int error, t_info **info);
+int						valid_format(const char *line, t_info *info);
+t_info					*read_file(t_map *map, int fd);
+int						read_main(t_info *info, int fd, t_map **map, int num);
 
 /*
 ** MATRIX_FUNCTION
 */
 
-s_ferm					*create_matrix(s_info *info);
-int						search_paths(s_info *info, s_ferm *ferm, int c_paths, int start);
-s_paths					*bfs_for_build(s_info *info, s_ferm *ferm, int start);
-void					update_ferm(s_ferm *ferm, s_info *info);
-s_paths					*find_way(s_info *info, s_ferm *ferm);
+t_ferm					*create_matrix(t_info *info);
+int						search_paths\
+						(t_info *info, t_ferm *ferm, int c_paths, int start);
+t_paths					*bfs_for_build(t_info *info, t_ferm *ferm, int start);
+void					update_ferm(t_ferm *ferm, t_info *info);
+t_paths					*find_way(t_info *info, t_ferm *ferm);
 
 /*
 ** SUURBALE
 */
 
-s_paths					*suurbale(s_ferm *ferm, s_info *info, int c_paths);
-void					close_pass(s_ferm **ferm, s_info *info);
+t_paths					*suurbale(t_ferm *ferm, t_info *info, int c_paths);
+void					close_pass(t_ferm **ferm, t_info *info);
 
 /*
 ** MARCH !
 */
 
-void					march(s_paths *paths, s_ferm *ferm, s_info *info);
+void					march(t_paths *paths, t_ferm *ferm, t_info *info);
 
 /*
 ** PATHS_FUNCTION
 */
 
-void					add_num(int num, s_set_path **set, s_set_path **s_set);
+void					add_num(int num, t_set_path **set, t_set_path **s_set);
+int						split_vertex\
+						(t_set_path *links, t_ferm *ferm, int branch);
 
 /*
 ** STACK
 */
 
-void					push(s_set_path **stack, int id);
-void					delete(s_set_path **stack);
+void					push(t_set_path **stack, int id);
+void					delete(t_set_path **stack);
 
 /*
 ** FREE_FUNCTION
 */
 
 char					**delete_ar(char **ar, int size);
-void					delete_info(s_info **info);
-s_ferm					*delete_ferm(s_ferm *ferm, int room);
-s_paths					*delete_paths(s_paths **path);
+void					delete_info(t_info **info);
+t_ferm					*delete_ferm(t_ferm *ferm, int room);
+t_paths					*delete_paths(t_paths **path);
 
 /*
 ** TMP_FUNCTION
 */
 
-int						write_ferm(s_ferm *ferm, s_info* info, int flag);
-void					write_paths(s_paths *paths, s_ferm *ferm);
-s_paths					*null_go(s_paths *paths);
+int						write_ferm(t_ferm *ferm, t_info *info, int flag);
+void					write_paths(t_paths *paths, t_ferm *ferm);
+t_paths					*null_go(t_paths *paths);
 
 #endif

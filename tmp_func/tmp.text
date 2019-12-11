@@ -1,4 +1,4 @@
-int		loop_check(s_ferm **ferm, int branch, s_history *history)
+int		loop_check(t_ferm **ferm, int branch, s_history *history)
 {
 	int i;
 
@@ -13,7 +13,7 @@ int		loop_check(s_ferm **ferm, int branch, s_history *history)
 	return (1);
 }
 
-int		search_end(s_ferm **ferm, int branch, s_info *info, s_history *history)
+int		search_end(t_ferm **ferm, int branch, t_info *info, s_history *history)
 {
 	int room;
 
@@ -39,7 +39,7 @@ int		search_end(s_ferm **ferm, int branch, s_info *info, s_history *history)
 	}
 	return (CLOSE);
 }
-void	search_dead_branch(s_ferm **ferm, s_info *info)
+void	search_dead_branch(t_ferm **ferm, t_info *info)
 {
 	int branch;
 	s_history *history;
@@ -91,7 +91,7 @@ void	push(s_stack **stack, int id)
 	tmp->next->next = NULL;
 }
 
-void	search_dead_branch(s_ferm **ferm, s_info *info)
+void	search_dead_branch(t_ferm **ferm, t_info *info)
 {
 	int branch;
 	int room;
@@ -129,9 +129,9 @@ void	search_dead_branch(s_ferm **ferm, s_info *info)
 
 #include "lem_in.h"
 
-void	delete(s_set_path **stack)
+void	delete(t_set_path **stack)
 {
-	s_set_path *tmp;
+	t_set_path *tmp;
 
 	tmp = *stack;
 	*stack = (*stack)->next;
@@ -139,30 +139,30 @@ void	delete(s_set_path **stack)
 	tmp = NULL;
 }
 
-void	push(s_set_path **stack, int id)
+void	push(t_set_path **stack, int id)
 {
-	s_set_path *tmp;
+	t_set_path *tmp;
 
 	tmp = *stack;
 	if (*stack == NULL)
 	{
-		*stack = (s_set_path *)malloc(sizeof(s_set_path));
+		*stack = (t_set_path *)malloc(sizeof(t_set_path));
 		(*stack)->var = id;
 		(*stack)->next = NULL;
 		return ;
 	}
 	while (tmp->next)
 		tmp = tmp->next;
-	tmp->next = (s_set_path *)malloc(sizeof(s_set_path));
+	tmp->next = (t_set_path *)malloc(sizeof(t_set_path));
 	tmp->next->var = id;
 	tmp->next->next = NULL;
 }
 
-void	matrix_orient(s_ferm **ferm, s_info *info)
+void	matrix_orient(t_ferm **ferm, t_info *info)
 {
 	int branch;
 	int room;
-	s_set_path *stack;
+	t_set_path *stack;
 
 	branch = 0;
 	room = 0;

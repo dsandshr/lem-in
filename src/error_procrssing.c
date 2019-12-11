@@ -6,13 +6,13 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 20:01:19 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/09 18:44:03 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/11 16:29:10 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void	error_processing(int error, s_info **info)
+void	error_processing(int error, t_info **info)
 {
 	if (error == START_1_E)
 		ft_putstr("[5] : start is announced after the number of ants");

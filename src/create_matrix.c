@@ -6,57 +6,68 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:53:59 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/04 18:19:28 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/11 16:29:13 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void	links_add(s_info *info, s_ferm *ferm)
+void		mark_links(t_ferm *ferm, t_info *info, int room, int branch)
+{
+	if (room < info->c_rooms)
+	{
+		push(&ferm[branch].links, room);
+		push(&ferm[room].links, branch);
+		ferm[branch].matrix[room].pass = OPEN;
+		ferm[room].matrix[branch].pass = OPEN;
+	}
+}
+
+void		search_links(t_info *info, t_ferm *ferm, t_links *links)
 {
 	int		branch;
 	int		room;
-	s_links	*links;
 
 	branch = 0;
 	room = 0;
+	while (branch < info->c_rooms)
+	{
+		if (ft_strcmp(ferm[0].matrix[branch].name, links->room1) == 0\
+		|| ft_strcmp(ferm[0].matrix[branch].name, links->room2) == 0)
+		{
+			while (room < info->c_rooms)
+			{
+				if (room != branch)
+				{
+					if (ft_strcmp(ferm[0].matrix[room].name, links->room1) == 0\
+					|| ft_strcmp(ferm[0].matrix[room].name, links->room2) == 0)
+						break ;
+				}
+				room = room + 1;
+			}
+			mark_links(ferm, info, room, branch);
+			break ;
+		}
+		branch++;
+	}
+}
+
+void		links_add(t_info *info, t_ferm *ferm)
+{
+	t_links	*links;
+
 	links = info->links;
 	while (links != NULL)
 	{
-		while (branch < info->c_rooms)
-		{
-			if (ft_strcmp(ferm[0].matrix[branch].name, links->room1) == 0 || ft_strcmp(ferm[0].matrix[branch].name, links->room2) == 0)
-			{
-				while (room < info->c_rooms)
-				{
-					if (room != branch)
-					{
-						if (ft_strcmp(ferm[0].matrix[room].name, links->room1) == 0 || ft_strcmp(ferm[0].matrix[room].name, links->room2) == 0)
-							break ;
-					}
-					room = room + 1;
-				}
-				if (room < info->c_rooms)
-				{
-					push(&ferm[branch].links, room);
-					push(&ferm[room].links, branch);
-					ferm[branch].matrix[room].pass = OPEN;
-					ferm[room].matrix[branch].pass = OPEN;
-				}
-				break;
-			}
-			branch++;
-		}
-		room = 0;
-		branch = 0;
+		search_links(info, ferm, links);
 		links = links->next;
 	}
 }
 
-void	create_branch(s_info *info, s_matrix *branch)
+void		create_branch(t_info *info, t_matrix *branch)
 {
 	int		i;
-	s_rooms	*all_tunnel;
+	t_rooms	*all_tunnel;
 
 	i = 0;
 	all_tunnel = info->rooms;
@@ -70,10 +81,9 @@ void	create_branch(s_info *info, s_matrix *branch)
 		branch[i].split = 0;
 		branch[i].ants = 0;
 		if (branch[i].type == START)
-		{
 			info->start_id = i;
+		if (branch[i].type == START)
 			branch[i].ants = info->c_ants;
-		}
 		else
 			branch[i].ants = 0;
 		if (branch[i].type == END)
@@ -83,16 +93,16 @@ void	create_branch(s_info *info, s_matrix *branch)
 	}
 }
 
-s_ferm	*create_matrix(s_info *info)
+t_ferm		*create_matrix(t_info *info)
 {
-	s_ferm	*ferm;
-	int i;
+	t_ferm	*ferm;
+	int		i;
 
 	i = 0;
-	ferm = (s_ferm *)malloc(sizeof(s_ferm) * (info->c_rooms));
+	ferm = (t_ferm *)malloc(sizeof(t_ferm) * (info->c_rooms));
 	while (i < info->c_rooms)
 	{
-		ferm[i].matrix = (s_matrix *)malloc(sizeof(s_matrix) * (info->c_rooms));
+		ferm[i].matrix = (t_matrix *)malloc(sizeof(t_matrix) * (info->c_rooms));
 		ferm[i].links = NULL;
 		create_branch(info, ferm[i].matrix);
 		i = i + 1;

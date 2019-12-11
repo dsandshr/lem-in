@@ -1,4 +1,4 @@
-void restore_ferm(s_info *info, s_ferm **ferm)
+void restore_ferm(t_info *info, t_ferm **ferm)
 {
 	int branch;
 	int rooms;
@@ -18,7 +18,7 @@ void restore_ferm(s_info *info, s_ferm **ferm)
 	}
 }
 
-int recur_orient(s_info *info, s_ferm **ferm, int branch)
+int recur_orient(t_info *info, t_ferm **ferm, int branch)
 {
 	int room;
 	int go;
@@ -48,10 +48,10 @@ int recur_orient(s_info *info, s_ferm **ferm, int branch)
 		return (OPEN);
 }
 
-void wide_walk(s_info *info, s_ferm **ferm, int branch)
+void wide_walk(t_info *info, t_ferm **ferm, int branch)
 {
 	int room;
-	s_set_path *stack;
+	t_set_path *stack;
 
 	room = 0;
 	stack = NULL;
@@ -73,7 +73,7 @@ void wide_walk(s_info *info, s_ferm **ferm, int branch)
 	}
 }
 
-void search_paths(s_info *info, s_ferm **ferm)
+void search_paths(t_info *info, t_ferm **ferm)
 {
 	int branch;
 	int room;
