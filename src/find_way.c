@@ -6,7 +6,7 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/01 19:43:42 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/12/10 15:59:32 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/10 16:36:57 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void		init_dist(int *dist, s_paths *pth, int c_w)
 	{
 		dist[i] = bf->len;
 		bf = bf->next;
-		i++;
+		++i;
 	}
 }
 
