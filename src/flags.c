@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   flags.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 17:16:56 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/12/15 21:17:51 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/15 21:33:50 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static void		do_dop_flags(short flgs, t_info *inf, t_ferm *frm, t_paths *pth)
 		if (pth == NULL)
 			error_processing(NULL_PATHS_E, &inf);
 		delete_paths(&pth);
-		ft_printf("%i\n", clock() / CLOCKS_PER_SEC);
+		ft_printf("%is\n", clock() / CLOCKS_PER_SEC);
 	}
 	if (flgs == SILENT_STEPS)
 	{
