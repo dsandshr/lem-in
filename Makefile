@@ -6,7 +6,7 @@
 #    By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 18:21:34 by dsandshr          #+#    #+#              #
-#    Updated: 2019/12/11 16:28:56 by tlorine          ###   ########.fr        #
+#    Updated: 2019/12/14 16:41:21 by tlorine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,11 @@ NAME				:=	lem-in
 DIR_SRC				:=	./src
 DIR_INCLUDE_LEM_IN	:=	./include
 DIR_LIBFT			:=	./libft/
+SDL_LIB 			:=	/Users/tlorine/SDL/
+SDL_INCLUDE 		:=	/Users/tlorine/SDL/SDL2.framework/Headers
 DIR_INCLUDE_LIBFT	:=	./libft/include
 DIR_BIN				:=	bin/
-DIRS_INCLUDE		:=	$(DIR_INCLUDE_LEM_IN) $(DIR_INCLUDE_LIBFT)
+DIRS_INCLUDE		:= $(DIR_INCLUDE_LEM_IN) $(DIR_INCLUDE_LIBFT) $(SDL_INCLUDE)
 
 SRCS				:= valid_check.c \
 						lem_in.c \
@@ -35,7 +37,12 @@ SRCS				:= valid_check.c \
 						update_ferm.c \
 						read_main.c \
 						split_vertex.c \
-						null_go.c
+						null_go.c \
+						vis_main.c \
+						drawing.c \
+						vis_write_ferm.c \
+						vis_march.c \
+						draw_traffic.c
 
 OBJS				:=	$(SRCS:.c=.o)
 OBJ_WITH_DIR		:=	$(addprefix $(DIR_BIN), $(OBJS))
@@ -51,6 +58,9 @@ CC					:=	gcc
 MAKE_LIBFT			:=	make -C $(DIR_LIBFT)
 REMOVE				:=	rm -rf
 
+FRAME 				:= SDL2
+SDL2 				:= -Wl,-rpath $(SDL_LIB) -F $(SDL_LIB) -framework $(FRAME)
+
 vpath %.c $(DIR_SRC)
 vpath %.o $(DIR_BIN)
 vpath %.h $(DIR_INCLUDE_LEM_IN)
@@ -59,7 +69,7 @@ vpath %.a $(DIR_LIBFT)
 all: $(LIBFT) $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
-		$(CC) $(CFLAGS) $(OBJ_WITH_DIR) $(NFLAG) $@ $(DIR_LIBFT)$(LIBFT)
+		$(CC) $(CFLAGS) $(OBJ_WITH_DIR) $(NFLAG) $@ $(DIR_LIBFT)$(LIBFT) $(SDL2)
 
 $(OBJS): %.o:%.c $(HEADERS) | $(DIR_BIN)
 		$(CC) $(CFLAG) $(CFLAGS) $< $(addprefix $(IFLAG), $(DIRS_INCLUDE)) $(NFLAG) $(DIR_BIN)$@

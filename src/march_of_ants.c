@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 15:54:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/11 16:29:20 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/15 20:31:30 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,7 @@ void			the_walking_line(t_ferm *ferm, t_info *info, int end)
 			delete(&stack);
 			while (room < info->c_rooms)
 			{
-				if ((ferm[p].matrix[p].split > 0 \
-				|| ferm[p].matrix[p].type == END))
+				if ((ferm[p].matrix[p].split > 0 || ferm[p].matrix[p].type == END))
 					step(ferm, &stack, p, room);
 				room++;
 			}
@@ -98,5 +97,7 @@ void			march(t_paths *paths, t_ferm *ferm, t_info *info)
 	ferm[end].matrix[end].split = info->c_ants;
 	ferm[start].matrix[start].ants = info->c_ants;
 	b_paths(paths, ferm);
-	the_walking_line(ferm, info, end);
+	visual(ferm, info, 1);
+	//exit (1);
+	//the_walking_line(ferm, info, end);
 }

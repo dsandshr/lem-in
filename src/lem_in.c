@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/07 16:20:07 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/11 16:29:16 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/15 20:26:20 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		main(void)
 	paths = find_way(info, ferm);
 	if (paths == NULL)
 		error_processing(NULL_PATHS_E, &info);
-	write_map(&map);
+	//write_map(&map);
 	march(paths, ferm, info);
 	delete_paths(&paths);
 	ferm = delete_ferm(ferm, info->c_rooms);
