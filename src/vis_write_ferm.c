@@ -50,7 +50,7 @@ void	write_vis_ferm(t_ferm *ferm, t_visual *visual, t_info *info)
 		{
 			if (ferm[branch].matrix[links->var].pass != TMP_OPEN && ferm[links->var].matrix[branch].pass != TMP_OPEN)
 				SDL_SetRenderDrawColor(visual->render, 11, 43, 59, 1);
-			else if (visual->size == 1)
+			else if (visual->size == VRCLR || visual->size == (VRCRD | VRCLR))
 				SDL_SetRenderDrawColor(visual->render, rand() % 255, rand() % 255, rand() % 255, 1);
 			else
 				SDL_SetRenderDrawColor(visual->render, 153, 50, 204, 1);

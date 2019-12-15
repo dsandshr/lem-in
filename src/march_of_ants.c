@@ -3,14 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   march_of_ants.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 15:54:23 by tlorine           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2019/12/15 20:31:30 by tlorine          ###   ########.fr       */
-=======
-/*   Updated: 2019/12/14 17:35:55 by dsandshr         ###   ########.fr       */
->>>>>>> d37f22957a1353a75445a8e52d8d2b2f73933405
+/*   Updated: 2019/12/15 21:14:38 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +82,7 @@ void			the_walking_line(t_ferm *ferm, t_info *info, int end)
 	}
 }
 
-void			march(t_paths *paths, t_ferm *ferm, t_info *info, short vis)
+void			march(t_paths *paths, t_ferm *ferm, t_info *info, short flgs)
 {
 	int	i;
 	int	start;
@@ -101,4 +97,9 @@ void			march(t_paths *paths, t_ferm *ferm, t_info *info, short vis)
 	ferm[end].matrix[end].split = info->c_ants;
 	ferm[start].matrix[start].ants = info->c_ants;
 	b_paths(paths, ferm);
+	if (flgs == VISUAL || flgs == VRCLR || flgs == VRCRD ||
+	flgs == (VRCLR | VRCRD))
+		visual(ferm, info, flgs);
+	else
+		the_walking_line(ferm, info, end);
 }

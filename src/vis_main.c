@@ -52,8 +52,8 @@ int		visual(t_ferm *ferm, t_info *info, short flag)
 	if (visual == NULL)
 		return (0);
 	visual->size = flag;
-	visual->radius = 5; //WIDTH / info->c_rooms > 0 ? WIDTH / (info->c_rooms * 10) : 2;
-	if (visual->size == 1)
+	visual->radius = 5;
+	if (visual->size == VRCRD || visual->size == (VRCRD | VRCLR))
 		cord(ferm, info);
 	while (visual->run)
 	{
