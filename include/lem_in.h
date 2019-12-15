@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/15 20:24:51 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/15 21:09:33 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LEM_IN_H
 # include "libft.h"
 # include "stdlib.h"
+# include <time.h>
 
 /*
 **	BONUS PARTH
@@ -42,6 +43,8 @@
 # define MALLOC_E -11
 # define NEW_L_E -12
 # define NULL_PATHS_E -13
+# define NO_START -14
+# define NO_END -15
 
 /*
 ** ROOM_FLAG
@@ -61,6 +64,19 @@
 # define TMP_OPEN 5
 
 /*
+** BONUS FLAGS
+*/
+
+# define ALL_FLAGS "WmWfSsStV"
+# define VISUAL 1
+# define WRITE_STD_PATH 2
+# define WRITE_FERM 4
+# define SILENT_TIME 8
+# define SILENT_STEPS 16
+# define WRITE_MOD_PATH 32
+# define ERROR_FLAG 64
+
+/*
 ** TMP FLAGS ! POTOM DELETE NADO BUDET NE ZABIT
 */
 
@@ -70,6 +86,7 @@
 /*
 ** READ_STRUCT
 */
+
 
 typedef struct			s_rooms
 {
@@ -196,7 +213,7 @@ int						search_paths\
 						(t_info *info, t_ferm *ferm, int c_paths, int start);
 t_paths					*bfs_for_build(t_info *info, t_ferm *ferm, int start);
 void					update_ferm(t_ferm *ferm, t_info *info);
-t_paths					*find_way(t_info *info, t_ferm *ferm);
+t_paths					*find_way(t_info *info, t_ferm *ferm, int last_sum, int c_w);
 
 /*
 ** SUURBALE
@@ -209,7 +226,7 @@ void					close_pass(t_ferm **ferm, t_info *info);
 ** MARCH !
 */
 
-void					march(t_paths *paths, t_ferm *ferm, t_info *info);
+void					march(t_paths *paths, t_ferm *ferm, t_info *info, short vis);
 
 /*
 ** PATHS_FUNCTION
@@ -243,6 +260,11 @@ t_paths					*delete_paths(t_paths **path);
 int						write_ferm(t_ferm *ferm, t_info *info, int flag);
 void					write_paths(t_paths *paths, t_ferm *ferm);
 t_paths					*null_go(t_paths *paths);
+void					do_flags(short flgs, t_info *inf, t_ferm *frm, t_paths *pth);
+short					check_flags(char **flags);
+int						calc_sum_for_bonus(t_paths *paths);
+void					writestdpath(char *argv,t_ferm *ferm,t_info *info);
+int						calc_sum_for_bonus(t_paths *pth);
 
 /*
 **	VISUAL FUNCTION!

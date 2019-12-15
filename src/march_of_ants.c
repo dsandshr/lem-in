@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   march_of_ants.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 15:54:23 by tlorine           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2019/12/15 20:31:30 by tlorine          ###   ########.fr       */
+=======
+/*   Updated: 2019/12/14 17:35:55 by dsandshr         ###   ########.fr       */
+>>>>>>> d37f22957a1353a75445a8e52d8d2b2f73933405
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +86,7 @@ void			the_walking_line(t_ferm *ferm, t_info *info, int end)
 	}
 }
 
-void			march(t_paths *paths, t_ferm *ferm, t_info *info)
+void			march(t_paths *paths, t_ferm *ferm, t_info *info, short vis)
 {
 	int	i;
 	int	start;
@@ -97,7 +101,4 @@ void			march(t_paths *paths, t_ferm *ferm, t_info *info)
 	ferm[end].matrix[end].split = info->c_ants;
 	ferm[start].matrix[start].ants = info->c_ants;
 	b_paths(paths, ferm);
-	visual(ferm, info, 1);
-	//exit (1);
-	//the_walking_line(ferm, info, end);
 }

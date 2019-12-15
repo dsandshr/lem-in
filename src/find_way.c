@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   find_way.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/01 19:43:42 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/12/11 16:29:12 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/15 18:19:03 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void		init_dist(int *dist, t_paths *pth, int c_w)
 	{
 		dist[i] = bf->len;
 		bf = bf->next;
-		i++;
+		++i;
 	}
 }
 
@@ -87,25 +87,23 @@ int				calc_sum(int l_s, t_paths *paths, int c_w, t_info *inf)
 	return (n_s);
 }
 
-t_paths			*find_way(t_info *info, t_ferm *ferm)
+t_paths			*find_way(t_info *info, t_ferm *ferm, int last_sum, int c_w)
 {
-	int			last_sum;
-	int			col_ways;
 	t_paths		*new;
 	t_paths		*last;
 
-	col_ways = 0;
-	if (!(new = suurbale(ferm, info, ++col_ways)))
+	if (!(new = suurbale(ferm, info, ++c_w)))
 		return (NULL);
+	new->go = info->c_ants;
 	last_sum = info->c_ants + (new->len - 1);
 	while (21)
 	{
 		if (last_sum != -1)
 		{
 			last = new;
-			if (!(new = suurbale(ferm, info, ++col_ways)))
+			if (!(new = suurbale(ferm, info, ++c_w)))
 				return (last);
-			last_sum = calc_sum(last_sum, new, col_ways, info);
+			last_sum = calc_sum(last_sum, new, c_w, info);
 			if (last_sum != -1)
 				delete_paths(&last);
 			if (last_sum == -1 && new)

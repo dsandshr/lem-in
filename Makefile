@@ -3,10 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+         #
+#    By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 18:21:34 by dsandshr          #+#    #+#              #
+<<<<<<< HEAD
 #    Updated: 2019/12/14 16:41:21 by tlorine          ###   ########.fr        #
+=======
+#    Updated: 2019/12/13 21:41:22 by dsandshr         ###   ########.fr        #
+>>>>>>> d37f22957a1353a75445a8e52d8d2b2f73933405
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +46,8 @@ SRCS				:= valid_check.c \
 						drawing.c \
 						vis_write_ferm.c \
 						vis_march.c \
-						draw_traffic.c
+						draw_traffic.c \
+						flags.c
 
 OBJS				:=	$(SRCS:.c=.o)
 OBJ_WITH_DIR		:=	$(addprefix $(DIR_BIN), $(OBJS))
