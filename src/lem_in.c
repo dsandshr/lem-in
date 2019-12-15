@@ -6,7 +6,7 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/07 16:20:07 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/15 17:12:42 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/15 17:35:01 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int			main(int argc, char **argv)
 	if (argc > 1 && (paths = NULL) == NULL)
 		do_flags(flg, info, ferm, paths);
 	if (flg == WRITE_STD_PATH)
-		writeStdPath(argv[1], ferm, info);
+		writestdpath(argv[1], ferm, info);
 	if (argc == 1)
 		std_lem_in_work(info, ferm, paths, map);
 	ferm = delete_ferm(ferm, info->c_rooms);

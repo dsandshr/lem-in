@@ -6,13 +6,13 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 20:01:19 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/15 17:21:15 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/15 17:36:13 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void	error_processing(int error, t_info **info)
+static void	error_processing_two(int error, t_info **info)
 {
 	if (error == ROOM_EXIST_E)
 		ft_putendl("[10] : room already exists");
@@ -30,7 +30,7 @@ void	error_processing(int error, t_info **info)
 	exit(1);
 }
 
-void	error_processing(int error, t_info **info)
+void		error_processing(int error, t_info **info)
 {
 	if (error == START_1_E)
 		ft_putendl("[5] : start is announced after the number of ants");
