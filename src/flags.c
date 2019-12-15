@@ -6,7 +6,7 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 17:16:56 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/12/15 20:36:23 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/15 21:16:48 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,8 @@ short			check_flags(char **flags)
 		ft_printf("%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n",\
 		"You can use lem-in \
 withoutt flags like  './lem-in < maps' and with flags :", "-V - \
-visual mode", "VR - visual mode with random color and coord", "VRclr - \
-visual mode with random cloros", "VRcrd - visual mode with random coord",\
+visual mode", "-VR - visual mode with random color and coord", "-VRclr - \
+visual mode with random cloros", "-VRcrd - visual mode with random coord",\
 "-w[num] - \
 write nubmer of paths without changes", "-Wm - write moded paths \
 that chose our program and number of ants on paths", "-St - silent \
