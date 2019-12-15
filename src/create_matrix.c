@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:53:59 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/11 16:29:13 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/15 19:52:52 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,9 @@ void		create_branch(t_info *info, t_matrix *branch)
 t_ferm		*create_matrix(t_info *info)
 {
 	t_ferm	*ferm;
+	t_rooms	*rooms;
+
+	rooms = info->rooms;
 	int		i;
 
 	i = 0;
@@ -104,8 +107,11 @@ t_ferm		*create_matrix(t_info *info)
 	{
 		ferm[i].matrix = (t_matrix *)malloc(sizeof(t_matrix) * (info->c_rooms));
 		ferm[i].links = NULL;
+		ferm[i].x = rooms->x;
+		ferm[i].y = rooms->y;
 		create_branch(info, ferm[i].matrix);
 		i = i + 1;
+		rooms = rooms->next;
 	}
 	links_add(info, ferm);
 	return (ferm);

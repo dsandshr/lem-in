@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_main.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 16:56:57 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/15 17:19:05 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/15 21:14:50 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int				add_rooms(t_info *info, const char *line, int type)
 	{
 		info->rooms = (t_rooms *)malloc(sizeof(t_rooms));
 		info->rooms->name = param[0];
+		info->rooms->x = ft_atoi(param[1]);
+		info->rooms->y = ft_atoi(param[2]);
 		info->rooms->type = type;
 		info->rooms->next = NULL;
 	}
@@ -32,6 +34,8 @@ int				add_rooms(t_info *info, const char *line, int type)
 			rooms = rooms->next;
 		rooms->next = (t_rooms *)malloc(sizeof(t_rooms));
 		rooms->next->name = param[0];
+		rooms->next->x = ft_atoi(param[1]);
+		rooms->next->y = ft_atoi(param[2]);
 		rooms->next->type = type;
 		rooms->next->next = NULL;
 	}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   march_of_ants.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 15:54:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/15 20:40:58 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/15 21:14:38 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,7 @@ void			the_walking_line(t_ferm *ferm, t_info *info, int end)
 			delete(&stack);
 			while (room < info->c_rooms)
 			{
-				if ((ferm[p].matrix[p].split > 0 \
-				|| ferm[p].matrix[p].type == END))
+				if ((ferm[p].matrix[p].split > 0 || ferm[p].matrix[p].type == END))
 					step(ferm, &stack, p, room);
 				room++;
 			}
@@ -100,7 +99,7 @@ void			march(t_paths *paths, t_ferm *ferm, t_info *info, short flgs)
 	b_paths(paths, ferm);
 	if (flgs == VISUAL || flgs == VRCLR || flgs == VRCRD ||
 	flgs == (VRCLR | VRCRD))
-		;
+		visual(ferm, info, flgs);
 	else
 		the_walking_line(ferm, info, end);
 }

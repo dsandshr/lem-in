@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lem_in.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/15 20:25:30 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/15 21:13:52 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 # include "libft.h"
 # include "stdlib.h"
 # include <time.h>
+
+/*
+**	BONUS PARTH
+*/
+
+# include <math.h>
+# include "SDL.h"
+
+# define WIDTH 1920
+# define HEIGHT 1080
 
 /*
 ** ERROR_FLAG
@@ -84,6 +94,8 @@ typedef struct			s_rooms
 {
 	char				*name;
 	int					type;
+	int					x;
+	int					y;
 	struct s_rooms		*next;
 }						t_rooms;
 
@@ -167,7 +179,23 @@ typedef struct			s_ferm
 {
 	t_set_path			*links;
 	t_matrix			*matrix;
+	int					x;
+	int					y;
 }						t_ferm;
+
+/*
+**	VISUAL STRUCT!
+*/
+
+typedef struct			s_visual
+{
+	void				*window;
+	void				*render;
+	void				*r_ants;
+	int					radius;
+	int					size;
+	int					run;
+}						t_visual;
 
 /*
 ** READ_FUNCTION
@@ -215,6 +243,7 @@ int						split_vertex\
 */
 
 void					push(t_set_path **stack, int id);
+void					rev_push(t_set_path **stack, int id);
 void					delete(t_set_path **stack);
 
 /*
@@ -239,4 +268,14 @@ int						calc_sum_for_bonus(t_paths *paths);
 void					writestdpath(char *argv,t_ferm *ferm,t_info *info);
 int						calc_sum_for_bonus(t_paths *pth);
 
+/*
+**	VISUAL FUNCTION!
+*/
+
+int						visual(t_ferm *ferm, t_info *info, short flag);
+void					draw_line(t_ferm cord_1, t_ferm cord_2, int size, t_visual *vis);
+void					drawing_circle(t_ferm cord, int radius, t_visual *vis);
+void					write_vis_ferm(t_ferm *ferm, t_visual *visual, t_info *info);
+t_set_path				*draw_traffic(t_ferm cord_1, t_ferm cord_2);
+void					vis_march(t_ferm *ferm, t_info *info, t_visual *vis, int end);
 #endif
