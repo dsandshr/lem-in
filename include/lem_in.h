@@ -6,7 +6,7 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/15 17:17:22 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/15 18:15:25 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -185,7 +185,7 @@ int						search_paths\
 						(t_info *info, t_ferm *ferm, int c_paths, int start);
 t_paths					*bfs_for_build(t_info *info, t_ferm *ferm, int start);
 void					update_ferm(t_ferm *ferm, t_info *info);
-t_paths					*find_way(t_info *info, t_ferm *ferm);
+t_paths					*find_way(t_info *info, t_ferm *ferm, int last_sum, int c_w);
 
 /*
 ** SUURBALE

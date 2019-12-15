@@ -6,7 +6,7 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 17:16:56 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/12/15 17:18:39 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/15 18:16:25 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void		do_dop_flags(short flgs, t_info *inf, t_ferm *frm, t_paths *pth)
 {
 	if (flgs == SILENT_TIME)
 	{
-		pth = find_way(inf, frm);
+		pth = find_way(inf, frm, 0, 0);
 		if (pth == NULL)
 			error_processing(NULL_PATHS_E, &inf);
 		delete_paths(&pth);
@@ -35,7 +35,7 @@ static void		do_dop_flags(short flgs, t_info *inf, t_ferm *frm, t_paths *pth)
 	}
 	if (flgs == SILENT_STEPS)
 	{
-		pth = find_way(inf, frm);
+		pth = find_way(inf, frm, 0, 0);
 		if (pth == NULL)
 			error_processing(NULL_PATHS_E, &inf);
 		ft_printf("%i\n", calc_sum_for_bonus(pth));
@@ -49,7 +49,7 @@ void			do_flags(short flgs, t_info *inf, t_ferm *frm, t_paths *pth)
 		error_processing(ERROR_FLAG, &inf);
 	if (flgs == VISUAL)
 	{
-		pth = find_way(inf, frm);
+		pth = find_way(inf, frm, 0, 0);
 		if (pth == NULL)
 			error_processing(NULL_PATHS_E, &inf);
 		march(pth, frm, inf, VISUAL);
@@ -57,7 +57,7 @@ void			do_flags(short flgs, t_info *inf, t_ferm *frm, t_paths *pth)
 	}
 	if (flgs == WRITE_MOD_PATH)
 	{
-		pth = find_way(inf, frm);
+		pth = find_way(inf, frm, 0, 0);
 		if (pth == NULL)
 			error_processing(NULL_PATHS_E, &inf);
 		write_paths(pth, frm);

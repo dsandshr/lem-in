@@ -6,7 +6,7 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/07 17:29:48 by dsandshr          #+#    #+#             */
-/*   Updated: 2019/12/15 17:13:34 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/15 18:21:52 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int				calc_sum_for_bonus(t_paths *pth)
 		++c_w;
 		buf = buf->next;
 	}
+	if (c_w == 1)
+		n_s = (pth->len - 1) + pth->go;
 	n_s /= c_w;
 	return (n_s);
 }
