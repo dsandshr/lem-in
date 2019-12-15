@@ -6,7 +6,7 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 12:15:04 by ksharlen          #+#    #+#             */
-/*   Updated: 2019/10/12 16:22:43 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/15 20:47:41 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,9 @@
 # define HEX 				16
 
 /*
-**Flags
-*/
-
-/*
 **HH
 */
+
 # define ZERO				1
 
 /*
@@ -78,22 +75,22 @@
 /*
 **Exeptions
 */
-# define NUM_INT 			"dDoOxXuUibBp"
-# define NUM_DOUBLE 		"fFeEgGaA"
-# define NUM_STRING			"sScC"
-# define NUM_OTHER 			"nrkv"
+# define NUM_INT 				"dDoOxXuUibBp"
+# define NUM_DOUBLE 			"fFeEgGaA"
+# define NUM_STRING				"sScC"
+# define NUM_OTHER 				"nrkv"
 
-# define SIGNED_INT 		"dicCD"
-# define UNSIGNED_INT 		"puxXoUbB"
+# define SIGNED_INT 			"dicCD"
+# define UNSIGNED_INT 			"puxXoUbB"
 
-# define UNDEF_BEH			"!\"&()/\\<=>?@[]^_`{}|~"
-# define SIZE_MOD			"zjlht"
+# define UNDEF_BEH				"!\"&()/\\<=>?@[]^_`{}|~"
+# define SIZE_MOD				"zjlht"
 
-# define COLOR				"brgypw"
-# define COLOR_F			"gih"
+# define COLOR					"brgypw"
+# define COLOR_F				"gih"
 
-# define SUPPORT_INT 		"diouxXn"
-# define SUPPORT_FLOAT 		"feEgGaAF"
+# define SUPPORT_INT 			"diouxXn"
+# define SUPPORT_FLOAT 			"feEgGaAF"
 
 # define TWO_POW_TWENTY_EIGHT	268435456
 # define FIVE_POW_TWENTEEN	244140625
@@ -203,9 +200,9 @@ int							get_quan_days(int month, int years);
 int							get_leap(int years);
 void						push_buf_sym_time(int num, unsigned char sym);
 void						check_ovf_to_time(int *num, int *num1,
-int ovf, int check);
+										int ovf, int check);
 void						check_ovf_to_date(int *num, int *num1,
-int ovf, int check);
+										int ovf, int check);
 
 /*
 **double function
@@ -244,6 +241,6 @@ void						push_wa(unsigned char *inbuf);
 void						write_and_free_malloc(unsigned char *buf,
 size_t size_str);
 int							check_the_entry(const char *def_str,
-											const int sym);
+										const int sym);
 
 #endif

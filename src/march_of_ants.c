@@ -6,7 +6,7 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 15:54:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/14 17:35:55 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/15 20:40:58 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void			the_walking_line(t_ferm *ferm, t_info *info, int end)
 	}
 }
 
-void			march(t_paths *paths, t_ferm *ferm, t_info *info, short vis)
+void			march(t_paths *paths, t_ferm *ferm, t_info *info, short flgs)
 {
 	int	i;
 	int	start;
@@ -98,8 +98,9 @@ void			march(t_paths *paths, t_ferm *ferm, t_info *info, short vis)
 	ferm[end].matrix[end].split = info->c_ants;
 	ferm[start].matrix[start].ants = info->c_ants;
 	b_paths(paths, ferm);
-	vis += 1;
-	// if (vis == 1)
-	// 	return (visual);
-	the_walking_line(ferm, info, end);
+	if (flgs == VISUAL || flgs == VRCLR || flgs == VRCRD ||
+	flgs == (VRCLR | VRCRD))
+		;
+	else
+		the_walking_line(ferm, info, end);
 }

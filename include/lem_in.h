@@ -6,7 +6,7 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/15 18:15:25 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/15 20:25:30 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@
 ** BONUS FLAGS
 */
 
-# define ALL_FLAGS "WmWfSsStV"
+# define ALL_FLAGS "WmWfSsStVVRclrVRcrdVR"
 # define VISUAL 1
 # define WRITE_STD_PATH 2
 # define WRITE_FERM 4
@@ -65,6 +65,8 @@
 # define SILENT_STEPS 16
 # define WRITE_MOD_PATH 32
 # define ERROR_FLAG 64
+# define VRCLR 128
+# define VRCRD 256
 
 /*
 ** TMP FLAGS ! POTOM DELETE NADO BUDET NE ZABIT
