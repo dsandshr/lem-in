@@ -6,7 +6,7 @@
 /*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 18:27:26 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/11 18:49:48 by dsandshr         ###   ########.fr       */
+/*   Updated: 2019/12/13 16:52:39 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ t_info	*read_file(t_map *map, int fd)
 	info->c_path = 0;
 	info->c_ants = read_ants(fd, &map);
 	if (info->c_ants < 1)
-		error_processing(info->c_ants, &info);
+		error_processing(NO_ANTS_E, &info);
 	finish = read_main(info, fd, &map, EMPTY_LINE_E);
 	if ((finish < 1))
 		error_processing(finish, &info);

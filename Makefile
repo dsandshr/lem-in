@@ -6,7 +6,7 @@
 #    By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 18:21:34 by dsandshr          #+#    #+#              #
-#    Updated: 2019/12/11 18:26:53 by dsandshr         ###   ########.fr        #
+#    Updated: 2019/12/13 21:41:22 by dsandshr         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,8 @@ SRCS				:= valid_check.c \
 						update_ferm.c \
 						read_main.c \
 						split_vertex.c \
-						null_go.c
+						null_go.c \
+						flags.c
 
 OBJS				:=	$(SRCS:.c=.o)
 OBJ_WITH_DIR		:=	$(addprefix $(DIR_BIN), $(OBJS))

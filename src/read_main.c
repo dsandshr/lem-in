@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_main.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 16:56:57 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/11 16:29:28 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/15 17:19:05 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ int				read_main(t_info *info, int fd, t_map **map, int num)
 	}
 	free(*map);
 	tmp->next = NULL;
-	if (srm.start != 1 || srm.end != 1)
-		num = START_2_E;
+	if (srm.start < 1 || srm.end < 1)
+		error_processing(srm.start < 1 ? NO_START : NO_END, &info);
 	return (num > 0 ? 1 : num);
 }
