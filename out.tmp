@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 15
 #Here is the number of lines required: 33
 ##start
@@ -1184,3 +1185,13 @@ Gdz7-Yba8
 real	0m18.171s
 user	0m15.766s
 sys	0m2.802s
+=======
+dyld: Library not loaded: @rpath/SDL2.framework/Versions/A/SDL2
+  Referenced from: /Users/dsandshr/main/lem-in/./lem-in
+  Reason: image not found
+./42_lem-in_tools/comparator.sh: line 163:  1308 Abort trap: 6           $bin < $MAP
+
+real	0m0.004s
+user	0m0.001s
+sys	0m0.001s
+>>>>>>> d242f7e38df33017e229b67de35c0edca7b5765f

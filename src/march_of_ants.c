@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 15:54:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/15 21:59:39 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/16 17:20:25 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,8 @@ void			the_walking_line(t_ferm *ferm, t_info *info, int end)
 			delete(&stack);
 			while (room < info->c_rooms)
 			{
-				if ((ferm[p].matrix[p].split > 0 || ferm[p].matrix[p].type == END))
+				if ((ferm[p].matrix[p].split > 0\
+				|| ferm[p].matrix[p].type == END))
 					step(ferm, &stack, p, room);
 				room++;
 			}

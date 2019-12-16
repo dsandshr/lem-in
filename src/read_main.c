@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 16:56:57 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/15 21:14:50 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/16 17:36:50 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,9 @@ int				room_or_links(t_read_main *srm, t_info *info, char *line)
 	else
 	{
 		num = valid_format(line, info);
+		if ((num == 1 && info->c_links != 0)\
+		|| (num == 2 && info->c_rooms == 0))
+			error_processing(ROOM_P_LINKS_E, &info);
 		if (num == 1)
 			info->c_rooms += add_rooms(info, line, srm->type);
 		else if (num == 2)

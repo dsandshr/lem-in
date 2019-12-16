@@ -6,17 +6,17 @@
 #    By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 18:21:34 by dsandshr          #+#    #+#              #
-#    Updated: 2019/12/16 16:21:50 by tlorine          ###   ########.fr        #
+#    Updated: 2019/12/16 16:24:35 by tlorine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME				:=	lem-in
 DIR_SRC				:=	./src
 DIR_INCLUDE_LEM_IN	:=	./include
-DIR_LIBFT			:=	./libft/
-SDL_LIB 			:=	/Users/tlorine/SDL/
-SDL_INCLUDE 		:=	/Users/tlorine/SDL/SDL2.framework/Headers
-DIR_INCLUDE_LIBFT	:=	./libft/include
+DIR_LIBFT			:=	./lib/libft/
+SDL_LIB 			:=	./lib//SDL/
+SDL_INCLUDE 		:=	./lib/SDL/SDL2.framework/Headers
+DIR_INCLUDE_LIBFT	:=	./lib/libft/include
 DIR_BIN				:=	bin/
 DIRS_INCLUDE		:= $(DIR_INCLUDE_LEM_IN) $(DIR_INCLUDE_LIBFT) $(SDL_INCLUDE)
 

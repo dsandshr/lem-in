@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/15 21:13:52 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/16 17:30:36 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@
 # define NULL_PATHS_E -13
 # define NO_START -14
 # define NO_END -15
+# define LINKS_EXIST_E -16
+# define ROOM_P_LINKS_E - 17
 
 /*
 ** ROOM_FLAG
@@ -197,6 +199,17 @@ typedef struct			s_visual
 	int					run;
 }						t_visual;
 
+typedef struct			s_brez
+{
+	int					d_x;
+	int					d_y;
+	int					s_x;
+	int					s_y;
+	int					er;
+	int					er_2;
+	t_set_path			*path;
+}						t_br;
+
 /*
 ** READ_FUNCTION
 */
@@ -273,7 +286,6 @@ int						calc_sum_for_bonus(t_paths *pth);
 */
 
 int						visual(t_ferm *ferm, t_info *info, short flag);
-void					draw_line(t_ferm cord_1, t_ferm cord_2, int size, t_visual *vis);
 void					drawing_circle(t_ferm cord, int radius, t_visual *vis);
 void					write_vis_ferm(t_ferm *ferm, t_visual *visual, t_info *info);
 t_set_path				*draw_traffic(t_ferm cord_1, t_ferm cord_2);

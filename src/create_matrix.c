@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:53:59 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/15 19:52:52 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/16 17:26:01 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void		mark_links(t_ferm *ferm, t_info *info, int room, int branch)
 	{
 		push(&ferm[branch].links, room);
 		push(&ferm[room].links, branch);
+		if (ferm[branch].matrix[room].pass == OPEN)
+			error_processing(LINKS_EXIST_E, &info);
 		ferm[branch].matrix[room].pass = OPEN;
 		ferm[room].matrix[branch].pass = OPEN;
 	}
