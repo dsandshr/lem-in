@@ -1,0 +1,8 @@
+dyld: Library not loaded: @rpath/SDL2.framework/Versions/A/SDL2
+  Referenced from: /Users/dsandshr/main/lem-in/./lem-in
+  Reason: image not found
+./42_lem-in_tools/comparator.sh: line 163:  1308 Abort trap: 6           $bin < $MAP
+
+real	0m0.004s
+user	0m0.001s
+sys	0m0.001s
