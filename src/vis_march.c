@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 16:07:31 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/16 16:56:25 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/16 19:55:22 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,10 @@ int				draw_step(t_paths *tmp, t_visual *vis)
 			tmp->set = tmp->set->next->next;
 			go++;
 		}
-		SDL_SetRenderDrawColor(vis->render, 210, 105, 30, 1);
+		if (vis->intr == 0)
+			SDL_SetRenderDrawColor(vis->render, 210, 105, 30, 1);
+		else
+			SDL_SetRenderDrawColor(vis->render, 240, 255, 255, 1);
 		drawing_circle(cord_1, vis->radius, vis);
 		tmp = tmp->next;
 	}
@@ -64,19 +67,17 @@ int				draw_step(t_paths *tmp, t_visual *vis)
 
 void			run_ants(t_paths *p, t_visual *vis, t_ferm *ferm, t_info *info)
 {
-	SDL_Event	event;
 	int			go;
 
 	go = START;
 	while (go)
 	{
-		if (SDL_PollEvent(&event))
-		{
-			if (event.type == SDL_QUIT)
-				exit(1);
-		}
+		event_loop(vis);
 		go = 0;
-		SDL_SetRenderDrawColor(vis->render, 255, 192, 203, 1);
+		if (vis->intr == 0)
+			SDL_SetRenderDrawColor(vis->render, 255, 192, 203, 1);
+		else
+			SDL_SetRenderDrawColor(vis->render, 0, 0, 0, 1);
 		SDL_RenderClear(vis->render);
 		write_vis_ferm(ferm, vis, info);
 		go = draw_step(p, vis);

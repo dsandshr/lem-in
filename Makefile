@@ -6,7 +6,7 @@
 #    By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/12 18:21:34 by dsandshr          #+#    #+#              #
-#    Updated: 2019/12/16 17:53:57 by tlorine          ###   ########.fr        #
+#    Updated: 2019/12/16 19:54:49 by tlorine          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,8 @@ SRCS				:= valid_check.c \
 						vis_march.c \
 						draw_traffic.c \
 						flags.c \
-						add_rooms.c
+						add_rooms.c \
+						event_loop.c
 
 OBJS				:=	$(SRCS:.c=.o)
 OBJ_WITH_DIR		:=	$(addprefix $(DIR_BIN), $(OBJS))

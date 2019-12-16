@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 16:03:58 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/16 16:22:35 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/16 18:22:37 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ t_visual	*init_sdl(short flag)
 	info->run = 1;
 	info->size = flag;
 	info->radius = 5;
+	info->intr = 0;
 	return (info);
 }
 

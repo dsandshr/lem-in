@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/13 13:26:23 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/16 18:13:51 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/16 19:53:53 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,6 +197,7 @@ typedef struct			s_visual
 	int					radius;
 	int					size;
 	int					run;
+	int					intr;
 }						t_visual;
 
 typedef struct			s_brez
@@ -296,4 +297,5 @@ void					write_vis_ferm\
 t_set_path				*draw_traffic(t_ferm cord_1, t_ferm cord_2);
 void					vis_march\
 						(t_ferm *ferm, t_info *info, t_visual *vis, int end);
+void					event_loop(t_visual *vis);
 #endif
