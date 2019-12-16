@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vis_main.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
+/*   By: dsandshr <dsandshr@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 16:03:58 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/16 18:22:37 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/16 21:22:35 by dsandshr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_visual	*init_sdl(short flag)
 	if ((SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS)) < 0)
 		return (NULL);
 	info = (t_visual *)malloc(sizeof(t_visual));
-	info->window = SDL_CreateWindow("VisualFiller", \
+	info->window = SDL_CreateWindow("lem-in", \
 	SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, \
 	WIDTH, HEIGHT, SDL_WINDOW_SHOWN);
 	if (info->window == NULL)
