@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/16 16:56:44 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/16 19:02:13 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/16 20:51:12 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void			color_vertex(t_ferm *ferm, t_visual *visual, int branch, int op)
 		SDL_SetRenderDrawColor(visual->render, 11, 43, 59, 1);
 }
 
-void			color_line(t_ferm *ferm, t_visual *visual, int branch, int var)
+int				color_line(t_ferm *ferm, t_visual *visual, int branch, int var)
 {
 	if (ferm[branch].matrix[var].pass != TMP_OPEN \
 	&& ferm[var].matrix[branch].pass != TMP_OPEN)
@@ -43,7 +43,7 @@ void			color_line(t_ferm *ferm, t_visual *visual, int branch, int var)
 		if (visual->intr == 0)
 			SDL_SetRenderDrawColor(visual->render, 11, 43, 59, 1);
 		else
-			SDL_SetRenderDrawColor(visual->render, 0, 0, 0, 1);
+			return (0);
 	}
 	else if (visual->intr == 1)
 		SDL_SetRenderDrawColor(visual->render, 0, 128, 128, 1);
@@ -54,6 +54,7 @@ void			color_line(t_ferm *ferm, t_visual *visual, int branch, int var)
 	}
 	else
 		SDL_SetRenderDrawColor(visual->render, 153, 50, 204, 1);
+	return (1);
 }
 
 void			write_vis_vertex(t_ferm *ferm, t_visual *visual, t_info *info)
@@ -92,9 +93,11 @@ void			write_vis_ferm(t_ferm *ferm, t_visual *visual, t_info *info)
 		links = ferm[branch].links;
 		while (links != NULL)
 		{
-			color_line(ferm, visual, branch, links->var);
-			SDL_RenderDrawLine(visual->render, ferm[branch].x,\
-			ferm[branch].y, ferm[links->var].x, ferm[links->var].y);
+			if (color_line(ferm, visual, branch, links->var))
+			{
+				SDL_RenderDrawLine(visual->render, ferm[branch].x,\
+				ferm[branch].y, ferm[links->var].x, ferm[links->var].y);
+			}
 			links = links->next;
 		}
 		branch++;
