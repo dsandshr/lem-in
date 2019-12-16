@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/01 20:01:19 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/16 17:31:32 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/16 18:02:39 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,10 @@ static void	error_processing_two(int error, t_info **info)
 		ft_putendl("[20] you write more than one flag or with mistake");
 	else if (error == LINKS_EXIST_E)
 		ft_putendl("[21] link already indicated");
-	else if(error == ROOM_P_LINKS_E)
-		ft_putendl("rooms are entered before connections");
+	else if (error == ROOM_P_LINKS_E)
+		ft_putendl("[22] rooms are entered before connections");
+	else if (error == SAME_COORDS_E)
+		ft_putendl("[23] rooms cannot have the same coordinates");
 	delete_info(info);
 	exit(1);
 }

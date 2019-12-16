@@ -6,44 +6,11 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/10 16:56:57 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/16 17:36:50 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/16 17:48:47 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-
-int				add_rooms(t_info *info, const char *line, int type)
-{
-	t_rooms	*rooms;
-	char	**param;
-
-	rooms = info->rooms;
-	param = ft_strsplit(line, ' ');
-	if (rooms == NULL)
-	{
-		info->rooms = (t_rooms *)malloc(sizeof(t_rooms));
-		info->rooms->name = param[0];
-		info->rooms->x = ft_atoi(param[1]);
-		info->rooms->y = ft_atoi(param[2]);
-		info->rooms->type = type;
-		info->rooms->next = NULL;
-	}
-	else
-	{
-		while (rooms->next != NULL)
-			rooms = rooms->next;
-		rooms->next = (t_rooms *)malloc(sizeof(t_rooms));
-		rooms->next->name = param[0];
-		rooms->next->x = ft_atoi(param[1]);
-		rooms->next->y = ft_atoi(param[2]);
-		rooms->next->type = type;
-		rooms->next->next = NULL;
-	}
-	free(param[1]);
-	free(param[2]);
-	free(param);
-	return (1);
-}
 
 int				add_links(t_info *info, const char *line)
 {

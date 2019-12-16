@@ -6,7 +6,7 @@
 /*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:53:59 by tlorine           #+#    #+#             */
-/*   Updated: 2019/12/16 17:26:01 by tlorine          ###   ########.fr       */
+/*   Updated: 2019/12/16 18:06:16 by tlorine          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,10 +99,9 @@ t_ferm		*create_matrix(t_info *info)
 {
 	t_ferm	*ferm;
 	t_rooms	*rooms;
-
-	rooms = info->rooms;
 	int		i;
 
+	rooms = info->rooms;
 	i = 0;
 	ferm = (t_ferm *)malloc(sizeof(t_ferm) * (info->c_rooms));
 	while (i < info->c_rooms)
