@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   vis_march.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/12/16 16:07:31 by tlorine           #+#    #+#             */
+/*   Updated: 2019/12/16 16:21:47 by tlorine          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
-t_paths		*vis_step(t_ferm *ferm, t_set_path **stack, int path, int room)
+t_paths			*vis_step(t_ferm *ferm, t_set_path **stack, int path, int room)
 {
-	t_paths *s_paths;
+	t_paths		*s_paths;
 
 	s_paths = NULL;
 	if (ferm[path].matrix[room].pass == TMP_OPEN)
@@ -24,12 +36,12 @@ t_paths		*vis_step(t_ferm *ferm, t_set_path **stack, int path, int room)
     return (s_paths);
 }
 
-void            run_ants(t_paths *paths, t_visual *vis, t_ferm *ferm, t_info *info)
+void			run_ants(t_paths *paths, t_visual *vis, t_ferm *ferm, t_info *info)
 {
-    t_paths *tmp;
-	t_ferm cord_1;
-	SDL_Event event;
-	int go;
+	t_paths		*tmp;
+	t_ferm		cord_1;
+	SDL_Event	event;
+	int			go;
 
 	go = 1;
     tmp = paths;
@@ -92,20 +104,20 @@ void			vis_march(t_ferm *ferm, t_info *info, t_visual *vis, int end)
 				if ((ferm[p].matrix[p].split > 0 || ferm[p].matrix[p].type == END))
 				{
 					if (paths == NULL)
-                    {
-					    paths = vis_step(ferm, &stack, p, room);
+					{
+						paths = vis_step(ferm, &stack, p, room);
 						if (paths)
-                        	paths->next = NULL;
-                    }
-                    else
-                    {
-                        tmp_paths = paths;
-                        while (tmp_paths->next != NULL)
-                            tmp_paths = tmp_paths->next;
-                    	tmp_paths->next = vis_step(ferm, &stack, p, room);
-                        if(tmp_paths->next != NULL)
+							paths->next = NULL;
+					}
+					else
+					{
+						tmp_paths = paths;
+						while (tmp_paths->next != NULL)
+							tmp_paths = tmp_paths->next;
+						tmp_paths->next = vis_step(ferm, &stack, p, room);
+						if (tmp_paths->next != NULL)
 							tmp_paths->next->next = NULL;
-                    }
+					}
 				}
 				links = links->next;
 			}

@@ -1,6 +1,18 @@
-# include "lem_in.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   vis_main.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlorine <tlorine@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/12/16 16:03:58 by tlorine           #+#    #+#             */
+/*   Updated: 2019/12/16 16:22:35 by tlorine          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void cord(t_ferm *ferm, t_info *info)
+#include "lem_in.h"
+
+void		cord(t_ferm *ferm, t_info *info)
 {
 	int branch;
 
@@ -13,7 +25,7 @@ void cord(t_ferm *ferm, t_info *info)
 	}
 }
 
-t_visual	*init_sdl(void)
+t_visual	*init_sdl(short flag)
 {
 	t_visual	*info;
 
@@ -33,6 +45,8 @@ t_visual	*init_sdl(void)
 	info->r_ants = SDL_CreateRenderer(info->window, -1, \
 	SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 	info->run = 1;
+	info->size = flag;
+	info->radius = 5;
 	return (info);
 }
 
@@ -43,16 +57,12 @@ void		quit_visual(t_visual *info)
 	SDL_Quit();
 }
 
-int		visual(t_ferm *ferm, t_info *info, short flag)
+int			visual(t_ferm *ferm, t_info *info, short flag)
 {
-	t_visual *visual;
-	SDL_Event event;
+	t_visual	*visual;
+	SDL_Event	event;
 
-	visual = init_sdl();
-	if (visual == NULL)
-		return (0);
-	visual->size = flag;
-	visual->radius = 5;
+	visual = init_sdl(flag);
 	if (visual->size == VRCRD || visual->size == (VRCRD | VRCLR))
 		cord(ferm, info);
 	while (visual->run)
@@ -61,20 +71,12 @@ int		visual(t_ferm *ferm, t_info *info, short flag)
 		{
 			if (event.type == SDL_QUIT)
 				visual->run = 0;
-			else if (event.type == SDL_KEYDOWN)
-			{
-				if (event.key.keysym.sym == SDLK_SPACE)
-				{
-					ft_putstr("SPACE\n");
-					exit (1);
-				}
-			}
 		}
 		SDL_SetRenderDrawColor(visual->render, 255, 255, 255, 1);
 		SDL_RenderClear(visual->render);
 		write_vis_ferm(ferm, visual, info);
 		SDL_RenderPresent(visual->render);
-		vis_march(ferm, info, visual, info->end_id);;
+		vis_march(ferm, info, visual, info->end_id);
 	}
 	quit_visual(visual);
 	return (0);
